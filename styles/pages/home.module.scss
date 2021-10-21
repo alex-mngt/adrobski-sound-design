@@ -1,0 +1,149 @@
+@use "/styles/base/variables.scss";
+@use "sass:math";
+
+.home__title {
+  line-height: 1.6;
+
+  & > span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(10%);
+
+    &:nth-of-type(1) {
+      animation: clientsFadeIn 0.5s ease-out forwards;
+    }
+
+    &:nth-of-type(2) {
+      animation: clientsFadeIn 0.5s ease-out 0.7s forwards;
+    }
+
+    &:nth-of-type(3) {
+      animation: clientsFadeIn 0.5s ease-out 1.4s forwards;
+    }
+  }
+}
+
+.home__title-emphasis {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    height: 4px;
+    background: variables.$white;
+    animation: underline 0.6s ease-in-out 1.6s forwards;
+  }
+}
+
+.home__clients {
+  p {
+    opacity: 0;
+    transform: translateY(10%);
+    animation: clientsFadeIn 0.5s ease-out 2.4s forwards;
+  }
+}
+
+.home__artists {
+  width: 250px;
+  opacity: 0;
+  transform: translateY(10%);
+  animation: clientsFadeIn 0.5s ease-out 2.6s forwards;
+}
+
+.home__brands {
+  width: 286px;
+  opacity: 0;
+  transform: translateY(10%);
+  animation: clientsFadeIn 0.5s ease-out 2.8s forwards;
+}
+
+@media (min-width: variables.$breakpoint-md) {
+  .home__title {
+    max-width: 80%;
+
+    & > span {
+      &:nth-of-type(1) {
+        animation: clientsFadeIn 0.5s ease-out forwards;
+      }
+
+      &:nth-of-type(2) {
+        animation: clientsFadeIn 0.5s ease-out 0.7s forwards;
+      }
+
+      &:nth-of-type(3) {
+        animation: clientsFadeIn 0.5s ease-out 0.7s forwards;
+      }
+    }
+  }
+
+  .home__title-emphasis {
+    &::after {
+      animation: underline 0.6s ease-in-out 0.9s forwards;
+    }
+  }
+
+  .home__clients {
+    p {
+      animation: clientsFadeIn 0.5s ease-out 1.7s forwards;
+    }
+  }
+
+  .home__artists {
+    width: 281px;
+    animation: clientsFadeIn 0.5s ease-out 1.9s forwards;
+  }
+
+  .home__brands {
+    width: 322px;
+    animation: clientsFadeIn 0.5s ease-out 2.1s forwards;
+  }
+}
+
+@media (min-width: variables.$breakpoint-lg) {
+  .home__title {
+    max-width: 65%;
+    margin-left: -#{math.div(variables.$spacing-8 + variables.$spacing-6, 2)};
+    margin-right: -#{math.div(variables.$spacing-8 + variables.$spacing-6, 2)};
+    font-size: 1.95rem * 1.4;
+  }
+
+  .home__clients {
+    margin-right: -#{math.div(variables.$spacing-8 + variables.$spacing-6, 2)};
+    margin-left: -#{math.div(variables.$spacing-8 + variables.$spacing-6, 2)};
+
+    p {
+      font-size: 3.05rem * 1.7;
+    }
+  }
+
+  .home__artists {
+    width: 478px;
+  }
+
+  .home__brands {
+    width: 547px;
+  }
+}
+
+@keyframes underline {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes clientsFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

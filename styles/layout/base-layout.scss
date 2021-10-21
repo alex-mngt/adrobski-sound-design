@@ -1,0 +1,28 @@
+@use 'styles/base/variables.scss';
+
+.container {
+  padding: 0 variables.$spacing-4;
+}
+
+@media screen and (min-width: variables.$breakpoint-md) {
+  .container {
+    padding: 0 variables.$spacing-6;
+  }
+}
+
+@media screen and (min-width: variables.$breakpoint-lg) {
+  .container {
+    padding: 0 #{variables.$spacing-8 + variables.$spacing-6};
+  }
+}
+
+@media screen and (min-width: variables.$breakpoint-x-lg) {
+  .container {
+    max-width: 1440px;
+    margin: auto;
+  }
+}
+
+.container--no-padding {
+  padding: 0;
+}

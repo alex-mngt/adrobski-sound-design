@@ -1,0 +1,42 @@
+@use 'styles/base/variables.scss';
+
+$spacings: variables.$spacing-0, variables.$spacing-1, variables.$spacing-2,
+  variables.$spacing-3, variables.$spacing-4, variables.$spacing-5,
+  variables.$spacing-6, variables.$spacing-7, variables.$spacing-8;
+
+@for $i from 1 through length($spacings) {
+  $size: #{nth($spacings, $i)};
+  $scale: #{$i - 1};
+
+  .mr-#{$scale} {
+    margin-right: #{$size};
+  }
+  .ml-#{$scale} {
+    margin-left: #{$size};
+  }
+  .mt-#{$scale} {
+    margin-top: #{$size};
+  }
+  .mb-#{$scale} {
+    margin-bottom: #{$size};
+  }
+  .m-#{$scale} {
+    margin: #{$size};
+  }
+
+  .pr-#{$scale} {
+    padding-right: #{$size};
+  }
+  .pl-#{$scale} {
+    padding-left: #{$size};
+  }
+  .pt-#{$scale} {
+    padding-top: #{$size};
+  }
+  .pb-#{$scale} {
+    padding-bottom: #{$size};
+  }
+  .p-#{$scale} {
+    padding: #{$size};
+  }
+}

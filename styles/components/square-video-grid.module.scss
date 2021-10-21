@@ -1,0 +1,33 @@
+@use "/styles/base//variables.scss";
+
+.square-video-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: variables.$spacing-6;
+  padding: 0 variables.$spacing-4;
+}
+
+.square-video-grid__video {
+  //   opacity: 0;
+  width: 100%;
+  height: auto;
+  border-radius: variables.$radius-small;
+}
+
+@media (min-width: variables.$breakpoint-md) {
+  .square-video-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: variables.$spacing-6;
+  }
+}
+
+@media (min-width: variables.$breakpoint-lg) {
+  .square-video-grid {
+    gap: variables.$spacing-8;
+    padding: 0;
+  }
+
+  .square-video-grid__video {
+    border-radius: variables.$radius;
+  }
+}
