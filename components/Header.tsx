@@ -11,6 +11,7 @@ import CloseIcon from './svg/close-icon.svg';
 import s from '/styles/components/header.module.scss';
 import BaseLayout from '../layout/BaseLayout';
 import Burger from './Burger';
+import { instagramLink, spotifyLink, twitterLink } from '../helpers/links';
 
 const Header: FC = () => {
   const [isMenuOpen, setisMenuOpen] = useState(false);
@@ -40,13 +41,13 @@ const Header: FC = () => {
             isMenuOpen ? s['header__svgs--slidin'] : ''
           } f-js-center f-as-start`}
         >
-          <a href='https://twitter.com/adrobskimusic'>
+          <a href={twitterLink}>
             <TwitterLogo />
           </a>
-          <a href='https://www.instagram.com/adrobskimusic'>
+          <a href={instagramLink}>
             <InstaLogo className='ml-4 mr-4' />
           </a>
-          <a href='https://open.spotify.com/artist/2pQTrxWzQz1FoHJpL2xQXg?si=T3DVJPviT9uvAquOnhc5ew&dl_branch=1tify '>
+          <a href={spotifyLink}>
             <SpotifyLogo />
           </a>
         </div>

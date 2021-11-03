@@ -10,6 +10,7 @@ import Brands from '/public/images/brands.png';
 import SquareVideoGrid from '../components/SquareVideoGrid';
 import squareVideoList from '../helpers/squareVideoList';
 import Bubbles from '../components/bubbles/Bubbles';
+import { spotifyLink } from '../helpers/links';
 
 const Home: NextPage = ({}) => {
   return (
@@ -19,8 +20,15 @@ const Home: NextPage = ({}) => {
         <h1 className={`${s['home__title']} mt-6 h3 fw-700`}>
           <span>Adrosbki is a french</span>{' '}
           <span>
-            <span className={`${s['home__title-emphasis']}`}>Musician</span> and
-            Sound
+            <a
+              href={spotifyLink}
+              target='_blank'
+              rel='noreferrer'
+              className={`${s['home__title-emphasis']}`}
+            >
+              Musician
+            </a>{' '}
+            and Sound
           </span>{' '}
           <span>Designer</span>
         </h1>
@@ -51,7 +59,10 @@ const Home: NextPage = ({}) => {
             </div>
           </div>
         </div>
-        <SquareVideoGrid videos={squareVideoList} />
+        <SquareVideoGrid
+          className={s['home__videos']}
+          videos={squareVideoList}
+        />
       </BaseLayout>
       <Bubbles />
     </>

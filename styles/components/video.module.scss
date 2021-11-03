@@ -1,0 +1,38 @@
+@use '/styles/base//variables.scss';
+
+.video {
+  width: 100%;
+  height: auto;
+  border-radius: variables.$radius-small;
+  // opacity: 0;
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+
+  // &:nth-of-type(n) {
+  //   transform: translateX(-30px) scale(0.9);
+  // }
+
+  // &:nth-of-type(2n) {
+  //   transform: translateX(30px) scale(0.95);
+  // }
+}
+
+.video--appearing {
+  opacity: 1;
+
+  &:nth-of-type(n),
+  &:nth-of-type(2n) {
+    transform: translateX(0) scale(1);
+  }
+}
+
+@media (min-width: variables.$breakpoint-md) {
+  .video {
+    &:nth-of-type(n) {
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+
+    &:nth-of-type(2n) {
+      transition: opacity 0.5s 0.25s ease-out, transform 0.5s 0.25s ease-out;
+    }
+  }
+}

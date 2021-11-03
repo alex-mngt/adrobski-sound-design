@@ -147,6 +147,15 @@ a {
   text-decoration: none;
 }
 
+button {
+  font-family: 'Urbanist', sans-serif;
+  padding: variables.$spacing-4 variables.$spacing-7;
+  height: auto;
+  color: variables.$black;
+  border-radius: variables.$radius-small;
+  border: none;
+}
+
 @media screen and (min-width: variables.$breakpoint-md) {
   :root {
     font-size: 18px;

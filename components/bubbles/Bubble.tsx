@@ -1,6 +1,6 @@
 import { FC, useCallback, useEffect, useRef } from 'react';
 import Image from 'next/image';
-import { debounce, getRandomArbitrary } from '../../helpers/tools';
+import { rafDebounce, getRandomArbitrary, debounce } from '../../helpers/tools';
 
 interface IBubbleProps {
   className: string;
@@ -9,18 +9,19 @@ interface IBubbleProps {
 
 const Bubble: FC<IBubbleProps> = ({ className, bubble }) => {
   let ref = useRef<null | HTMLDivElement>(null);
+  const animationStrength = getRandomArbitrary(10, 20);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(handleIntersection, {
-      threshold: 0,
-    });
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(handleIntersection, {
+  //     threshold: 0,
+  //   });
 
-    if (!ref.current) {
-      return;
-    }
+  //   if (!ref.current) {
+  //     return;
+  //   }
 
-    observer.observe(ref.current);
-  });
+  //   observer.observe(ref.current);
+  // }, []);
 
   const handleIntersection: IntersectionObserverCallback = entries => {
     entries.forEach(entry => {
@@ -32,17 +33,8 @@ const Bubble: FC<IBubbleProps> = ({ className, bubble }) => {
     });
   };
 
-  let prevTimestamp: number;
-
   const listenMouseMove = () => {
-    window.addEventListener('mousemove', e => {
-      if (Date.now() - prevTimestamp < 50) {
-        return;
-      }
-
-      debouncedHandleMouseMove(e);
-      prevTimestamp = Date.now();
-    });
+    window.addEventListener('mousemove', debouncedHandleMouseMove);
   };
 
   const cancelMouseMoveListening = () => {
@@ -61,15 +53,16 @@ const Bubble: FC<IBubbleProps> = ({ className, bubble }) => {
       y: boundingClientRect.top + boundingClientRect.height / 2,
     };
 
-    const translateX = `${-(centerCoord.x - e.clientX) / 10}px`;
-    const translateY = `${-(centerCoord.y - e.clientY) / 10}px`;
+    const translateX = `${-(centerCoord.x - e.clientX) / animationStrength}px`;
+    const translateY = `${-(centerCoord.y - e.clientY) / animationStrength}px`;
 
     ref.current.style.willChange = 'transform';
     ref.current.style.transform = `translate(${translateX}, ${translateY})`;
     ref.current.style.willChange = 'unset';
   };
 
-  const debouncedHandleMouseMove = debounce(handleMouseMove);
+  const rafDebouncedHandleMouseMove = rafDebounce(handleMouseMove);
+  const debouncedHandleMouseMove = debounce(rafDebouncedHandleMouseMove, 50);
 
   return (
     <div ref={ref} className={className}>

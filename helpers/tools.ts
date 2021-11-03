@@ -4,7 +4,7 @@ export const getRandomArbitrary = (min: number, max: number) => {
   return Math.random() * (max - min) + min;
 };
 
-export const debounce = (fn: Function) => {
+export const rafDebounce = (fn: Function) => {
   var timeout: number;
 
   return (...args: any[]) => {
@@ -15,5 +15,18 @@ export const debounce = (fn: Function) => {
     timeout = window.requestAnimationFrame(() => {
       fn.apply(this, args);
     });
+  };
+};
+
+export const debounce = (fn: Function, delay: number) => {
+  let prevTimestamp = 0;
+
+  return (...args: any[]) => {
+    if (Date.now() - prevTimestamp < delay) {
+      return;
+    }
+
+    fn.apply(this, args);
+    prevTimestamp = Date.now();
   };
 };
