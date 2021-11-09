@@ -43,7 +43,7 @@ const Video: FC<IVideoProps> = ({ video, isAnimated = false }) => {
       loop
       className={`${s['video']}`}
       controls
-      id={video.name.replaceAll(' ', '-')}
+      id={video.name.replace(/ /g, '-')}
       poster={video.fallbackSource.poster}
     >
       <source src={video.fallbackSource.url} type={video.fallbackSource.type} />
