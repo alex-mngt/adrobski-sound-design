@@ -19,19 +19,19 @@ const Bubbles: FC = () => {
       window.scrollY / 4
     }px, 0)`;
     bubblesWrapper.style.willChange = 'unset';
-    // bubblesWrapper.style.height = `calc(100% + ${window.scrollY / 4}px)`;
+    bubblesWrapper.style.height = `calc(100% + ${window.scrollY / 4}px)`;
   };
 
   const rafDebouncedHandleScroll = rafDebounce(handleScroll);
   const debouncedHandleScroll = debounce(rafDebouncedHandleScroll, 100);
 
-  // useEffect(() => {
-  //   document.addEventListener('scroll', debouncedHandleScroll, {
-  //     passive: true,
-  //   });
+  useEffect(() => {
+    document.addEventListener('scroll', debouncedHandleScroll, {
+      passive: true,
+    });
 
-  //   return () => document.removeEventListener('scroll', debouncedHandleScroll);
-  // }, []);
+    return () => document.removeEventListener('scroll', debouncedHandleScroll);
+  }, []);
 
   return (
     <div ref={bubblesWrapperRef} className={`${s['bubbles-wrapper']}`}>
