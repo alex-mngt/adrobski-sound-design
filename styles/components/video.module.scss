@@ -4,16 +4,16 @@
   width: 100%;
   height: auto;
   border-radius: variables.$radius-small;
-  // opacity: 0;
+  opacity: 0;
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 
-  // &:nth-of-type(n) {
-  //   transform: translateX(-30px) scale(0.9);
-  // }
+  &:nth-of-type(n) {
+    transform: translateX(-30px);
+  }
 
-  // &:nth-of-type(2n) {
-  //   transform: translateX(30px) scale(0.95);
-  // }
+  &:nth-of-type(2n) {
+    transform: translateX(30px);
+  }
 }
 
 .video--appearing {
@@ -21,7 +21,7 @@
 
   &:nth-of-type(n),
   &:nth-of-type(2n) {
-    transform: translateX(0) scale(1);
+    transform: translateX(0);
   }
 }
 

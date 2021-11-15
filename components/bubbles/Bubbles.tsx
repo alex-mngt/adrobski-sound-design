@@ -14,16 +14,14 @@ const Bubbles: FC = () => {
     }
 
     const bubblesWrapper = bubblesWrapperRef.current as HTMLDivElement;
-    bubblesWrapper.style.willChange = 'transform';
-    bubblesWrapper.style.transform = `translate3d(0, -${
-      window.scrollY / 4
-    }px, 0)`;
-    bubblesWrapper.style.willChange = 'unset';
-    bubblesWrapper.style.height = `calc(100% + ${window.scrollY / 4}px)`;
+    // bubblesWrapper.style.willChange = 'transform';
+    bubblesWrapper.style.transform = `translate(0, -${window.scrollY / 4}px)`;
+    // bubblesWrapper.style.willChange = 'unset';
+    // bubblesWrapper.style.height = `calc(100% + ${window.scrollY / 4}px)`;
   };
 
   const rafDebouncedHandleScroll = rafDebounce(handleScroll);
-  const debouncedHandleScroll = debounce(rafDebouncedHandleScroll, 100);
+  const debouncedHandleScroll = debounce(rafDebouncedHandleScroll, 200);
 
   useEffect(() => {
     document.addEventListener('scroll', debouncedHandleScroll, {
