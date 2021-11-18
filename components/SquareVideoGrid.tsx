@@ -20,12 +20,12 @@ const SquareVideoGrid: FC<ISquareVideoGrid> = ({ videos, className }) => {
 
   return (
     <div className={`${s['square-video-grid']} ${className || ''}`}>
-      {videos.map((video, index) => (
-        // index < page * VIDEOS_PER_PAGE && (
-        //   <Video isAnimated key={video.name} video={video} />
-        // ),
-        <Video isAnimated key={video.name} video={video} />
-      ))}
+      {videos.map(
+        (video, index) =>
+          index < page * VIDEOS_PER_PAGE && (
+            <Video isAnimated key={video.name} video={video} />
+          ),
+      )}
       {page * VIDEOS_PER_PAGE < videos.length && (
         <div className={`f f-jc-center ${s['square-video-grid__show-more']}`}>
           <button className='fw-700 h5' onClick={handleShowMore}>
