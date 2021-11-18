@@ -66,7 +66,7 @@ const Bubble: FC<IBubbleProps> = ({ className, bubble }) => {
 
   return (
     <div ref={ref} className={className}>
-      <img alt='' src='/images/bubbles/bubble-1.svg' />
+      <Image alt='' src={bubble} />
     </div>
   );
 };

@@ -33,10 +33,12 @@ const Bubbles: FC = () => {
 
   return (
     <div ref={bubblesWrapperRef} className={`${s['bubbles-wrapper']}`}>
-      {bubbles.map(bubble => (
+      {bubbles.map((bubble, index) => (
         <Bubble
           key={bubble.key}
-          className={bubble.className}
+          className={`${bubble.className} ${
+            index < 3 ? s['bubble--animated'] : ''
+          }`}
           bubble={bubble.bubble}
         />
       ))}
