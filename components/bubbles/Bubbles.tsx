@@ -14,10 +14,10 @@ const Bubbles: FC = () => {
     }
 
     const bubblesWrapper = bubblesWrapperRef.current as HTMLDivElement;
-    // bubblesWrapper.style.willChange = 'transform';
     bubblesWrapper.style.transform = `translate(0, -${window.scrollY / 4}px)`;
-    // bubblesWrapper.style.willChange = 'unset';
-    // bubblesWrapper.style.height = `calc(100% + ${window.scrollY / 4}px)`;
+    bubblesWrapper.style.willChange = 'height';
+    bubblesWrapper.style.height = `calc(100% + ${window.scrollY / 4}px)`;
+    bubblesWrapper.style.willChange = 'unset';
   };
 
   const rafDebouncedHandleScroll = rafDebounce(handleScroll);
