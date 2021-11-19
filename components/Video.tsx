@@ -1,10 +1,10 @@
 import { FC, useEffect, useRef } from 'react';
-import { ISquareVideo } from '../helpers/squareVideoList';
+import { IVideo } from '../helpers/videos';
 
 import s from '/styles/components/video.module.scss';
 
 interface IVideoProps {
-  video: ISquareVideo;
+  video: IVideo;
   isAnimated?: boolean;
 }
 

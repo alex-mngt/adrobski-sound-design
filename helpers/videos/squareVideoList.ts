@@ -1,13 +1,6 @@
-export interface ISquareVideo {
-  fallbackSource: {
-    url: string;
-    type: string;
-    poster: string;
-  };
-  name: string;
-}
+import { IVideo } from '.';
 
-const squareVideoList: ISquareVideo[] = [
+const squareVideoList: IVideo[] = [
   {
     name: 'video 1',
     fallbackSource: {

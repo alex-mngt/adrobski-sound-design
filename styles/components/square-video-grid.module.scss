@@ -4,7 +4,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: variables.$spacing-6;
-  padding: 0 variables.$spacing-4 variables.$spacing-6 variables.$spacing-4;
+  padding: 0 variables.$spacing-4;
 }
 
 .square-video-grid__show-more {
@@ -16,7 +16,6 @@
 @media (min-width: variables.$breakpoint-md) {
   .square-video-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: variables.$spacing-6;
   }
 
   .square-video-grid__show-more {
@@ -32,9 +31,5 @@
   .square-video-grid {
     gap: variables.$spacing-8;
     padding: 0;
-  }
-
-  .square-video-grid__video {
-    border-radius: variables.$radius;
   }
 }

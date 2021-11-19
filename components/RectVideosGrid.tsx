@@ -6,12 +6,12 @@ import s from '/styles/components/square-video-grid.module.scss';
 
 const VIDEOS_PER_PAGE = 4;
 
-interface ISquareVideoGridProps {
+interface IRectVideoGridProps {
   className?: string;
   videos: IVideo[];
 }
 
-const SquareVideoGrid: FC<ISquareVideoGridProps> = ({ videos, className }) => {
+const RectVideoGrid: FC<IRectVideoGridProps> = ({ videos, className }) => {
   const [page, setPage] = useState<number>(1);
 
   const handleShowMore = () => {
@@ -19,12 +19,12 @@ const SquareVideoGrid: FC<ISquareVideoGridProps> = ({ videos, className }) => {
   };
 
   return (
-    <div className={`${s['square-video-grid']} ${className || ''}`}>
-      {videos.map((video, index) => (
+    <div className={`${s['rect-video-grid']} ${className || ''}`}>
+      {videos.map(video => (
         <Video isAnimated key={video.name} video={video} />
       ))}
       {page * VIDEOS_PER_PAGE < videos.length && (
-        <div className={`f f-jc-center ${s['square-video-grid__show-more']}`}>
+        <div className={`f f-jc-center ${s['rect-video-grid__show-more']}`}>
           <button className='fw-700 h5' onClick={handleShowMore}>
             Show more
           </button>
@@ -34,4 +34,4 @@ const SquareVideoGrid: FC<ISquareVideoGridProps> = ({ videos, className }) => {
   );
 };
 
-export default SquareVideoGrid;
+export default RectVideoGrid;

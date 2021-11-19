@@ -8,9 +8,11 @@ import s from '/styles/pages/home.module.scss';
 import Artists from '/public/images/artists.png';
 import Brands from '/public/images/brands.png';
 import SquareVideoGrid from '../components/SquareVideoGrid';
-import squareVideoList from '../helpers/squareVideoList';
+import squareVideoList from '../helpers/videos/squareVideoList';
+import rectVideoList from '../helpers/videos/rectVideosList';
 import Bubbles from '../components/bubbles/Bubbles';
 import { spotifyLink } from '../helpers/links';
+import RectVideoGrid from '../components/RectVideosGrid';
 
 const Home: NextPage = ({}) => {
   return (
@@ -60,8 +62,12 @@ const Home: NextPage = ({}) => {
           </div>
         </div>
         <SquareVideoGrid
-          className={s['home__videos']}
+          className={s['home__square-videos']}
           videos={squareVideoList}
+        />
+        <RectVideoGrid
+          className={s['home__rect-videos']}
+          videos={rectVideoList}
         />
       </BaseLayout>
       <Bubbles />

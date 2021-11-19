@@ -1,13 +1,13 @@
 import { FC, MouseEventHandler } from 'react';
 import s from '/styles/components/burger.module.scss';
 
-interface IBurger {
+interface IBurgerProps {
   className?: string;
   onClick?: MouseEventHandler<HTMLDivElement>;
   isMenuOpen: boolean;
 }
 
-const Burger: FC<IBurger> = ({ className, onClick, isMenuOpen }) => {
+const Burger: FC<IBurgerProps> = ({ className, onClick, isMenuOpen }) => {
   return (
     <div
       onClick={onClick}
