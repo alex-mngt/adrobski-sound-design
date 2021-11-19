@@ -14,31 +14,31 @@ const Bubbles: FC = () => {
     }
 
     const bubblesWrapper = bubblesWrapperRef.current as HTMLDivElement;
-    bubblesWrapper.style.willChange = 'transform';
-    bubblesWrapper.style.transform = `translate3d(0, -${
-      window.scrollY / 4
-    }px, 0)`;
+    bubblesWrapper.style.transform = `translate(0, -${window.scrollY / 4}px)`;
+    bubblesWrapper.style.willChange = 'height';
+    bubblesWrapper.style.height = `calc(100% + ${window.scrollY / 4}px)`;
     bubblesWrapper.style.willChange = 'unset';
-    // bubblesWrapper.style.height = `calc(100% + ${window.scrollY / 4}px)`;
   };
 
   const rafDebouncedHandleScroll = rafDebounce(handleScroll);
-  const debouncedHandleScroll = debounce(rafDebouncedHandleScroll, 100);
+  const debouncedHandleScroll = debounce(rafDebouncedHandleScroll, 200);
 
-  // useEffect(() => {
-  //   document.addEventListener('scroll', debouncedHandleScroll, {
-  //     passive: true,
-  //   });
+  useEffect(() => {
+    document.addEventListener('scroll', debouncedHandleScroll, {
+      passive: true,
+    });
 
-  //   return () => document.removeEventListener('scroll', debouncedHandleScroll);
-  // }, []);
+    return () => document.removeEventListener('scroll', debouncedHandleScroll);
+  }, []);
 
   return (
     <div ref={bubblesWrapperRef} className={`${s['bubbles-wrapper']}`}>
-      {bubbles.map(bubble => (
+      {bubbles.map((bubble, index) => (
         <Bubble
           key={bubble.key}
-          className={bubble.className}
+          className={`${bubble.className} ${
+            index < 3 ? s['bubble--animated'] : ''
+          }`}
           bubble={bubble.bubble}
         />
       ))}

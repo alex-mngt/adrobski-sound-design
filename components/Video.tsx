@@ -11,16 +11,16 @@ interface IVideoProps {
 const Video: FC<IVideoProps> = ({ video, isAnimated = false }) => {
   const videoRef = useRef(null);
 
-  // useEffect(() => {
-  //   if (!videoRef.current || !isAnimated) {
-  //     return;
-  //   }
+  useEffect(() => {
+    if (!videoRef.current || !isAnimated) {
+      return;
+    }
 
-  //   const observer = new IntersectionObserver(handleIntersections, {
-  //     threshold: 0.5,
-  //   });
-  //   observer.observe(videoRef.current);
-  // });
+    const observer = new IntersectionObserver(handleIntersections, {
+      threshold: 0.5,
+    });
+    observer.observe(videoRef.current);
+  });
 
   const handleIntersections: IntersectionObserverCallback = (
     intersections,
@@ -43,7 +43,7 @@ const Video: FC<IVideoProps> = ({ video, isAnimated = false }) => {
       loop
       className={`${s['video']}`}
       controls
-      id={video.name.replaceAll(' ', '-')}
+      id={video.name.replace(/ /g, '-')}
       poster={video.fallbackSource.poster}
     >
       <source src={video.fallbackSource.url} type={video.fallbackSource.type} />
