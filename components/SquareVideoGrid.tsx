@@ -6,12 +6,12 @@ import s from '/styles/components/square-video-grid.module.scss';
 
 const VIDEOS_PER_PAGE = 4;
 
-interface ISquareVideoGridProps {
+interface IVideosGridProps {
   className?: string;
   videos: IVideo[];
 }
 
-const SquareVideoGrid: FC<ISquareVideoGridProps> = ({ videos, className }) => {
+const VideosGrid: FC<IVideosGridProps> = ({ videos, className }) => {
   const [page, setPage] = useState<number>(1);
 
   const handleShowMore = () => {
@@ -37,4 +37,4 @@ const SquareVideoGrid: FC<ISquareVideoGridProps> = ({ videos, className }) => {
   );
 };
 
-export default SquareVideoGrid;
+export default VideosGrid;

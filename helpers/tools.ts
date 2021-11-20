@@ -30,3 +30,5 @@ export const debounce = (fn: Function, delay: number) => {
     prevTimestamp = Date.now();
   };
 };
+
+export const slugify = (str: string) => str.toLowerCase().replace(/ /g, '-');

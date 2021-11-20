@@ -2,284 +2,256 @@ import { IVideo } from '.';
 
 const squareVideoList: IVideo[] = [
   {
-    name: 'video 1',
+    name: 'Cartier',
     fallbackSource: {
-      url: '/videos/square/video-1.mp4',
+      url: '/videos/square/cartier/cartier.mp4',
       type: 'video/mp4',
-      poster: '/images/video-posters/video-poster-1.jpg',
     },
+    sources: [
+      {
+        url: '/videos/square/cartier/cartier.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
   },
   {
-    name: 'video 2',
+    name: 'Chivas',
     fallbackSource: {
-      url: '/videos/square/video-1.mp4',
+      url: '/videos/square/chivas/chivas.mp4',
       type: 'video/mp4',
-      poster: '/images/video-posters/video-poster-1.jpg',
     },
+    sources: [
+      {
+        url: '/videos/square/chivas/chivas.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
   },
   {
-    name: 'video 3',
+    name: 'Colors',
     fallbackSource: {
-      url: '/videos/square/video-1.mp4',
+      url: '/videos/square/colors/colors.mp4',
       type: 'video/mp4',
-      poster: '/images/video-posters/video-poster-1.jpg',
     },
+    sources: [
+      {
+        url: '/videos/square/colors/colors.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
   },
   {
-    name: 'video 4',
+    name: 'Fleur',
     fallbackSource: {
-      url: '/videos/square/video-1.mp4',
+      url: '/videos/square/fleur/fleur.mp4',
       type: 'video/mp4',
-      poster: '/images/video-posters/video-poster-1.jpg',
     },
+    sources: [
+      {
+        url: '/videos/square/fleur/fleur.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
   },
   {
-    name: 'video 5',
+    name: '36 Days of Type',
     fallbackSource: {
-      url: '/videos/square/video-1.mp4',
+      url: '/videos/square/36-days-of-type/36-days-of-type.mp4',
       type: 'video/mp4',
-      poster: '/images/video-posters/video-poster-1.jpg',
     },
+    sources: [
+      {
+        url: '/videos/square/36-days-of-type/36-days-of-type.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
   },
   {
-    name: 'video 6',
+    name: 'Blansable',
     fallbackSource: {
-      url: '/videos/square/video-1.mp4',
+      url: '/videos/square/blansable/blansable.mp4',
       type: 'video/mp4',
-      poster: '/images/video-posters/video-poster-1.jpg',
     },
+    sources: [
+      {
+        url: '/videos/square/blansable/blansable.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
   },
   {
-    name: 'video 7',
+    name: 'Planet',
     fallbackSource: {
-      url: '/videos/square/video-1.mp4',
+      url: '/videos/square/planet/planet.mp4',
       type: 'video/mp4',
-      poster: '/images/video-posters/video-poster-1.jpg',
     },
+    sources: [
+      {
+        url: '/videos/square/planet/planet.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
   },
   {
-    name: 'video 8',
+    name: 'Mekaverse',
     fallbackSource: {
-      url: '/videos/square/video-1.mp4',
+      url: '/videos/square/mekaverse/mekaverse.mp4',
       type: 'video/mp4',
-      poster: '/images/video-posters/video-poster-1.jpg',
     },
+    sources: [
+      {
+        url: '/videos/square/mekaverse/mekaverse.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
   },
   {
-    name: 'video 9',
+    name: 'Robot',
     fallbackSource: {
-      url: '/videos/square/video-1.mp4',
+      url: '/videos/square/robot/robot.mp4',
       type: 'video/mp4',
-      poster: '/images/video-posters/video-poster-1.jpg',
     },
+    sources: [
+      {
+        url: '/videos/square/robot/robot.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
   },
   {
-    name: 'video 10',
+    name: 'Chess',
     fallbackSource: {
-      url: '/videos/square/video-1.mp4',
+      url: '/videos/square/chess/chess.mp4',
       type: 'video/mp4',
-      poster: '/images/video-posters/video-poster-1.jpg',
     },
+    sources: [
+      {
+        url: '/videos/square/chess/chess.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
   },
   {
-    name: 'video 11',
+    name: 'Armadillo',
     fallbackSource: {
-      url: '/videos/square/video-1.mp4',
+      url: '/videos/square/armadillo/armadillo.mp4',
       type: 'video/mp4',
-      poster: '/images/video-posters/video-poster-1.jpg',
     },
+    sources: [
+      {
+        url: '/videos/square/armadillo/armadillo.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
   },
   {
-    name: 'video 12',
+    name: 'Tetris',
     fallbackSource: {
-      url: '/videos/square/video-1.mp4',
+      url: '/videos/square/tetris/tetris.mp4',
       type: 'video/mp4',
-      poster: '/images/video-posters/video-poster-1.jpg',
     },
+    sources: [
+      {
+        url: '/videos/square/tetris/tetris.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
   },
   {
-    name: 'video 13',
+    name: 'Falling Pieces',
     fallbackSource: {
-      url: '/videos/square/video-1.mp4',
+      url: '/videos/square/falling-pieces/falling-pieces.mp4',
       type: 'video/mp4',
-      poster: '/images/video-posters/video-poster-1.jpg',
     },
+    sources: [
+      {
+        url: '/videos/square/falling-pieces/falling-pieces.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
   },
   {
-    name: 'video 14',
+    name: 'Yoplait Chocolat',
     fallbackSource: {
-      url: '/videos/square/video-1.mp4',
+      url: '/videos/square/yoplait-chocolat/yoplait-chocolat.mp4',
       type: 'video/mp4',
-      poster: '/images/video-posters/video-poster-1.jpg',
     },
+    sources: [
+      {
+        url: '/videos/square/yoplait-chocolat/yoplait-chocolat.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
   },
   {
-    name: 'video 15',
+    name: 'Yoplait Lemon',
     fallbackSource: {
-      url: '/videos/square/video-1.mp4',
+      url: '/videos/square/yoplait-lemon/yoplait-lemon.mp4',
       type: 'video/mp4',
-      poster: '/images/video-posters/video-poster-1.jpg',
     },
+    sources: [
+      {
+        url: '/videos/square/yoplait-lemon/yoplait-lemon.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
   },
   {
-    name: 'video 16',
+    name: 'Yoplait Cream',
     fallbackSource: {
-      url: '/videos/square/video-1.mp4',
+      url: '/videos/square/yoplait-cream/yoplait-cream.mp4',
       type: 'video/mp4',
-      poster: '/images/video-posters/video-poster-1.jpg',
     },
+    sources: [
+      {
+        url: '/videos/square/yoplait-cream/yoplait-cream.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
   },
   {
-    name: 'video 17',
+    name: 'Yoplait Strawberry',
     fallbackSource: {
-      url: '/videos/square/video-1.mp4',
+      url: '/videos/square/yoplait-strawberry/yoplait-strawberry.mp4',
       type: 'video/mp4',
-      poster: '/images/video-posters/video-poster-1.jpg',
     },
+    sources: [
+      {
+        url: '/videos/square/yoplait-strawberry/yoplait-strawberry.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
   },
   {
-    name: 'video 18',
+    name: 'Yoplait Strawberry Mango',
     fallbackSource: {
-      url: '/videos/square/video-1.mp4',
+      url: '/videos/square/yoplait-strawberry-mango/yoplait-strawberry-mango.mp4',
       type: 'video/mp4',
-      poster: '/images/video-posters/video-poster-1.jpg',
     },
-  },
-  {
-    name: 'video 19',
-    fallbackSource: {
-      url: '/videos/square/video-1.mp4',
-      type: 'video/mp4',
-      poster: '/images/video-posters/video-poster-1.jpg',
-    },
-  },
-  {
-    name: 'video 20',
-    fallbackSource: {
-      url: '/videos/square/video-1.mp4',
-      type: 'video/mp4',
-      poster: '/images/video-posters/video-poster-1.jpg',
-    },
-  },
-  {
-    name: 'video 21',
-    fallbackSource: {
-      url: '/videos/square/video-1.mp4',
-      type: 'video/mp4',
-      poster: '/images/video-posters/video-poster-1.jpg',
-    },
-  },
-  {
-    name: 'video 22',
-    fallbackSource: {
-      url: '/videos/square/video-1.mp4',
-      type: 'video/mp4',
-      poster: '/images/video-posters/video-poster-1.jpg',
-    },
-  },
-  {
-    name: 'video 23',
-    fallbackSource: {
-      url: '/videos/square/video-1.mp4',
-      type: 'video/mp4',
-      poster: '/images/video-posters/video-poster-1.jpg',
-    },
-  },
-  {
-    name: 'video 24',
-    fallbackSource: {
-      url: '/videos/square/video-1.mp4',
-      type: 'video/mp4',
-      poster: '/images/video-posters/video-poster-1.jpg',
-    },
-  },
-  {
-    name: 'video 25',
-    fallbackSource: {
-      url: '/videos/square/video-1.mp4',
-      type: 'video/mp4',
-      poster: '/images/video-posters/video-poster-1.jpg',
-    },
-  },
-  {
-    name: 'video 26',
-    fallbackSource: {
-      url: '/videos/square/video-1.mp4',
-      type: 'video/mp4',
-      poster: '/images/video-posters/video-poster-1.jpg',
-    },
-  },
-  {
-    name: 'video 27',
-    fallbackSource: {
-      url: '/videos/square/video-1.mp4',
-      type: 'video/mp4',
-      poster: '/images/video-posters/video-poster-1.jpg',
-    },
-  },
-  {
-    name: 'video 28',
-    fallbackSource: {
-      url: '/videos/square/video-1.mp4',
-      type: 'video/mp4',
-      poster: '/images/video-posters/video-poster-1.jpg',
-    },
-  },
-  {
-    name: 'video 29',
-    fallbackSource: {
-      url: '/videos/square/video-1.mp4',
-      type: 'video/mp4',
-      poster: '/images/video-posters/video-poster-1.jpg',
-    },
-  },
-  {
-    name: 'video 30',
-    fallbackSource: {
-      url: '/videos/square/video-1.mp4',
-      type: 'video/mp4',
-      poster: '/images/video-posters/video-poster-1.jpg',
-    },
-  },
-  {
-    name: 'video 31',
-    fallbackSource: {
-      url: '/videos/square/video-1.mp4',
-      type: 'video/mp4',
-      poster: '/images/video-posters/video-poster-1.jpg',
-    },
-  },
-  {
-    name: 'video 32',
-    fallbackSource: {
-      url: '/videos/square/video-1.mp4',
-      type: 'video/mp4',
-      poster: '/images/video-posters/video-poster-1.jpg',
-    },
-  },
-  {
-    name: 'video 33',
-    fallbackSource: {
-      url: '/videos/square/video-1.mp4',
-      type: 'video/mp4',
-      poster: '/images/video-posters/video-poster-1.jpg',
-    },
-  },
-  {
-    name: 'video 34',
-    fallbackSource: {
-      url: '/videos/square/video-1.mp4',
-      type: 'video/mp4',
-      poster: '/images/video-posters/video-poster-1.jpg',
-    },
-  },
-  {
-    name: 'video 35',
-    fallbackSource: {
-      url: '/videos/square/video-1.mp4',
-      type: 'video/mp4',
-      poster: '/images/video-posters/video-poster-1.jpg',
-    },
+    sources: [
+      {
+        url: '/videos/square/yoplait-strawberry-mango/yoplait-strawberry-mango.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
   },
 ];
 

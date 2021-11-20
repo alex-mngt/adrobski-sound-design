@@ -35,4 +35,8 @@
       transition: opacity 0.5s 0.25s ease-out, transform 0.5s 0.25s ease-out;
     }
   }
+
+  .video--rect {
+    grid-column: auto / span 2;
+  }
 }

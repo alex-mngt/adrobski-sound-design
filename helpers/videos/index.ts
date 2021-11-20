@@ -2,7 +2,11 @@ export interface IVideo {
   fallbackSource: {
     url: string;
     type: string;
-    poster: string;
   };
+  sources: {
+    url: string;
+    type: string;
+  }[];
   name: string;
+  format: 'square' | 'rect';
 }
