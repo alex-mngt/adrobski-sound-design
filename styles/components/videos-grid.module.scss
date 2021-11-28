@@ -1,6 +1,6 @@
 @use '/styles/base//variables.scss';
 
-.square-video-grid {
+.videos-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: variables.$spacing-6;
@@ -9,18 +9,18 @@
   transition: opacity 0.2s ease-out;
 }
 
-.square-video-grid--hidden {
+.videos-grid--hidden {
   opacity: 0;
 }
 
 @media (min-width: variables.$breakpoint-md) {
-  .square-video-grid {
+  .videos-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (min-width: variables.$breakpoint-lg) {
-  .square-video-grid {
+  .videos-grid {
     gap: variables.$spacing-8;
     padding: 0;
   }

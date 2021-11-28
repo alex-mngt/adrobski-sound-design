@@ -5,7 +5,7 @@ import { IVideo } from '../helpers/video';
 import Pagination from './Pagination';
 import Video from './Video';
 
-import s from '/styles/components/square-video-grid.module.scss';
+import s from '/styles/components/videos-grid.module.scss';
 
 interface IVideosGridProps {
   className?: string;
@@ -19,23 +19,23 @@ const VideosGrid: FC<IVideosGridProps> = ({ videos, className }) => {
   const videosSlice = [(page - 1) * VIDEOS_PER_PAGE, page * VIDEOS_PER_PAGE];
 
   const paginationFn = () => {
-    ref.current?.classList.toggle(s['square-video-grid--hidden']);
+    ref.current?.classList.toggle(s['videos-grid--hidden']);
     setTimeout(() => {
       window.scroll({ top: 0, behavior: 'smooth' });
       setTimeout(() => {
-        ref.current?.classList.toggle(s['square-video-grid--hidden']);
+        ref.current?.classList.toggle(s['videos-grid--hidden']);
       }, 600);
     }, 400);
   };
 
   return (
     <>
-      <div ref={ref} className={`${s['square-video-grid']} ${className || ''}`}>
+      <div ref={ref} className={`${s['videos-grid']} ${className || ''}`}>
         {videos.slice(videosSlice[0], videosSlice[1]).map(video => (
           <Video isAnimated key={slugify(video.name)} video={video} />
         ))}
       </div>
-      <div className={`f f-jc-center ${s['square-video-grid__pagination']}`}>
+      <div className={`f f-jc-center ${s['videos-grid__pagination']}`}>
         <Pagination
           selectedPage={page}
           setSelectedPage={setPage}
