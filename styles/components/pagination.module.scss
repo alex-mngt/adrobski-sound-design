@@ -1,0 +1,34 @@
+@use '/styles/base/variables.scss';
+
+.pagination__page {
+  margin-right: variables.$spacing-2;
+  cursor: pointer;
+}
+
+.pagination__page--last {
+  margin-right: 0;
+}
+
+.pagionation__page--selected {
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.pagination__arrow {
+  opacity: 1;
+  transform: scale(1.3);
+  cursor: pointer;
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+
+  &:first-of-type:hover {
+    transform: scale(1.4) translateX(-2px);
+  }
+
+  &:nth-of-type(2):hover {
+    transform: scale(1.4) translateX(2px);
+  }
+}
+
+.pagination__arrow--hidden {
+  opacity: 0;
+}

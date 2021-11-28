@@ -1,6 +1,6 @@
 import { FC, useEffect, useRef } from 'react';
 import { bubbles } from '../../helpers/bubbleList';
-import { debounce, rafDebounce } from '../../helpers/tools';
+import { rafDebounce } from '../../helpers/tools';
 import Bubble from '../bubbles/Bubble';
 
 import s from '/styles/components/bubbles.module.scss';
@@ -21,14 +21,14 @@ const Bubbles: FC = () => {
   };
 
   const rafDebouncedHandleScroll = rafDebounce(handleScroll);
-  const debouncedHandleScroll = debounce(rafDebouncedHandleScroll, 200);
 
   useEffect(() => {
-    document.addEventListener('scroll', debouncedHandleScroll, {
+    document.addEventListener('scroll', rafDebouncedHandleScroll, {
       passive: true,
     });
 
-    return () => document.removeEventListener('scroll', debouncedHandleScroll);
+    return () =>
+      document.removeEventListener('scroll', rafDebouncedHandleScroll);
   }, []);
 
   return (

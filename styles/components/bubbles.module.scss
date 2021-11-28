@@ -6,16 +6,16 @@
   height: 100%;
   overflow: hidden;
   z-index: -1;
-  transition: transform 0.2s ease-out;
+  transition: transform 0.05s ease-out;
 }
 
 .bubble {
   position: absolute;
-  transition: transform 0.05s linear;
+  transition: transform 0.2s linear;
 }
 
 .bubble--animated {
-  animation: bounce 1s ease-out 3.5s forwards;
+  animation: bounce 1s ease-out forwards;
   transform: matrix3d(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
 }
 
@@ -23,19 +23,20 @@
   width: 220px;
   top: 290px;
   right: 155px;
+  animation-delay: 3.5s;
 }
 
 .bubble--2 {
   width: 240px;
   top: 700px;
   left: -178px;
+  animation-delay: 3.7s;
 }
 
 .bubble--3 {
   width: 280px;
   top: 1100px;
   right: -170px;
-  animation-delay: 2.9s;
 }
 
 .bubble--4 {

@@ -11,8 +11,15 @@ import SquareVideoGrid from '../components/SquareVideoGrid';
 import squareVideoList from '../helpers/videos/squareVideoList';
 import Bubbles from '../components/bubbles/Bubbles';
 import { spotifyLink } from '../helpers/links';
+import { useEffect } from 'react';
+import smoothscroll from 'smoothscroll-polyfill';
+import Footer from '../components/Footer';
 
 const Home: NextPage = ({}) => {
+  useEffect(() => {
+    smoothscroll.polyfill();
+  });
+
   return (
     <>
       <Header />
@@ -63,6 +70,7 @@ const Home: NextPage = ({}) => {
           className={`${s['home__square-videos']} mb-6`}
           videos={squareVideoList}
         />
+        <Footer />
       </BaseLayout>
       <Bubbles />
     </>

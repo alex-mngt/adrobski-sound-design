@@ -1,5 +1,3 @@
-import { MutableRefObject } from 'react';
-
 export const getRandomArbitrary = (min: number, max: number) => {
   return Math.random() * (max - min) + min;
 };
@@ -32,3 +30,13 @@ export const debounce = (fn: Function, delay: number) => {
 };
 
 export const slugify = (str: string) => str.toLowerCase().replace(/ /g, '-');
+
+export const fillArray = (startIndex: number, length: number) => {
+  const array: number[] = [];
+
+  for (let i = startIndex; i <= length; i++) {
+    array.push(i);
+  }
+
+  return array;
+};
