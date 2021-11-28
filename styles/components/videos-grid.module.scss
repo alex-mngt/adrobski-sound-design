@@ -1,0 +1,27 @@
+@use '/styles/base//variables.scss';
+
+.videos-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: variables.$spacing-6;
+  padding: 0 variables.$spacing-4;
+  opacity: 1;
+  transition: opacity 0.2s ease-out;
+}
+
+.videos-grid--hidden {
+  opacity: 0;
+}
+
+@media (min-width: variables.$breakpoint-md) {
+  .videos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: variables.$breakpoint-lg) {
+  .videos-grid {
+    gap: variables.$spacing-8;
+    padding: 0;
+  }
+}

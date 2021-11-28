@@ -1,10 +1,11 @@
 import { FC, useEffect, useRef } from 'react';
-import { ISquareVideo } from '../helpers/squareVideoList';
+import { slugify } from '../helpers/tools';
+import { IVideo } from '../helpers/video';
 
 import s from '/styles/components/video.module.scss';
 
 interface IVideoProps {
-  video: ISquareVideo;
+  video: IVideo;
   isAnimated?: boolean;
 }
 
@@ -41,12 +42,23 @@ const Video: FC<IVideoProps> = ({ video, isAnimated = false }) => {
       ref={videoRef}
       playsInline
       loop
-      className={`${s['video']}`}
+      className={`${s['video']} ${
+        video.format === 'rect' ? s['video--rect'] : ''
+      }`}
       controls
-      id={video.name.replace(/ /g, '-')}
-      poster={video.fallbackSource.poster}
+      preload='metadata'
     >
-      <source src={video.fallbackSource.url} type={video.fallbackSource.type} />
+      {video.sources.map(source => (
+        <source
+          key={slugify(source.url)}
+          src={`${source.url}#t=0.1`}
+          type={source.type}
+        />
+      ))}
+      <source
+        src={`${video.fallbackSource.url}#t=0.1`}
+        type={video.fallbackSource.type}
+      />
       Your browser cannot play HTML5 videos
     </video>
   );

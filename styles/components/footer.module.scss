@@ -1,0 +1,45 @@
+@use '/styles/base/variables.scss';
+
+.footer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: variables.$spacing-5;
+}
+
+.footer__catchprase {
+  grid-column: 1 / span 2;
+}
+
+.footer__legals {
+  align-self: center;
+}
+
+.footer__studio {
+  justify-self: flex-end;
+}
+
+.footer__logo {
+  width: 30px;
+}
+
+@media (min-width: variables.$breakpoint-lg) {
+  .footer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer__legals {
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+  .footer__catchprase {
+    margin: auto;
+    grid-row: 1;
+    grid-column: 2;
+  }
+
+  .footer__studio {
+    grid-row: 1;
+    grid-column: 3;
+  }
+}

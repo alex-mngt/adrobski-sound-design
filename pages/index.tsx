@@ -7,12 +7,19 @@ import Image from 'next/image';
 import s from '/styles/pages/home.module.scss';
 import Artists from '/public/images/artists.png';
 import Brands from '/public/images/brands.png';
-import SquareVideoGrid from '../components/SquareVideoGrid';
-import squareVideoList from '../helpers/squareVideoList';
+import VideoGrid from '../components/VideosGrid';
+import videoList from '../helpers/videoList';
 import Bubbles from '../components/bubbles/Bubbles';
 import { spotifyLink } from '../helpers/links';
+import { useEffect } from 'react';
+import smoothscroll from 'smoothscroll-polyfill';
+import Footer from '../components/Footer';
 
 const Home: NextPage = ({}) => {
+  useEffect(() => {
+    smoothscroll.polyfill();
+  });
+
   return (
     <>
       <Header />
@@ -59,10 +66,11 @@ const Home: NextPage = ({}) => {
             </div>
           </div>
         </div>
-        <SquareVideoGrid
-          className={s['home__videos']}
-          videos={squareVideoList}
+        <VideoGrid
+          className={`${s['home__square-videos']} mb-6`}
+          videos={videoList}
         />
+        <Footer />
       </BaseLayout>
       <Bubbles />
     </>
