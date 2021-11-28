@@ -1,6 +1,6 @@
-import { IVideo } from '.';
+import { IVideo } from './video';
 
-const squareVideoList: IVideo[] = [
+const videoList: IVideo[] = [
   {
     name: 'Cartier',
     fallbackSource: {
@@ -255,4 +255,4 @@ const squareVideoList: IVideo[] = [
   },
 ];
 
-export default squareVideoList;
+export default videoList;

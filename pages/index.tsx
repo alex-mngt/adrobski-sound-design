@@ -7,8 +7,8 @@ import Image from 'next/image';
 import s from '/styles/pages/home.module.scss';
 import Artists from '/public/images/artists.png';
 import Brands from '/public/images/brands.png';
-import SquareVideoGrid from '../components/SquareVideoGrid';
-import squareVideoList from '../helpers/videos/squareVideoList';
+import VideoGrid from '../components/VideosGrid';
+import videoList from '../helpers/videoList';
 import Bubbles from '../components/bubbles/Bubbles';
 import { spotifyLink } from '../helpers/links';
 import { useEffect } from 'react';
@@ -66,9 +66,9 @@ const Home: NextPage = ({}) => {
             </div>
           </div>
         </div>
-        <SquareVideoGrid
+        <VideoGrid
           className={`${s['home__square-videos']} mb-6`}
-          videos={squareVideoList}
+          videos={videoList}
         />
         <Footer />
       </BaseLayout>

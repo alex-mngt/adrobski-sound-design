@@ -1,6 +1,6 @@
 import { FC, useEffect, useRef } from 'react';
 import { slugify } from '../helpers/tools';
-import { IVideo } from '../helpers/videos';
+import { IVideo } from '../helpers/video';
 
 import s from '/styles/components/video.module.scss';
 

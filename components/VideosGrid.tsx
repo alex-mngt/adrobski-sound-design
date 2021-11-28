@@ -1,13 +1,11 @@
 import { FC, useRef, useState } from 'react';
-import { BEFORE_PAGE_CHANGE } from '../helpers/pagination';
+import { BEFORE_PAGE_CHANGE, VIDEOS_PER_PAGE } from '../helpers/pagination';
 import { slugify } from '../helpers/tools';
-import { IVideo } from '../helpers/videos';
+import { IVideo } from '../helpers/video';
 import Pagination from './Pagination';
 import Video from './Video';
 
 import s from '/styles/components/square-video-grid.module.scss';
-
-const VIDEOS_PER_PAGE = 8;
 
 interface IVideosGridProps {
   className?: string;
