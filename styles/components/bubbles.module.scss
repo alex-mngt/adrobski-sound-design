@@ -1,3 +1,5 @@
+@use '/styles/base/variables.scss';
+
 .bubbles-wrapper {
   position: absolute;
   top: 0;
@@ -20,209 +22,157 @@
 }
 
 .bubble--1 {
-  width: 220px;
-  top: 290px;
-  right: 155px;
+  width: 245px;
+  top: 296px;
+  right: 128px;
   animation-delay: 3.5s;
 }
 
 .bubble--2 {
+  display: none;
   width: 240px;
   top: 700px;
+  top: 619px;
   left: -178px;
   animation-delay: 3.7s;
 }
 
 .bubble--3 {
-  width: 280px;
+  width: 240px;
   top: 1100px;
-  right: -170px;
+  right: -145px;
 }
 
 .bubble--4 {
-  width: 450px;
-  top: 1600px;
-  left: -290px;
+  width: 350px;
+  top: 1525px;
+  left: -200px;
 }
 
 .bubble--5 {
-  width: 290px;
-  top: 2300px;
-  right: -200px;
+  width: 300px;
+  top: 2027px;
+  right: -180px;
 }
 
 .bubble--6 {
-  width: 220px;
-  top: 3000px;
-  left: -80px;
+  width: 280px;
+  top: 2523px;
+  left: -136px;
 }
 
 .bubble--7 {
-  width: 450px;
-  top: 3450px;
-  right: -310px;
+  width: 225px;
+  top: 3031px;
+  right: -111px;
 }
 
 .bubble--8 {
   width: 200px;
-  top: 4100px;
-  left: -110px;
+  top: 3530px;
+  left: -107px;
 }
 
 .bubble--9 {
   width: 280px;
-  top: 4600px;
+  top: 3971px;
   right: -110px;
 }
 
 .bubble--10 {
-  width: 140px;
-  top: 5000px;
-  left: -85px;
+  width: 358px;
+  top: 4606px;
+  left: -166px;
 }
 
-.bubble--11 {
-  width: 400px;
-  top: 5400px;
-  right: -230px;
+@media (min-width: variables.$breakpoint-md) {
+  .bubble--1 {
+    width: 640px;
+    top: 390px;
+    right: 400px;
+  }
+
+  .bubble--2 {
+    width: 600px;
+    top: 1200px;
+    left: -440px;
+  }
+
+  .bubble--3 {
+    width: 500px;
+    top: 1750px;
+    right: -350px;
+  }
+
+  .bubble--4 {
+    width: 700px;
+    top: 2220px;
+    left: -535px;
+  }
+
+  .bubble--5 {
+    width: 500px;
+    top: 2980px;
+    right: -300px;
+  }
+
+  .bubble--6 {
+    width: 1500px;
+    top: 3825px;
+    left: -480px;
+  }
+
+  .bubble--7,
+  .bubble--8,
+  .bubble--9,
+  .bubble--10 {
+    display: none;
+  }
 }
 
-.bubble--12 {
-  width: 250px;
-  top: 5970px;
-  left: -130px;
-}
+@media (min-width: variables.$breakpoint-xx-lg) {
+  .bubble--1 {
+    width: 640px;
+    top: 390px;
+    right: 400px;
+  }
 
-.bubble--13 {
-  width: 160px;
-  top: 6400px;
-  right: -90px;
-}
+  .bubble--2 {
+    width: 600px;
+    top: 1200px;
+    left: -440px;
+  }
 
-.bubble--14 {
-  width: 460px;
-  top: 6700px;
-  left: -245px;
-}
+  .bubble--3 {
+    width: 670px;
+    top: 1700px;
+    right: -480px;
+  }
 
-.bubble--15 {
-  width: 310px;
-  top: 7350px;
-  right: -125px;
-}
+  .bubble--4 {
+    width: 700px;
+    top: 2450px;
+    left: -510px;
+  }
 
-.bubble--16 {
-  width: 220px;
-  top: 7850px;
-  left: -85px;
-}
+  .bubble--5 {
+    width: 500px;
+    top: 3340px;
+    right: -280px;
+  }
 
-.bubble--17 {
-  width: 180px;
-  top: 8400px;
-  right: -60px;
-}
+  .bubble--6 {
+    width: 800px;
+    top: 4000px;
+    left: -400px;
+  }
 
-.bubble--18 {
-  width: 480px;
-  top: 8900px;
-  left: -360px;
-}
-
-.bubble--19 {
-  width: 210px;
-  top: 9500px;
-  right: -135px;
-}
-
-.bubble--20 {
-  width: 140px;
-  top: 10000px;
-  left: -55px;
-}
-
-.bubble--21 {
-  width: 350px;
-  top: 10350px;
-  right: -150px;
-}
-
-.bubble--22 {
-  width: 200px;
-  top: 11000px;
-  left: -90px;
-}
-
-.bubble--24 {
-  width: 250px;
-  top: 11500px;
-  right: -150px;
-}
-
-.bubble--25 {
-  width: 320px;
-  top: 12000px;
-  left: -160px;
-}
-
-.bubble--26 {
-  width: 280px;
-  top: 12550px;
-  right: -190px;
-}
-
-.bubble--27 {
-  width: 150px;
-  top: 13050px;
-  left: -50px;
-}
-
-.bubble--28 {
-  width: 270px;
-  top: 13500px;
-  right: -120px;
-}
-
-.bubble--29 {
-  width: 420px;
-  top: 14100px;
-  left: -210px;
-}
-
-.bubble--30 {
-  width: 200px;
-  top: 14850px;
-  right: -110px;
-}
-
-.bubble--31 {
-  width: 320px;
-  top: 15380px;
-  left: -210px;
-}
-
-.bubble--32 {
-  width: 200px;
-  top: 16000px;
-  right: -80px;
-}
-
-.bubble--33 {
-  width: 280px;
-  top: 16400px;
-  left: -150px;
-}
-
-.bubble--34 {
-  width: 180px;
-  top: 16950px;
-  right: -50px;
-}
-
-.bubble--35 {
-  width: 380px;
-  top: 17400px;
-  left: -150px;
+  .bubble--7,
+  .bubble--8,
+  .bubble--9,
+  .bubble--10 {
+    display: none;
+  }
 }
 
 @keyframes bounce {
