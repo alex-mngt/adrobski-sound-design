@@ -19,6 +19,8 @@ const Footer = () => {
           <a target='_blank' className='f f-center'>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
+              width='30px'
+              height='20.73px'
               className={`${s['footer__logo']} mr-1`}
               src='/images/we-are-studio-99.svg'
               alt='WeAreStudio99Logo'
