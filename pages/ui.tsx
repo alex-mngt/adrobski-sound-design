@@ -1,9 +1,11 @@
-import { NextPage } from "next";
+import { NextPage } from 'next';
+import Sample from '../components/Sample';
 
 const UI: NextPage = () => {
   return (
-    <div className="p-5">
-      <h1 className="mb-3">A Visual Type Scale</h1>
+    <div className='p-5'>
+      <Sample text='test' />
+      <h1 className='mb-3'>A Visual Type Scale</h1>
       <p>
         What looked like a small patch of purple grass, above five feet square,
         was moving across the sand in their direction.
@@ -13,7 +15,7 @@ const UI: NextPage = () => {
         no blades, but only purple roots. The roots were revolving, for each
         small plant in the whole patch, like the spokes of a rimless wheel.
       </p>
-      <h2 className="mb-3">A Visual Type Scale</h2>
+      <h2 className='mb-3'>A Visual Type Scale</h2>
       <p>
         What looked like a small patch of purple grass, above five feet square,
         was moving across the sand in their direction.
@@ -23,7 +25,7 @@ const UI: NextPage = () => {
         no blades, but only purple roots. The roots were revolving, for each
         small plant in the whole patch, like the spokes of a rimless wheel.
       </p>
-      <h3 className="mb-3">A Visual Type Scale</h3>
+      <h3 className='mb-3'>A Visual Type Scale</h3>
       <p>
         What looked like a small patch of purple grass, above five feet square,
         was moving across the sand in their direction.
@@ -33,7 +35,7 @@ const UI: NextPage = () => {
         no blades, but only purple roots. The roots were revolving, for each
         small plant in the whole patch, like the spokes of a rimless wheel.
       </p>
-      <h4 className="mb-3">A Visual Type Scale</h4>
+      <h4 className='mb-3'>A Visual Type Scale</h4>
       <p>
         What looked like a small patch of purple grass, above five feet square,
         was moving across the sand in their direction.
@@ -43,7 +45,7 @@ const UI: NextPage = () => {
         no blades, but only purple roots. The roots were revolving, for each
         small plant in the whole patch, like the spokes of a rimless wheel.
       </p>
-      <h5 className="mb-3">A Visual Type Scale</h5>
+      <h5 className='mb-3'>A Visual Type Scale</h5>
       <p>
         What looked like a small patch of purple grass, above five feet square,
         was moving across the sand in their direction.
