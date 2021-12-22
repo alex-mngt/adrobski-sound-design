@@ -45,14 +45,14 @@ export const checkValidity = (
     }
   }
 
-  if (customValidationFunction) {
-    const customValidationMessage = customValidationFunction(e);
-    if (customValidationMessage) {
-      e.target.setCustomValidity(customValidationMessage);
-      setError(customValidationMessage);
-      return;
-    }
-  }
+  // if (customValidationFunction) {
+  //   const customValidationMessage = customValidationFunction(e);
+  //   if (customValidationMessage) {
+  //     e.target.setCustomValidity(customValidationMessage);
+  //     setError(customValidationMessage);
+  //     return;
+  //   }
+  // }
 
   if (type === 'email') {
     if (e.target.validity.typeMismatch) {
