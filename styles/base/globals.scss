@@ -156,6 +156,11 @@ button {
   border: none;
 }
 
+input {
+  font-size: 1rem;
+  font-family: 'Urbanist', sans-serif;
+}
+
 @media screen and (min-width: variables.$breakpoint-md) {
   :root {
     font-size: 18px;

@@ -1,4 +1,4 @@
-@use "/styles/base/variables.scss";
+@use '/styles/base/variables.scss';
 
 .burger {
   width: 30px;
@@ -13,6 +13,6 @@
 .burger__item {
   background-color: variables.$white;
   height: 4px;
-  border-radius: variables.$radius-x-small;
+  border-radius: variables.$radius-xx-small;
   margin-bottom: 5px;
 }
