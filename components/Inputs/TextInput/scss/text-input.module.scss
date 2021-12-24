@@ -1,0 +1,55 @@
+@use '/styles/base/variables.scss';
+
+.text-input__input {
+  font-size: 1rem;
+  box-shadow: 0px 0px 0px 1px variables.$white;
+  border-radius: variables.$radius-x-small;
+  border: none;
+  outline: none;
+  background: none;
+  color: variables.$white;
+  transition: box-shadow 0.2s ease-out;
+  -webkit-appearance: none;
+
+  &:focus {
+    box-shadow: 0px 0px 0px 2px variables.$primary;
+  }
+}
+
+.text-input__input--textarea {
+  resize: vertical;
+}
+
+.text-input__input--invalid {
+  box-shadow: 0px 0px 0px 1px variables.$error;
+
+  &:focus {
+    box-shadow: 0px 0px 0px 2px variables.$error;
+  }
+}
+
+.text-input__error {
+  color: variables.$error;
+}
+
+@media (min-width: variables.$breakpoint-lg) {
+  .text-input__input {
+    &:hover {
+      box-shadow: 0px 0px 0px 2px variables.$white;
+    }
+
+    &:focus {
+      box-shadow: 0px 0px 0px 2px variables.$primary;
+    }
+  }
+
+  .text-input__input--invalid {
+    &:hover {
+      box-shadow: 0px 0px 0px 2px variables.$error;
+    }
+
+    &:focus {
+      box-shadow: 0px 0px 0px 2px variables.$error;
+    }
+  }
+}

@@ -2,7 +2,7 @@ import Bubble2 from '/public/images/bubbles/bubble-2.png';
 import Bubble3 from '/public/images/bubbles/bubble-3.png';
 import Bubble4 from '/public/images/bubbles/bubble-4.png';
 
-import s from '/styles/components/bubbles.module.scss';
+import s from '../components/Bubbles/scss/bubbles.module.scss';
 
 export const bubbles = [
   {

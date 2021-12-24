@@ -1,4 +1,4 @@
-import { IVideo } from './video';
+import { IVideo } from '../components/Video/typescript/video.interfaces';
 
 const videoList: IVideo[] = [
   {

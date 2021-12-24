@@ -3,7 +3,9 @@ import { DEFAULT_COUNTER } from './typescript/sample.constants';
 import { handleClick } from './typescript/sample.helpers';
 import { ISampleProps } from './typescript/sample.interfaces';
 
-const Sample: FC<ISampleProps> = ({ text }) => {
+import s from './scss/sample.module.scss';
+
+const Sample: FC<ISampleProps> = ({ text, className }) => {
   const [counter, setCounter] = useState<number>(DEFAULT_COUNTER);
 
   const onClick: MouseEventHandler<HTMLParagraphElement> = e => {
@@ -11,7 +13,7 @@ const Sample: FC<ISampleProps> = ({ text }) => {
   };
 
   return (
-    <div>
+    <div className={`${className || ''} ${s['sample']}`}>
       <p onClick={onClick}>{text}</p>
     </div>
   );

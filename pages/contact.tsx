@@ -2,9 +2,8 @@ import { NextPage } from 'next';
 import { ChangeEvent, useReducer, useRef, useState } from 'react';
 import Form from '../components/Form';
 import Header from '../components/Header';
-import Button from '../components/inputs/Button';
-import TextAreaInput from '../components/inputs/TextAreaInput';
-import TextInput from '../components/inputs/TextInput';
+import Button from '../components/Inputs/Button';
+import TextInput from '../components/Inputs/TextInput';
 import BaseLayout from '../layout/BaseLayout';
 
 import s from '/styles/pages/contact.module.scss';
@@ -60,17 +59,18 @@ const Contact: NextPage = () => {
             required
             validateOnBlur
           />
-          <TextAreaInput
+          <TextInput
             className='mb-5'
             form={form}
             index={4}
+            type='textarea'
             name='message'
             label='Message'
             value={message}
             setValue={setMessage}
-            placeholder=''
+            placeholder={`Hey, I'd really like to work with you on some projects ...`}
+            rows={5}
             required
-            maxLength={500}
           />
           <Button
             className={s['contact__button']}
