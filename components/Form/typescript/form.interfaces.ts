@@ -4,4 +4,5 @@ import { Props } from '../../../interfaces';
 export interface IFormProps extends Props {
   reference: RefObject<HTMLFormElement>;
   setIsValid: Dispatch<SetStateAction<boolean>>;
+  isValid: boolean;
 }

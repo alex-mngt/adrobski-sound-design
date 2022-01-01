@@ -9,23 +9,11 @@ import Video from '../Video';
 import { IVideo } from '../Video/typescript/video.interfaces';
 
 import s from './scss/videos-grid.module.scss';
+import { useVideoGrid } from './typescript/video-grid.hooks';
 import { IVideosGridProps } from './typescript/video-grid.interfaces';
 
 const VideosGrid: FC<IVideosGridProps> = ({ videos, className }) => {
-  const [page, setPage] = useState<number>(1);
-  const ref = useRef<HTMLDivElement>(null);
-
-  const videosSlice = [(page - 1) * VIDEOS_PER_PAGE, page * VIDEOS_PER_PAGE];
-
-  const paginationFn = () => {
-    ref.current?.classList.toggle(s['videos-grid--hidden']);
-    setTimeout(() => {
-      window.scroll({ top: 0, behavior: 'smooth' });
-      setTimeout(() => {
-        ref.current?.classList.toggle(s['videos-grid--hidden']);
-      }, 600);
-    }, 400);
-  };
+  const [page, setPage, ref, videosSlice, paginationFn] = useVideoGrid();
 
   return (
     <>

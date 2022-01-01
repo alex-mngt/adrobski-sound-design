@@ -1,11 +1,6 @@
-import { Dispatch, MouseEvent, MouseEventHandler, SetStateAction } from 'react';
+import { MouseEvent } from 'react';
 
-export const handleClick = (
-  e: MouseEvent<HTMLParagraphElement>,
-  counter: number,
-  setCounter: Dispatch<SetStateAction<number>>,
-) => {
+export const changeColor = (e: MouseEvent<HTMLParagraphElement>) => {
   // @ts-ignore
   e.target.style.color = 'blue';
-  setCounter(counter + 1);
 };

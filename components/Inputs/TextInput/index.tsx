@@ -1,17 +1,7 @@
-import {
-  ChangeEventHandler,
-  FC,
-  FocusEventHandler,
-  KeyboardEventHandler,
-  useState,
-} from 'react';
+import { FC } from 'react';
 import { ITextInputProps } from './typescript/text-input.interfaces';
 import s from './scss/text-input.module.scss';
-import {
-  handleBlur,
-  handleChange,
-  handleKeyDown,
-} from './typescript/text-input.helpers';
+import { useTextInput } from './typescript/text-input.hooks';
 
 const TextInput: FC<ITextInputProps> = ({
   className,
@@ -29,43 +19,17 @@ const TextInput: FC<ITextInputProps> = ({
   validateOnBlur,
   rows,
 }) => {
-  const [error, setError] = useState<string>('');
-
-  const onChange: ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement> =
-    e => {
-      handleChange(
-        e,
-        setValue,
-        label,
-        error,
-        setError,
-        validateOnBlur,
-        required,
-        minLength,
-        maxLength,
-        type,
-      );
-    };
-
-  const onBlur: FocusEventHandler<HTMLInputElement> = e => {
-    handleBlur(
-      e,
-      label,
-      error,
-      setError,
-      validateOnBlur,
-      required,
-      minLength,
-      maxLength,
-      type,
-    );
-  };
-
-  const onKeyDown: KeyboardEventHandler<
-    HTMLInputElement | HTMLTextAreaElement
-  > = e => {
-    handleKeyDown(e, form, index);
-  };
+  const [error, handleChange, handleBlur, handleKeyDown] = useTextInput(
+    setValue,
+    validateOnBlur,
+    label,
+    required,
+    minLength,
+    maxLength,
+    type,
+    form,
+    index,
+  );
 
   return (
     <div className={`${className} f f-direction-column`}>
@@ -78,8 +42,8 @@ const TextInput: FC<ITextInputProps> = ({
             s['text-input__input--textarea']
           } ${error ? s['text-input__input--invalid'] : ''} p-2`}
           data-form={`${form}-${index}`}
-          onChange={onChange}
-          onKeyDown={onKeyDown}
+          onChange={handleChange}
+          onKeyDown={handleKeyDown}
           name={name}
           placeholder={placeholder}
           id={name}
@@ -93,9 +57,9 @@ const TextInput: FC<ITextInputProps> = ({
             error ? s['text-input__input--invalid'] : ''
           } p-2`}
           data-form={`${form}-${index}`}
-          onChange={onChange}
-          onBlur={onBlur}
-          onKeyDown={onKeyDown}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          onKeyDown={handleKeyDown}
           type={type}
           name={name}
           placeholder={placeholder}

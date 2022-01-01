@@ -1,9 +1,10 @@
 import { FC, useRef } from 'react';
 import Image from 'next/image';
 import { IBubbleProps } from './typescript/bubble.interfaces';
+import { useBubble } from './typescript/bubble.hooks';
 
 const Bubble: FC<IBubbleProps> = ({ className, bubble }) => {
-  let ref = useRef<HTMLDivElement>(null);
+  const [ref] = useBubble();
 
   return (
     <div ref={ref} className={className}>

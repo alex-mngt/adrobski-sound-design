@@ -11,9 +11,10 @@ import CloseIcon from '../svg/close-icon.svg';
 import s from './scss/header.module.scss';
 import Burger from '../Burger';
 import { instagramLink, spotifyLink, twitterLink } from '../../helpers/links';
+import { useHeader } from './typescript/header.hooks';
 
 const Header: FC = () => {
-  const [isMenuOpen, setisMenuOpen] = useState<boolean>(false);
+  const [isMenuOpen, handleBurgerClick, handleCloseIconClick] = useHeader();
 
   return (
     <header className={`${s['header']} p-4`}>
@@ -32,7 +33,7 @@ const Header: FC = () => {
             </a>
           </Link>
         </div>
-        <Burger isMenuOpen={isMenuOpen} onClick={() => setisMenuOpen(true)} />
+        <Burger isMenuOpen={isMenuOpen} onClick={handleBurgerClick} />
       </div>
       <div
         className={`${s['header__wrapper']} ${
@@ -90,7 +91,7 @@ const Header: FC = () => {
           </a>
         </Link>
         <CloseIcon
-          onClick={() => setisMenuOpen(false)}
+          onClick={handleCloseIconClick}
           className={`${s['header__close']} ${
             isMenuOpen ? s['header__close--popin'] : ''
           }`}

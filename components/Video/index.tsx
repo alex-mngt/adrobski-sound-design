@@ -1,18 +1,16 @@
-import { FC, useEffect, useRef } from 'react';
+import { FC } from 'react';
 import { slugify } from '../../helpers/tools';
 
 import s from './scss/video.module.scss';
-import { observe } from './typescript/video.helpers';
+import { useVideo } from './typescript/video.hooks';
 import { IVideoProps } from './typescript/video.interfaces';
 
 const Video: FC<IVideoProps> = ({ video, isAnimated = false }) => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => observe(videoRef, isAnimated));
+  const [ref] = useVideo(isAnimated);
 
   return (
     <video
-      ref={videoRef}
+      ref={ref}
       playsInline
       loop
       className={`${s['video']} ${

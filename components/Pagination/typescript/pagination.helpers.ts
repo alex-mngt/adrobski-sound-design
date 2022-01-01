@@ -31,24 +31,3 @@ export const handleArrowClick = (
     fnExecution !== BEFORE_PAGE_CHANGE && fn();
   }, fnDelay);
 };
-
-export const handlePageClick = (
-  page: number,
-  setDisplayedSelectedPage: Dispatch<SetStateAction<number>>,
-  setSelectedPage: IPaginationProps['setSelectedPage'],
-  fn: IPaginationProps['fn'],
-  fnExecution: IPaginationProps['fnExecution'],
-  fnDelay: IPaginationProps['fnDelay'],
-) => {
-  setDisplayedSelectedPage(page);
-
-  if (!fn) {
-    return;
-  }
-
-  fnExecution === BEFORE_PAGE_CHANGE && fn();
-  setTimeout(() => {
-    setSelectedPage(page);
-    fnExecution !== BEFORE_PAGE_CHANGE && fn();
-  }, fnDelay);
-};

@@ -1,91 +1,11 @@
-import {
-  ChangeEvent,
-  Dispatch,
-  FocusEvent,
-  KeyboardEvent,
-  SetStateAction,
-} from 'react';
+import { ChangeEvent, Dispatch, FocusEvent, SetStateAction } from 'react';
 import { ITextInputProps } from './text-input.interfaces';
 
-export const handleChange = (
-  e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  setValue: Dispatch<SetStateAction<string>>,
-  label: ITextInputProps['label'],
-  error: string,
-  setError: Dispatch<SetStateAction<string>>,
-  validateOnBlur: ITextInputProps['validateOnBlur'],
-  required: ITextInputProps['required'],
-  minLength: ITextInputProps['minLength'],
-  maxLength: ITextInputProps['maxLength'],
-  type: ITextInputProps['type'],
-) => {
-  setValue(e.target.value);
-
-  if (validateOnBlur && !error) {
-    return;
-  }
-
-  checkValidity(
-    e,
-    label,
-    error,
-    setError,
-    required,
-    minLength,
-    maxLength,
-    type,
-  );
-};
-
-export const handleBlur = (
-  e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  label: ITextInputProps['label'],
-  error: string,
-  setError: Dispatch<SetStateAction<string>>,
-  validateOnBlur: ITextInputProps['validateOnBlur'],
-  required: ITextInputProps['required'],
-  minLength: ITextInputProps['minLength'],
-  maxLength: ITextInputProps['maxLength'],
-  type: ITextInputProps['type'],
-) => {
-  if (!validateOnBlur) {
-    return;
-  }
-
-  checkValidity(
-    e,
-    label,
-    error,
-    setError,
-    required,
-    minLength,
-    maxLength,
-    type,
-  );
-};
-
-export const handleKeyDown = (
-  e: KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>,
-  form: ITextInputProps['form'],
-  index: ITextInputProps['index'],
-) => {
-  if (e.key !== 'Enter') {
-    return;
-  }
-
-  const nextInput: HTMLInputElement | null = document.querySelector(
-    `input[data-form="${form}-${index + 1}"]`,
-  );
-
-  nextInput?.focus();
-};
-
-const checkValidity = (
+export const checkValidity = (
   e:
     | ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
     | FocusEvent<HTMLInputElement | HTMLTextAreaElement>,
   label: ITextInputProps['label'],
-  error: string,
   setError: Dispatch<SetStateAction<string>>,
   required?: ITextInputProps['required'],
   minLength?: ITextInputProps['minLength'],

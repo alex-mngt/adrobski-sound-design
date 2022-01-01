@@ -1,6 +1,6 @@
-import { FC, MouseEventHandler } from 'react';
+import { FC } from 'react';
 import s from './scss/button.module.scss';
-import { handleClick } from './typescript/button.helpers';
+import { useButton } from './typescript/button.hooks';
 import { IButtonProps } from './typescript/button.interfaces';
 
 const Button: FC<IButtonProps> = ({
@@ -11,13 +11,11 @@ const Button: FC<IButtonProps> = ({
   disabled,
   primary,
 }) => {
-  const onClick: MouseEventHandler<HTMLButtonElement> = e => {
-    handleClick(e);
-  };
+  const [handleClick] = useButton();
 
   return (
     <button
-      onClick={onClick}
+      onClick={handleClick}
       disabled={disabled}
       type={type}
       className={`${className || ''} ${s['button']} ${

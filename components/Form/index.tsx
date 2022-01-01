@@ -1,5 +1,5 @@
-import { FC, useEffect, useState } from 'react';
-import { checkHasCurrentRef, checkValidity } from './typescript/form.helpers';
+import { FC } from 'react';
+import { useForm } from './typescript/form.hooks';
 import { IFormProps } from './typescript/form.interfaces';
 
 const Form: FC<IFormProps> = ({
@@ -7,17 +7,10 @@ const Form: FC<IFormProps> = ({
   children,
   className,
   reference,
+  isValid,
   setIsValid,
 }) => {
-  const [, setHasCurrentRef] = useState<boolean>();
-
-  useEffect(() => {
-    checkValidity(reference, setIsValid);
-  });
-
-  useEffect(() => {
-    checkHasCurrentRef(reference, setHasCurrentRef);
-  }, [reference]);
+  useForm(reference, isValid, setIsValid);
 
   return (
     <form ref={reference} className={className || ''} id={id} noValidate>

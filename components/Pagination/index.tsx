@@ -1,15 +1,10 @@
-import { FC, useState } from 'react';
-import { fillArray } from '../../helpers/tools';
+import { FC } from 'react';
 import LeftArrow from '../svg/arrow-left.svg';
 import RightArrow from '../svg/arrow-right.svg';
-import { BEFORE_PAGE_CHANGE } from './typescript/pagination.constants';
 import { IPaginationProps } from './typescript/pagination.interfaces';
 
 import s from './scss/pagination.module.scss';
-import {
-  handleArrowClick,
-  handlePageClick,
-} from './typescript/pagination.helpers';
+import { usePagination } from './typescript/pagination.hooks';
 
 const Pagination: FC<IPaginationProps> = ({
   length,
@@ -20,45 +15,22 @@ const Pagination: FC<IPaginationProps> = ({
   fnDelay = 0,
   fn = () => {},
 }) => {
-  const [displayedSelectedPage, setDisplayedSelectedPage] =
-    useState(selectedPage);
-  const nbOfPages = Math.ceil(length / itemsPerPage);
-  const pages = fillArray(1, nbOfPages);
-
-  const onLeftArrowClick = () => {
-    handleArrowClick(
-      'left',
-      setDisplayedSelectedPage,
-      selectedPage,
-      setSelectedPage,
-      fn,
-      fnExecution,
-      fnDelay,
-    );
-  };
-
-  const onRightArrowClick = () => {
-    handleArrowClick(
-      'right',
-      setDisplayedSelectedPage,
-      selectedPage,
-      setSelectedPage,
-      fn,
-      fnExecution,
-      fnDelay,
-    );
-  };
-
-  const onPageClick = (page: number) => {
-    handlePageClick(
-      page,
-      setDisplayedSelectedPage,
-      setSelectedPage,
-      fn,
-      fnExecution,
-      fnDelay,
-    );
-  };
+  const [
+    displayedSelectedPage,
+    nbOfPages,
+    pages,
+    handleLeftArrowClick,
+    handleRightArrowClick,
+    handlePageClick,
+  ] = usePagination(
+    length,
+    selectedPage,
+    itemsPerPage,
+    setSelectedPage,
+    fn,
+    fnExecution,
+    fnDelay,
+  );
 
   const renderPages = (page: number) => {
     const isSelected = displayedSelectedPage === page;
@@ -95,7 +67,7 @@ const Pagination: FC<IPaginationProps> = ({
 
     return (
       <p
-        onClick={() => onPageClick(page)}
+        onClick={() => handlePageClick(page)}
         key={page}
         className={`${s['pagination__page']} ${
           page === nbOfPages ? s['pagination__page--last'] : ''
@@ -112,7 +84,7 @@ const Pagination: FC<IPaginationProps> = ({
         className={`${s['pagination__arrow']} ${
           selectedPage === 1 ? s['pagination__arrow--hidden'] : ''
         } f f-ai-center mr-3`}
-        onClick={onLeftArrowClick}
+        onClick={handleLeftArrowClick}
       >
         <LeftArrow />
       </div>
@@ -121,7 +93,7 @@ const Pagination: FC<IPaginationProps> = ({
         className={`${s['pagination__arrow']} ${
           selectedPage === nbOfPages ? s['pagination__arrow--hidden'] : ''
         } f f-ai-center ml-3`}
-        onClick={onRightArrowClick}
+        onClick={handleRightArrowClick}
       >
         <RightArrow />
       </div>

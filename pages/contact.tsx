@@ -21,7 +21,12 @@ const Contact: NextPage = () => {
     <>
       <Header />
       <BaseLayout>
-        <Form id='form' reference={form} setIsValid={setIsFormValid}>
+        <Form
+          id='form'
+          reference={form}
+          isValid={isFormValid}
+          setIsValid={setIsFormValid}
+        >
           <TextInput
             className='mb-3'
             form={form}

@@ -1,4 +1,4 @@
-import { FC, MouseEventHandler } from 'react';
+import { FC } from 'react';
 import { IBurgerProps } from './typescript/burger.interfaces';
 import s from './scss/burger.module.scss';
 
