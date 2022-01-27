@@ -16,6 +16,10 @@
   }
 }
 
+.video--focused {
+  transform: translateX(0) scale(1.1) !important;
+}
+
 .video--appearing {
   opacity: 1;
 

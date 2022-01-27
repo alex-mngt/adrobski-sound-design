@@ -1,4 +1,4 @@
-import { FC, useRef } from 'react';
+import { FC } from 'react';
 import Image from 'next/image';
 import { IBubbleProps } from './typescript/bubble.interfaces';
 import { useBubble } from './typescript/bubble.hooks';

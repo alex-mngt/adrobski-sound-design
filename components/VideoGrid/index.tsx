@@ -1,4 +1,4 @@
-import { FC, useRef, useState } from 'react';
+import { FC } from 'react';
 import { slugify } from '../../helpers/tools';
 import Pagination from '../Pagination';
 import {
@@ -6,7 +6,6 @@ import {
   VIDEOS_PER_PAGE,
 } from '../Pagination/typescript/pagination.constants';
 import Video from '../Video';
-import { IVideo } from '../Video/typescript/video.interfaces';
 
 import s from './scss/videos-grid.module.scss';
 import { useVideoGrid } from './typescript/video-grid.hooks';
@@ -15,10 +14,12 @@ import { IVideosGridProps } from './typescript/video-grid.interfaces';
 const VideosGrid: FC<IVideosGridProps> = ({ videos, className }) => {
   const [page, setPage, ref, videosSlice, paginationFn] = useVideoGrid();
 
+  const displayedVideos = videos.slice(videosSlice[0], videosSlice[1])
+
   return (
     <>
       <div ref={ref} className={`${s['videos-grid']} ${className || ''}`}>
-        {videos.slice(videosSlice[0], videosSlice[1]).map(video => (
+        {displayedVideos.map(video => (
           <Video isAnimated key={slugify(video.name)} video={video} />
         ))}
       </div>

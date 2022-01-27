@@ -11,17 +11,25 @@ import VideoGrid from '../components/VideoGrid';
 import videoList from '../helpers/videoList';
 import Bubbles from '../components/Bubbles';
 import { spotifyLink } from '../helpers/links';
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import smoothscroll from 'smoothscroll-polyfill';
 import Footer from '../components/Footer';
+import Notification, { NotificationContext } from '../components/Notification';
+import { useNotification } from '../components/Notification/typescript/notification.hooks';
 
 const Home: NextPage = ({}) => {
   useEffect(() => {
     smoothscroll.polyfill();
   });
 
+  const [
+    isNotificationVisible,
+    notificationContent,
+    notificationContexteValue,
+  ] = useNotification();
+
   return (
-    <>
+    <NotificationContext.Provider value={notificationContexteValue}>
       <Header />
       <BaseLayout>
         <h1 className={`${s['home__title']} mt-6 h3 fw-700`}>
@@ -73,7 +81,11 @@ const Home: NextPage = ({}) => {
         <Footer />
       </BaseLayout>
       <Bubbles />
-    </>
+      <Notification
+        isVisible={isNotificationVisible}
+        content={notificationContent}
+      />
+    </NotificationContext.Provider>
   );
 };
 

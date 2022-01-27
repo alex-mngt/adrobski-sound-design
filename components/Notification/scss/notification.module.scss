@@ -1,0 +1,12 @@
+@use '/styles/base//variables.scss';
+
+.notification {
+  position: fixed;
+  width: calc(100% - variables.$spacing-4 * 2 - variables.$spacing-4 * 2);
+  background: variables.$white;
+  bottom: variables.$spacing-4;
+  left: variables.$spacing-4;
+  color: variables.$black;
+  padding: variables.$spacing-4;
+  border-radius: variables.$radius-x-small;
+}

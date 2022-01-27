@@ -6,7 +6,7 @@ import { useVideo } from './typescript/video.hooks';
 import { IVideoProps } from './typescript/video.interfaces';
 
 const Video: FC<IVideoProps> = ({ video, isAnimated = false }) => {
-  const [ref] = useVideo(isAnimated);
+  const [ref] = useVideo(isAnimated, video);
 
   return (
     <video
