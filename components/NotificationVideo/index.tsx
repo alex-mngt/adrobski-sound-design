@@ -15,7 +15,7 @@ const NotificationVideo: FC<INotificationVideoProps> = ({
     <div className={`${s['notification-video']} f f-jc-space-b f-ai-center`}>
       <div className={`${s['notification-video__infos']}`}>
         <p className='fw-700 mb-2'>{name}</p>
-        <div className={`${s['notification-video__links']} f f-ai-center`}>
+        <p className={`${s['notification-video__links']} pb-1`}>
           {artists.map((artist, index) => (
             <>
               <a
@@ -25,12 +25,10 @@ const NotificationVideo: FC<INotificationVideoProps> = ({
               >
                 {artist.name}
               </a>
-              {index !== artists.length - 1 && (
-                <span className='mr-1 ml-1'>x</span>
-              )}
+              {index !== artists.length - 1 && ' x '}
             </>
           ))}
-        </div>
+        </p>
         <p></p>
       </div>
       {link && (

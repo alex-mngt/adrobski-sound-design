@@ -11,16 +11,17 @@ export const useVideo: IVideoHook = ({ video, focusedVideo, ref }) => {
   const notifications = useContext(NotificationContext);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => observe(ref), []);
+  useEffect(() => observe(ref, focusedVideo, notifications), []);
 
   const handleClick: MouseEventHandler = async e => {
-    const videoElement = e.target as Element;
+    const videoElement = e.target as HTMLVideoElement;
 
     if (window.innerWidth > 768 || focusedVideo.current === videoElement) {
       return;
     }
 
     if (focusedVideo.current) {
+      focusedVideo.current.pause();
       focusedVideo.current.classList.remove(s['video--focused']);
       notifications.hideNotification();
       await sleep(400);

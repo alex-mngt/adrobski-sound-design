@@ -15,7 +15,7 @@ export const ARTISTS: Record<string, IArtist> = {
     profileUrl: 'https://twitter.com/MattBraccini/',
   },
   stretchClub: {
-    name: 'Stretch Club',
+    name: 'Stretch Clubbbbb',
     profileUrl: 'https://www.instagram.com/_stretchclub/',
   },
 };

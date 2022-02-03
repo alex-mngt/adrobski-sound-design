@@ -7,7 +7,6 @@ import { IVideoProps } from './typescript/video.interfaces';
 
 const Video: FC<IVideoProps> = ({ video, focusedVideo }) => {
   const ref = useRef<HTMLVideoElement>(null);
-
   const { handleClick } = useVideo({ video, focusedVideo, ref });
 
   return (

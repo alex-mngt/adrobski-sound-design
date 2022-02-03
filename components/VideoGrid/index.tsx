@@ -13,7 +13,7 @@ import { IVideosGridProps } from './typescript/video-grid.interfaces';
 
 const VideosGrid: FC<IVideosGridProps> = ({ videos, className }) => {
   const [page, setPage, ref, videosSlice, paginationFn] = useVideoGrid();
-  const focusedVideo = useRef<Element>();
+  const focusedVideo = useRef<HTMLVideoElement>();
 
   const displayedVideos = videos.slice(videosSlice[0], videosSlice[1]);
 

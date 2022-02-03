@@ -9,7 +9,7 @@ import { CustomHook, IVideo } from '../../../helpers/types';
 
 export interface IVideoProps {
   video: IVideo;
-  focusedVideo: MutableRefObject<Element | undefined>;
+  focusedVideo: MutableRefObject<HTMLVideoElement | undefined>;
 }
 
 export type IVideoHook = CustomHook<

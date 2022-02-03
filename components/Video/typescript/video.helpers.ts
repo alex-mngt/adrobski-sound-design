@@ -4,8 +4,12 @@ import { IVideoProps } from './video.interfaces';
 import s from '../scss/video.module.scss';
 import { INotificationContext } from '../../Notification/typescript/notification.interfaces';
 
-export const observe = (videoRef: RefObject<HTMLVideoElement>) => {
-  if (!videoRef.current) {
+export const observe = (
+  ref: RefObject<HTMLVideoElement>,
+  focusedVideo: IVideoProps['focusedVideo'],
+  notifications: INotificationContext,
+) => {
+  if (!ref.current) {
     return;
   }
 
@@ -23,6 +27,23 @@ export const observe = (videoRef: RefObject<HTMLVideoElement>) => {
     });
   };
 
+  const handleDisappearingIntersections: IntersectionObserverCallback =
+    intersections => {
+      intersections.forEach(intersection => {
+        const videoElement = intersection.target as HTMLVideoElement;
+
+        if (
+          !intersection.isIntersecting &&
+          focusedVideo.current === videoElement
+        ) {
+          videoElement.pause();
+          focusedVideo.current.classList.remove(s['video--focused']);
+          focusedVideo.current = undefined;
+          notifications.hideNotification();
+        }
+      });
+    };
+
   const appearingObserver = new IntersectionObserver(
     handleAppearingIntersections,
     {
@@ -30,5 +51,11 @@ export const observe = (videoRef: RefObject<HTMLVideoElement>) => {
     },
   );
 
-  appearingObserver.observe(videoRef.current);
+  const disappearingObserver = new IntersectionObserver(
+    handleDisappearingIntersections,
+    { threshold: 0 },
+  );
+
+  appearingObserver.observe(ref.current);
+  disappearingObserver.observe(ref.current);
 };
