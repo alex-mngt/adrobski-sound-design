@@ -1,7 +1,7 @@
 import { MouseEventHandler } from 'react';
-import { Props } from '../../../interfaces';
+import { IStandardProps } from '../../../helpers/types';
 
-export interface IBurgerProps extends Props {
-  onClick?: MouseEventHandler<HTMLDivElement>;
+export interface IBurgerProps extends IStandardProps {
+  onClick?: MouseEventHandler;
   isMenuOpen: boolean;
 }

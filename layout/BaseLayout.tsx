@@ -1,5 +1,4 @@
-import { FC, UIEventHandler } from 'react';
-import Notification from '../components/Notification';
+import { FC } from 'react';
 
 const BaseLayout: FC = ({ children }) => {
   return <div className='container'>{children}</div>;

@@ -5,10 +5,7 @@ import {
   INotificationVideoProps,
 } from './notificationVideo.interfaces';
 
-export const useNotificationVideo: CustomHook<
-  Pick<INotificationVideoProps, 'link'>,
-  INotificationVideoHook
-> = ({ link }) => {
+export const useNotificationVideo: INotificationVideoHook = ({ link }) => {
   const handleButtonClick: MouseEventHandler = () => {
     window.open(link, '_blank');
   };

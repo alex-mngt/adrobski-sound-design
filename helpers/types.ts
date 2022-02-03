@@ -20,3 +20,8 @@ export interface IVideo {
   format: 'square' | 'rect';
   link?: string;
 }
+
+export interface IStandardProps {
+  className?: string;
+  id?: string;
+}

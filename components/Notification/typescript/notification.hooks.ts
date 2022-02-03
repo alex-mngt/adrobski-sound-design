@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { ReactNode, useState } from 'react';
 import {
   INotificationContext,
   INotificationHook,
@@ -7,7 +7,7 @@ import {
 import s from '../scss/notification.module.scss';
 
 export const useNotification: INotificationHook = ({ reference }) => {
-  const [content, setContent] = useState<JSX.Element>();
+  const [content, setContent] = useState<ReactNode>();
 
   const context: INotificationContext = {
     showNotification: content => {

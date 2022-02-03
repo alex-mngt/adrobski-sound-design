@@ -1,5 +1,5 @@
-import { Props } from '../../../interfaces';
+import { CustomHook, IStandardProps } from '../../../helpers/types';
 
-export interface IBubbleProps extends Props {
+export interface IBubbleProps extends IStandardProps {
   bubble: StaticImageData;
 }

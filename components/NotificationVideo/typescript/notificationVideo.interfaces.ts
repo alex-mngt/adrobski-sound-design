@@ -1,5 +1,5 @@
 import { MouseEventHandler } from 'react';
-import { IArtist } from '../../../helpers/types';
+import { CustomHook, IArtist } from '../../../helpers/types';
 
 export interface INotificationVideoProps {
   name: string;
@@ -7,6 +7,9 @@ export interface INotificationVideoProps {
   link?: string;
 }
 
-export interface INotificationVideoHook {
-  handleButtonClick: MouseEventHandler;
-}
+export type INotificationVideoHook = CustomHook<
+  Pick<INotificationVideoProps, 'link'>,
+  {
+    handleButtonClick: MouseEventHandler;
+  }
+>;

@@ -6,12 +6,12 @@ import { useVideo } from './typescript/video.hooks';
 import { IVideoProps } from './typescript/video.interfaces';
 
 const Video: FC<IVideoProps> = ({ video, focusedVideo }) => {
-  const ref = useRef<HTMLVideoElement>(null);
-  const { handleClick } = useVideo({ video, focusedVideo, ref });
+  const reference = useRef<HTMLVideoElement>(null);
+  const { handleClick } = useVideo({ video, focusedVideo, reference });
 
   return (
     <video
-      ref={ref}
+      ref={reference}
       playsInline
       loop
       className={`${s['video']} ${

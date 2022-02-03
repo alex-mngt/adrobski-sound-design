@@ -1,16 +1,7 @@
-import {
-  Dispatch,
-  RefObject,
-  SetStateAction,
-  useEffect,
-  useState,
-} from 'react';
+import { useEffect, useState } from 'react';
+import { IFormHook } from './form.interfaces';
 
-export const useForm = (
-  reference: RefObject<HTMLFormElement>,
-  isValid: boolean,
-  setIsValid: Dispatch<SetStateAction<boolean>>,
-) => {
+export const useForm: IFormHook = ({ reference, isValid, setIsValid }) => {
   const [, setHasCurrentRef] = useState<boolean>();
 
   useEffect(() => {

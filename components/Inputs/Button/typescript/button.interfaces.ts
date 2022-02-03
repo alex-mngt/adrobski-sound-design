@@ -1,7 +1,7 @@
 import { MouseEventHandler } from 'react';
-import { Props } from '../../../../interfaces';
+import { IStandardProps } from '../../../../helpers/types';
 
-export interface IButtonProps extends Props {
+export interface IButtonProps extends IStandardProps {
   text: string;
   fullWidth?: boolean;
   type: 'button' | 'submit' | 'reset';

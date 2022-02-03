@@ -1,21 +1,26 @@
 import { IArtist } from '../helpers/types';
 
-export const ARTISTS: Record<string, IArtist> = {
-  blansable: {
-    name: 'Blansable',
-    profileUrl: 'https://www.instagram.com/blansable/',
-  },
-  heirvey: {
-    name: 'Heirvey',
-    profileUrl: 'https://www.instagram.com/heirvey/',
-  },
-  mekalabs: { name: 'Mekalabs', profileUrl: 'https://twitter.com/MekaLabs' },
-  mBraccini: {
-    name: 'Matthieu Braccini',
-    profileUrl: 'https://twitter.com/MattBraccini/',
-  },
-  stretchClub: {
-    name: 'Stretch Clubbbbb',
-    profileUrl: 'https://www.instagram.com/_stretchclub/',
-  },
+export const BLANSABLE: IArtist = {
+  name: 'Blansable',
+  profileUrl: 'https://www.instagram.com/blansable/',
+};
+
+export const HEIRVEY: IArtist = {
+  name: 'Heirvey',
+  profileUrl: 'https://www.instagram.com/heirvey/',
+};
+
+export const MEKALABS: IArtist = {
+  name: 'Mekalabs',
+  profileUrl: 'https://twitter.com/MekaLabs',
+};
+
+export const MATTHIEU_BRACCINI: IArtist = {
+  name: 'Matthieu Braccini',
+  profileUrl: 'https://twitter.com/MattBraccini/',
+};
+
+export const STRETCH_CLUB: IArtist = {
+  name: 'Stretch Clubbbbb',
+  profileUrl: 'https://www.instagram.com/_stretchclub/',
 };

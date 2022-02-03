@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { ITextInputProps } from './typescript/text-input.interfaces';
 import s from './scss/text-input.module.scss';
 import { useTextInput } from './typescript/text-input.hooks';
@@ -19,7 +19,9 @@ const TextInput: FC<ITextInputProps> = ({
   validateOnBlur,
   rows,
 }) => {
-  const [error, handleChange, handleBlur, handleKeyDown] = useTextInput(
+  const [error, setError] = useState<string>('');
+
+  const { handleChange, handleBlur, handleKeyDown } = useTextInput({
     setValue,
     validateOnBlur,
     label,
@@ -29,7 +31,8 @@ const TextInput: FC<ITextInputProps> = ({
     type,
     form,
     index,
-  );
+    setError,
+  });
 
   return (
     <div className={`${className} f f-direction-column`}>

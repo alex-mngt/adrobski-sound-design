@@ -1,5 +1,4 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
 import Header from '../components/Header';
 import BaseLayout from '../layout/BaseLayout';
 import Image from 'next/image';
@@ -9,13 +8,14 @@ import Artists from '/public/images/artists.png';
 import Brands from '/public/images/brands.png';
 import VideoGrid from '../components/VideoGrid';
 import Bubbles from '../components/Bubbles';
-import { spotifyLink } from '../constants/links';
-import { useEffect, useMemo, useRef } from 'react';
+import { SPOTIFY_LINK } from '../constants/links';
+import { useEffect, useRef } from 'react';
 import smoothscroll from 'smoothscroll-polyfill';
 import Footer from '../components/Footer';
-import Notification, { NotificationContext } from '../components/Notification';
+import Notification from '../components/Notification';
 import { useNotification } from '../components/Notification/typescript/notification.hooks';
 import { videos } from '../constants/videos';
+import { NotificationContext } from '../components/Notification/typescript/notification.context';
 
 const Home: NextPage = ({}) => {
   useEffect(() => {
@@ -36,7 +36,7 @@ const Home: NextPage = ({}) => {
           <span>Adrosbki is a french</span>{' '}
           <span>
             <a
-              href={spotifyLink}
+              href={SPOTIFY_LINK}
               target='_blank'
               rel='noreferrer'
               className={`${s['home__title-emphasis']}`}

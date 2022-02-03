@@ -5,34 +5,29 @@ import {
   useState,
 } from 'react';
 import { checkValidity } from './text-input.helpers';
-import { ITextInputProps } from './text-input.interfaces';
+import { ITextInputHook, ITextInputProps } from './text-input.interfaces';
 
-export const useTextInput = (
-  setValue: ITextInputProps['setValue'],
-  validateOnBlur: ITextInputProps['validateOnBlur'],
-  label: ITextInputProps['label'],
-  required: ITextInputProps['required'],
-  minLength: ITextInputProps['minLength'],
-  maxLength: ITextInputProps['maxLength'],
-  type: ITextInputProps['type'],
-  form: ITextInputProps['form'],
-  index: ITextInputProps['index'],
-): [
-  string,
-  ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>,
-  FocusEventHandler<HTMLInputElement | HTMLTextAreaElement>,
-  KeyboardEventHandler<HTMLInputElement | HTMLTextAreaElement>,
-] => {
-  const [error, setError] = useState<string>('');
+export const useTextInput: ITextInputHook = ({
+  setValue,
+  validateOnBlur,
+  label,
+  required,
+  minLength,
+  maxLength,
+  type,
+  form,
+  index,
+  setError,
+}) => {
+  const handleBlur: FocusEventHandler<
+    HTMLInputElement | HTMLTextAreaElement
+  > = e => {
+    if (!validateOnBlur) {
+      return;
+    }
 
-  const handleBlur: FocusEventHandler<HTMLInputElement | HTMLTextAreaElement> =
-    e => {
-      if (!validateOnBlur) {
-        return;
-      }
-
-      checkValidity(e, label, setError, required, minLength, maxLength, type);
-    };
+    checkValidity(e, label, setError, required, minLength, maxLength, type);
+  };
 
   const handleChange: ChangeEventHandler<
     HTMLInputElement | HTMLTextAreaElement
@@ -60,5 +55,5 @@ export const useTextInput = (
     nextInput?.focus();
   };
 
-  return [error, handleChange, handleBlur, handleKeyDown];
+  return { handleChange, handleBlur, handleKeyDown };
 };

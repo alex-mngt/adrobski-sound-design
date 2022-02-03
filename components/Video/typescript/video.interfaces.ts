@@ -1,10 +1,4 @@
-import {
-  Dispatch,
-  MouseEventHandler,
-  MutableRefObject,
-  RefObject,
-  SetStateAction,
-} from 'react';
+import { MouseEventHandler, MutableRefObject, RefObject } from 'react';
 import { CustomHook, IVideo } from '../../../helpers/types';
 
 export interface IVideoProps {
@@ -14,7 +8,7 @@ export interface IVideoProps {
 
 export type IVideoHook = CustomHook<
   Pick<IVideoProps, 'video' | 'focusedVideo'> & {
-    ref: RefObject<HTMLVideoElement>;
+    reference: RefObject<HTMLVideoElement>;
   },
   { handleClick: MouseEventHandler }
 >;

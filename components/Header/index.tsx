@@ -10,11 +10,19 @@ import CloseIcon from '../svg/close-icon.svg';
 
 import s from './scss/header.module.scss';
 import Burger from '../Burger';
-import { instagramLink, spotifyLink, twitterLink } from '../../constants/links';
+import {
+  INSTAGRAM_LINK,
+  SPOTIFY_LINK,
+  TWITTER_LINK,
+} from '../../constants/links';
 import { useHeader } from './typescript/header.hooks';
 
 const Header: FC = () => {
-  const [isMenuOpen, handleBurgerClick, handleCloseIconClick] = useHeader();
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+
+  const { handleBurgerClick, handleCloseIconClick } = useHeader({
+    setIsMenuOpen,
+  });
 
   return (
     <header className={`${s['header']} p-4`}>
@@ -45,13 +53,13 @@ const Header: FC = () => {
             isMenuOpen ? s['header__svgs--slidin'] : ''
           } f-js-center f-as-start`}
         >
-          <a href={twitterLink}>
+          <a href={TWITTER_LINK}>
             <TwitterLogo />
           </a>
-          <a href={instagramLink}>
+          <a href={INSTAGRAM_LINK}>
             <InstaLogo className='ml-4 mr-4' />
           </a>
-          <a href={spotifyLink}>
+          <a href={SPOTIFY_LINK}>
             <SpotifyLogo />
           </a>
         </div>

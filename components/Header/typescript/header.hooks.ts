@@ -1,19 +1,14 @@
 import { MouseEventHandler, useState } from 'react';
+import { IHeaderHook } from './header.interfaces';
 
-export const useHeader = (): [
-  boolean,
-  MouseEventHandler<HTMLDivElement>,
-  MouseEventHandler<HTMLDivElement>,
-] => {
-  const [isMenuOpen, setisMenuOpen] = useState<boolean>(false);
-
-  const handleBurgerClick: MouseEventHandler<HTMLDivElement> = () => {
-    setisMenuOpen(true);
+export const useHeader: IHeaderHook = ({ setIsMenuOpen }) => {
+  const handleBurgerClick: MouseEventHandler = () => {
+    setIsMenuOpen(true);
   };
 
-  const handleCloseIconClick: MouseEventHandler<HTMLDivElement> = () => {
-    setisMenuOpen(false);
+  const handleCloseIconClick: MouseEventHandler = () => {
+    setIsMenuOpen(false);
   };
 
-  return [isMenuOpen, handleBurgerClick, handleCloseIconClick];
+  return { handleBurgerClick, handleCloseIconClick };
 };

@@ -1,11 +1,17 @@
 import { IVideo } from '../helpers/types';
-import { ARTISTS } from './artists';
+import {
+  BLANSABLE,
+  HEIRVEY,
+  MATTHIEU_BRACCINI,
+  MEKALABS,
+  STRETCH_CLUB,
+} from './artists';
 
 export const videos: IVideo[] = [
   {
     id: 'cartier',
     name: 'Cartier',
-    artists: [ARTISTS.heirvey],
+    artists: [HEIRVEY],
     link: 'https://www.instagram.com/p/CH7w52rojbc',
     fallbackSource: {
       url: '/videos/square/cartier/cartier.mp4',
@@ -22,7 +28,7 @@ export const videos: IVideo[] = [
   {
     id: 'chivas',
     name: 'Chivas',
-    artists: [ARTISTS.blansable],
+    artists: [BLANSABLE],
     link: 'https://twitter.com/Blansable99/status/1311699137772040195?s=20&t=P4cl7a-460XkHbeX9Oy8Vg',
     fallbackSource: {
       url: '/videos/square/chivas/chivas.mp4',
@@ -39,7 +45,7 @@ export const videos: IVideo[] = [
   {
     id: 'colors',
     name: 'Colors',
-    artists: [ARTISTS.blansable],
+    artists: [BLANSABLE],
     link: 'https://www.instagram.com/p/CLpA_EtHjmi/',
     fallbackSource: {
       url: '/videos/square/colors/colors.mp4',
@@ -56,7 +62,7 @@ export const videos: IVideo[] = [
   {
     id: 'fleur',
     name: 'Fleur',
-    artists: [ARTISTS.heirvey],
+    artists: [HEIRVEY],
     link: 'https://www.instagram.com/p/CC5jOd8IfmF/',
     fallbackSource: {
       url: '/videos/square/fleur/fleur.mp4',
@@ -73,7 +79,7 @@ export const videos: IVideo[] = [
   {
     id: '36-days-of-type',
     name: '36 Days of Type',
-    artists: [ARTISTS.blansable],
+    artists: [BLANSABLE],
     link: 'https://www.instagram.com/p/CNkO8dQHbVf/',
     fallbackSource: {
       url: '/videos/square/36-days-of-type/36-days-of-type.mp4',
@@ -90,7 +96,7 @@ export const videos: IVideo[] = [
   {
     id: 'blansable',
     name: 'Blansable',
-    artists: [ARTISTS.blansable],
+    artists: [BLANSABLE],
     link: 'https://twitter.com/Blansable99/status/1290052948966412288?s=20&t=P4cl7a-460XkHbeX9Oy8Vg',
     fallbackSource: {
       url: '/videos/square/blansable/blansable.mp4',
@@ -107,7 +113,7 @@ export const videos: IVideo[] = [
   {
     id: 'planet',
     name: 'Planet',
-    artists: [ARTISTS.heirvey],
+    artists: [HEIRVEY],
     link: 'https://www.instagram.com/p/CJQnOTJIdfa/',
     fallbackSource: {
       url: '/videos/square/planet/planet.mp4',
@@ -124,7 +130,7 @@ export const videos: IVideo[] = [
   {
     id: 'mekaverse',
     name: 'Mekaverse',
-    artists: [ARTISTS.mekalabs],
+    artists: [MEKALABS],
     link: 'https://twitter.com/MekaVerse/status/1438929989819379713?s=20&t=P4cl7a-460XkHbeX9Oy8Vg',
     fallbackSource: {
       url: '/videos/square/mekaverse/mekaverse.mp4',
@@ -141,7 +147,7 @@ export const videos: IVideo[] = [
   {
     id: 'robot',
     name: 'Robot',
-    artists: [ARTISTS.heirvey],
+    artists: [HEIRVEY],
     link: 'https://www.instagram.com/p/CEyvTRRoSZT/',
     fallbackSource: {
       url: '/videos/square/robot/robot.mp4',
@@ -158,7 +164,7 @@ export const videos: IVideo[] = [
   {
     id: 'chess',
     name: 'Chess',
-    artists: [ARTISTS.heirvey],
+    artists: [HEIRVEY],
     link: 'https://www.instagram.com/p/B93_EdLIRkN/',
     fallbackSource: {
       url: '/videos/square/chess/chess.mp4',
@@ -175,7 +181,7 @@ export const videos: IVideo[] = [
   {
     id: 'armadillo',
     name: 'Armadillo',
-    artists: [ARTISTS.blansable],
+    artists: [BLANSABLE],
     link: 'https://www.instagram.com/p/CVfrxqKDaV6/',
     fallbackSource: {
       url: '/videos/square/armadillo/armadillo.mp4',
@@ -192,7 +198,7 @@ export const videos: IVideo[] = [
   {
     id: 'tetris',
     name: 'Tetris',
-    artists: [ARTISTS.blansable],
+    artists: [BLANSABLE],
     link: 'https://www.instagram.com/p/CITRh-dnkOM/',
     fallbackSource: {
       url: '/videos/square/tetris/tetris.mp4',
@@ -209,7 +215,7 @@ export const videos: IVideo[] = [
   {
     id: 'falling-pieces',
     name: 'Falling Pieces',
-    artists: [ARTISTS.blansable],
+    artists: [BLANSABLE],
     link: 'https://www.instagram.com/p/CFZzkpEnXV6/',
     fallbackSource: {
       url: '/videos/square/falling-pieces/falling-pieces.mp4',
@@ -226,7 +232,7 @@ export const videos: IVideo[] = [
   {
     id: 'yoplait-chocolat',
     name: 'Yoplait Chocolat',
-    artists: [ARTISTS.mBraccini, ARTISTS.stretchClub],
+    artists: [MATTHIEU_BRACCINI, STRETCH_CLUB],
     link: 'https://wearestretchclub.com/perle-de-lait/',
     fallbackSource: {
       url: '/videos/square/yoplait-chocolat/yoplait-chocolat.mp4',
@@ -243,7 +249,7 @@ export const videos: IVideo[] = [
   {
     id: 'yoplait-lemon',
     name: 'Yoplait Lemon',
-    artists: [ARTISTS.mBraccini, ARTISTS.stretchClub],
+    artists: [MATTHIEU_BRACCINI, STRETCH_CLUB],
     link: 'https://wearestretchclub.com/perle-de-lait/',
     fallbackSource: {
       url: '/videos/square/yoplait-lemon/yoplait-lemon.mp4',
@@ -260,7 +266,7 @@ export const videos: IVideo[] = [
   {
     id: 'yoplait-cream',
     name: 'Yoplait Cream',
-    artists: [ARTISTS.mBraccini, ARTISTS.stretchClub],
+    artists: [MATTHIEU_BRACCINI, STRETCH_CLUB],
     link: 'https://wearestretchclub.com/perle-de-lait/',
     fallbackSource: {
       url: '/videos/square/yoplait-cream/yoplait-cream.mp4',
@@ -277,7 +283,7 @@ export const videos: IVideo[] = [
   {
     id: 'yoplait-strawberry',
     name: 'Yoplait Strawberry',
-    artists: [ARTISTS.mBraccini, ARTISTS.stretchClub],
+    artists: [MATTHIEU_BRACCINI, STRETCH_CLUB],
     link: 'https://wearestretchclub.com/perle-de-lait/',
     fallbackSource: {
       url: '/videos/square/yoplait-strawberry/yoplait-strawberry.mp4',
@@ -294,7 +300,7 @@ export const videos: IVideo[] = [
   {
     id: 'yoplait-strawberry-mango',
     name: 'Yoplait Strawberry Mango',
-    artists: [ARTISTS.mBraccini, ARTISTS.stretchClub],
+    artists: [MATTHIEU_BRACCINI, STRETCH_CLUB],
     link: 'https://wearestretchclub.com/perle-de-lait/',
     fallbackSource: {
       url: '/videos/square/yoplait-strawberry-mango/yoplait-strawberry-mango.mp4',

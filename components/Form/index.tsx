@@ -10,7 +10,7 @@ const Form: FC<IFormProps> = ({
   isValid,
   setIsValid,
 }) => {
-  useForm(reference, isValid, setIsValid);
+  useForm({ reference, isValid, setIsValid });
 
   return (
     <form ref={reference} className={className || ''} id={id} noValidate>

@@ -1,7 +1,14 @@
-import { Dispatch, RefObject, SetStateAction } from 'react';
-import { Props } from '../../../../interfaces';
+import {
+  ChangeEventHandler,
+  Dispatch,
+  FocusEventHandler,
+  KeyboardEventHandler,
+  RefObject,
+  SetStateAction,
+} from 'react';
+import { CustomHook, IStandardProps } from '../../../../helpers/types';
 
-export interface ITextInputProps extends Props {
+export interface ITextInputProps extends IStandardProps {
   name: string;
   label: string;
   placeholder?: string;
@@ -16,3 +23,23 @@ export interface ITextInputProps extends Props {
   validateOnBlur?: boolean;
   rows?: number;
 }
+
+export type ITextInputHook = CustomHook<
+  Pick<
+    ITextInputProps,
+    | 'setValue'
+    | 'validateOnBlur'
+    | 'label'
+    | 'required'
+    | 'minLength'
+    | 'maxLength'
+    | 'type'
+    | 'form'
+    | 'index'
+  > & { setError: Dispatch<SetStateAction<string>> },
+  {
+    handleChange: ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>;
+    handleBlur: FocusEventHandler<HTMLInputElement | HTMLTextAreaElement>;
+    handleKeyDown: KeyboardEventHandler<HTMLInputElement | HTMLTextAreaElement>;
+  }
+>;

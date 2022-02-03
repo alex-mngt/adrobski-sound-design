@@ -1,21 +1,20 @@
-import { RefObject } from 'react';
-import { CustomHook } from '../../../helpers/types';
-import { Props } from '../../../interfaces';
+import { ReactNode, RefObject } from 'react';
+import { CustomHook, IStandardProps } from '../../../helpers/types';
 
-export interface INotificationProps extends Props {
-  content: any;
+export interface INotificationProps extends IStandardProps {
+  content: ReactNode;
   reference: RefObject<HTMLDivElement>;
 }
 
 export interface INotificationContext {
-  showNotification: (content: JSX.Element) => void;
+  showNotification: (content: ReactNode) => void;
   hideNotification: () => void;
 }
 
 export type INotificationHook = CustomHook<
   Pick<INotificationProps, 'reference'>,
   {
-    notificationContent: JSX.Element | undefined;
+    notificationContent: ReactNode;
     notificationContextValue: INotificationContext;
   }
 >;

@@ -1,17 +1,17 @@
 import { createElement, MouseEventHandler, useContext, useEffect } from 'react';
-import { NotificationContext } from '../../Notification';
 import { observe } from './video.helpers';
 import { IVideoHook } from './video.interfaces';
 
 import s from '../scss/video.module.scss';
 import NotificationVideo from '../../NotificationVideo';
 import { sleep } from '../../../helpers/tools';
+import { NotificationContext } from '../../Notification/typescript/notification.context';
 
-export const useVideo: IVideoHook = ({ video, focusedVideo, ref }) => {
+export const useVideo: IVideoHook = ({ video, focusedVideo, reference }) => {
   const notifications = useContext(NotificationContext);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => observe(ref, focusedVideo, notifications), []);
+  useEffect(() => observe(reference, focusedVideo, notifications), []);
 
   const handleClick: MouseEventHandler = async e => {
     const videoElement = e.target as HTMLVideoElement;
