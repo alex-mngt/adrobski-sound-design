@@ -1,38 +1,34 @@
-import { RefObject, useContext } from 'react';
+import { RefObject } from 'react';
 import { IVideoProps } from './video.interfaces';
 
 import s from '../scss/video.module.scss';
-import { videoNotification } from './video.test';
 import { INotificationContext } from '../../Notification/typescript/notification.interfaces';
 
-export const observe = (
-  videoRef: RefObject<HTMLVideoElement>,
-  isAnimated: IVideoProps['isAnimated'],
-  notifications: INotificationContext,
-  video: IVideoProps['video'],
-) => {
-  if (!videoRef.current || !isAnimated) {
+export const observe = (videoRef: RefObject<HTMLVideoElement>) => {
+  if (!videoRef.current) {
     return;
   }
 
-  const handleIntersections: IntersectionObserverCallback = intersections => {
+  const handleAppearingIntersections: IntersectionObserverCallback = (
+    intersections,
+    observer,
+  ) => {
     intersections.forEach(intersection => {
       if (!intersection.isIntersecting) {
         return;
       }
 
-      if (!intersection.target.classList.contains(s['video--appearing'])) {
-        intersection.target.classList.add(s['video--appearing']);
-      }
-
-      notifications.showNotification(videoNotification(video.name));
-      intersection.target.classList.add(s['video--focused']);
+      intersection.target.classList.add(s['video--appearing']);
+      observer.disconnect();
     });
   };
 
-  const observer = new IntersectionObserver(handleIntersections, {
-    threshold: 0.5,
-  });
+  const appearingObserver = new IntersectionObserver(
+    handleAppearingIntersections,
+    {
+      threshold: 0.3,
+    },
+  );
 
-  observer.observe(videoRef.current);
+  appearingObserver.observe(videoRef.current);
 };

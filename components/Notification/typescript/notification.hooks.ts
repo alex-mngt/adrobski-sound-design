@@ -1,17 +1,33 @@
 import { useState } from 'react';
-import { INotificationContext } from './notification.interfaces';
+import {
+  INotificationContext,
+  INotificationHook,
+} from './notification.interfaces';
 
-export const useNotification = (): [boolean, any, INotificationContext] => {
-  const [isVisible, setIsVisible] = useState<boolean>(false);
+import s from '../scss/notification.module.scss';
+
+export const useNotification: INotificationHook = ({ reference }) => {
   const [content, setContent] = useState<JSX.Element>();
 
-  const contextValue: INotificationContext = {
+  const context: INotificationContext = {
     showNotification: content => {
-      setIsVisible(true);
+      if (!reference.current) {
+        return;
+      }
+
       setContent(content);
+      reference.current.classList.add(s['notification--appearing']);
     },
-    hideNotification: () => setIsVisible(false),
+    hideNotification: () => {
+      if (!reference.current) {
+        return;
+      }
+      reference.current.classList.remove(s['notification--appearing']);
+    },
   };
 
-  return [isVisible, content, contextValue];
+  return {
+    notificationContent: content,
+    notificationContextValue: context,
+  };
 };

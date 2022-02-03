@@ -6,11 +6,11 @@ import {
 
 import s from './scss/notification.module.scss';
 
-const Notification: FC<INotificationProps> = ({ isVisible, content }) => {
-  return isVisible ? (
-    <div className={`${s['notification']}`}>{content}</div>
-  ) : (
-    <></>
+const Notification: FC<INotificationProps> = ({ content, reference }) => {
+  return (
+    <div ref={reference} className={`${s['notification']}`}>
+      {content}
+    </div>
   );
 };
 

@@ -1,0 +1,41 @@
+@use '/styles/base/variables.scss';
+
+.notification-video {
+  width: 100%;
+  max-width: 100%;
+}
+
+.notification-video__infos {
+  flex-shrink: 1;
+  flex-basis: auto;
+  overflow: hidden;
+}
+
+.notification-video__button {
+  flex-shrink: 0;
+}
+
+.notification-video__links {
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  padding-bottom: variables.$spacing-1;
+}
+
+.notification-video__link {
+  flex-grow: 0;
+  flex-basis: 0;
+  flex-shrink: 1;
+  position: relative;
+  white-space: nowrap;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -(variables.$spacing-1);
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: variables.$primary;
+  }
+}

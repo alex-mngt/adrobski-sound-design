@@ -22,6 +22,11 @@
   width: 100%;
 }
 
+.button--small {
+  padding: variables.$spacing-3;
+  font-size: 0.8rem;
+}
+
 .button--primary {
   color: variables.$white;
   background: variables.$primary;

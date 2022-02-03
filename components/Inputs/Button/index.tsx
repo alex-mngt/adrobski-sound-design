@@ -10,8 +10,10 @@ const Button: FC<IButtonProps> = ({
   type,
   disabled,
   primary,
+  small,
+  onClick,
 }) => {
-  const [handleClick] = useButton();
+  const { handleClick } = useButton({ onClick });
 
   return (
     <button
@@ -20,7 +22,9 @@ const Button: FC<IButtonProps> = ({
       type={type}
       className={`${className || ''} ${s['button']} ${
         fullWidth ? s['button--full'] : ''
-      } ${primary ? s['button--primary'] : ''} p-4 fw-700`}
+      } ${small ? s['button--small'] : ''} ${
+        primary ? s['button--primary'] : ''
+      } p-4 fw-700`}
     >
       {text}
     </button>

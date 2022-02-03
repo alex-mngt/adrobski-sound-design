@@ -1,4 +1,4 @@
-import { IVideo } from '../../Video/typescript/video.interfaces';
+import { IVideo } from '../../../helpers/types';
 
 export interface IVideosGridProps {
   className?: string;

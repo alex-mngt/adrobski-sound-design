@@ -1,16 +1,42 @@
-import { RefObject, useContext, useEffect, useRef } from 'react';
+import { createElement, MouseEventHandler, useContext, useEffect } from 'react';
 import { NotificationContext } from '../../Notification';
 import { observe } from './video.helpers';
-import { IVideoProps } from './video.interfaces';
+import { IVideoHook } from './video.interfaces';
 
-export const useVideo = (
-  isAnimated: IVideoProps['isAnimated'],
-  video: IVideoProps['video'],
-): [RefObject<HTMLVideoElement>] => {
-  const ref = useRef<HTMLVideoElement>(null);
+import s from '../scss/video.module.scss';
+import NotificationVideo from '../../NotificationVideo';
+import { sleep } from '../../../helpers/tools';
+
+export const useVideo: IVideoHook = ({ video, focusedVideo, ref }) => {
   const notifications = useContext(NotificationContext);
 
-  useEffect(() => observe(ref, isAnimated, notifications, video), []);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => observe(ref), []);
 
-  return [ref];
+  const handleClick: MouseEventHandler = async e => {
+    const videoElement = e.target as Element;
+
+    if (window.innerWidth > 768 || focusedVideo.current === videoElement) {
+      return;
+    }
+
+    if (focusedVideo.current) {
+      focusedVideo.current.classList.remove(s['video--focused']);
+      notifications.hideNotification();
+      await sleep(400);
+    }
+
+    videoElement.classList.add(s['video--focused']);
+    focusedVideo.current = videoElement;
+
+    notifications.showNotification(
+      createElement(NotificationVideo, {
+        artists: video.artists,
+        link: video.link,
+        name: video.name,
+      }),
+    );
+  };
+
+  return { handleClick };
 };

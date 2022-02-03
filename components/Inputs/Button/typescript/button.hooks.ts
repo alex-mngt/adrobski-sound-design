@@ -1,11 +1,16 @@
 import { MouseEventHandler } from 'react';
+import { CustomHook } from '../../../../helpers/types';
+import { IButtonHook, IButtonProps } from './button.interfaces';
 
-export const useButton = (): [MouseEventHandler<HTMLButtonElement>] => {
-  const handleClick: MouseEventHandler<HTMLButtonElement> = e => {
-    console.log('click');
-
+export const useButton: CustomHook<
+  Pick<IButtonProps, 'onClick'>,
+  IButtonHook
+> = ({ onClick }) => {
+  const handleClick: MouseEventHandler = e => {
     e.preventDefault();
+
+    onClick(e);
   };
 
-  return [handleClick];
+  return { handleClick };
 };

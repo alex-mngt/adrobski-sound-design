@@ -1,12 +1,14 @@
-import { FC } from 'react';
+import { FC, useRef } from 'react';
 import { slugify } from '../../helpers/tools';
 
 import s from './scss/video.module.scss';
 import { useVideo } from './typescript/video.hooks';
 import { IVideoProps } from './typescript/video.interfaces';
 
-const Video: FC<IVideoProps> = ({ video, isAnimated = false }) => {
-  const [ref] = useVideo(isAnimated, video);
+const Video: FC<IVideoProps> = ({ video, focusedVideo }) => {
+  const ref = useRef<HTMLVideoElement>(null);
+
+  const { handleClick } = useVideo({ video, focusedVideo, ref });
 
   return (
     <video
@@ -18,6 +20,7 @@ const Video: FC<IVideoProps> = ({ video, isAnimated = false }) => {
       }`}
       controls
       preload='metadata'
+      onClick={handleClick}
     >
       {video.sources.map(source => (
         <source

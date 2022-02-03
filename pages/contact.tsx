@@ -1,5 +1,11 @@
 import { NextPage } from 'next';
-import { ChangeEvent, useReducer, useRef, useState } from 'react';
+import {
+  ChangeEvent,
+  MouseEventHandler,
+  useReducer,
+  useRef,
+  useState,
+} from 'react';
 import Form from '../components/Form';
 import Header from '../components/Header';
 import Button from '../components/Inputs/Button';
@@ -16,6 +22,10 @@ const Contact: NextPage = () => {
   const [message, setMessage] = useState<string>('');
 
   const form = useRef<HTMLFormElement>(null);
+
+  const hanldeSubmit: MouseEventHandler = () => {
+    console.log('submited');
+  };
 
   return (
     <>
@@ -78,6 +88,7 @@ const Contact: NextPage = () => {
             required
           />
           <Button
+            onClick={hanldeSubmit}
             className={s['contact__button']}
             disabled={!isFormValid}
             text='Submit'

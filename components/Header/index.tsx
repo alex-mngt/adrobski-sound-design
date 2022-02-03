@@ -10,7 +10,7 @@ import CloseIcon from '../svg/close-icon.svg';
 
 import s from './scss/header.module.scss';
 import Burger from '../Burger';
-import { instagramLink, spotifyLink, twitterLink } from '../../helpers/links';
+import { instagramLink, spotifyLink, twitterLink } from '../../constants/links';
 import { useHeader } from './typescript/header.hooks';
 
 const Header: FC = () => {

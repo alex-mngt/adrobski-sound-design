@@ -28,6 +28,7 @@ export const useBubbles = (): [RefObject<HTMLDivElement>] => {
 
     return () =>
       document.removeEventListener('scroll', rafDebouncedHandleScroll);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return [ref];

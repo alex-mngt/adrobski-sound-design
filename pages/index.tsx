@@ -8,28 +8,28 @@ import s from '/styles/pages/home.module.scss';
 import Artists from '/public/images/artists.png';
 import Brands from '/public/images/brands.png';
 import VideoGrid from '../components/VideoGrid';
-import videoList from '../helpers/videoList';
 import Bubbles from '../components/Bubbles';
-import { spotifyLink } from '../helpers/links';
-import { useEffect, useMemo } from 'react';
+import { spotifyLink } from '../constants/links';
+import { useEffect, useMemo, useRef } from 'react';
 import smoothscroll from 'smoothscroll-polyfill';
 import Footer from '../components/Footer';
 import Notification, { NotificationContext } from '../components/Notification';
 import { useNotification } from '../components/Notification/typescript/notification.hooks';
+import { videos } from '../constants/videos';
 
 const Home: NextPage = ({}) => {
   useEffect(() => {
     smoothscroll.polyfill();
   });
 
-  const [
-    isNotificationVisible,
-    notificationContent,
-    notificationContexteValue,
-  ] = useNotification();
+  const reference = useRef<HTMLDivElement>(null);
+
+  const { notificationContent, notificationContextValue } = useNotification({
+    reference,
+  });
 
   return (
-    <NotificationContext.Provider value={notificationContexteValue}>
+    <NotificationContext.Provider value={notificationContextValue}>
       <Header />
       <BaseLayout>
         <h1 className={`${s['home__title']} mt-6 h3 fw-700`}>
@@ -76,15 +76,12 @@ const Home: NextPage = ({}) => {
         </div>
         <VideoGrid
           className={`${s['home__square-videos']} mb-6`}
-          videos={videoList}
+          videos={videos}
         />
         <Footer />
       </BaseLayout>
       <Bubbles />
-      <Notification
-        isVisible={isNotificationVisible}
-        content={notificationContent}
-      />
+      <Notification reference={reference} content={notificationContent} />
     </NotificationContext.Provider>
   );
 };
