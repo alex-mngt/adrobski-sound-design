@@ -16,7 +16,31 @@ export const useVideo: IVideoHook = ({ video, focusedVideo, reference }) => {
   const handleClick: MouseEventHandler = async e => {
     const videoElement = e.target as HTMLVideoElement;
 
-    if (window.innerWidth > 768 || focusedVideo.current === videoElement) {
+    console.log('click 1');
+
+    if (window.innerWidth > 768) {
+      return;
+    }
+
+    if (focusedVideo.current === videoElement) {
+      videoElement.classList.add(s['video--focused']);
+      notifications.showNotification(
+        createElement(NotificationVideo, {
+          artists: video.artists,
+          link: video.link,
+          name: video.name,
+        }),
+      );
+
+      setTimeout(() => {
+        if (!focusedVideo.current) {
+          return;
+        }
+
+        focusedVideo.current.classList.remove(s['video--focused']);
+        notifications.hideNotification();
+      }, 5000);
+
       return;
     }
 
@@ -37,6 +61,15 @@ export const useVideo: IVideoHook = ({ video, focusedVideo, reference }) => {
         name: video.name,
       }),
     );
+
+    setTimeout(() => {
+      if (!focusedVideo.current) {
+        return;
+      }
+
+      focusedVideo.current.classList.remove(s['video--focused']);
+      notifications.hideNotification();
+    }, 5000);
   };
 
   return { handleClick };

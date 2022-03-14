@@ -10,7 +10,3 @@ export interface IButtonProps extends IStandardProps {
   small?: boolean;
   onClick: MouseEventHandler;
 }
-
-export interface IButtonHook {
-  handleClick: MouseEventHandler<HTMLButtonElement>;
-}

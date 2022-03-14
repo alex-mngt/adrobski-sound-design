@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import s from './scss/button.module.scss';
-import { useButton } from './typescript/button.hooks';
+import { handleClick } from './typescript/button.helpers';
 import { IButtonProps } from './typescript/button.interfaces';
 
 const Button: FC<IButtonProps> = ({
@@ -13,11 +13,9 @@ const Button: FC<IButtonProps> = ({
   small,
   onClick,
 }) => {
-  const { handleClick } = useButton({ onClick });
-
   return (
     <button
-      onClick={handleClick}
+      onClick={handleClick(onClick)}
       disabled={disabled}
       type={type}
       className={`${className || ''} ${s['button']} ${

@@ -7,22 +7,21 @@ import InstaLogo from '../svg/instagram.svg';
 import AdrobskiLogo from '/public/images/logo.png';
 import AdrobskiLogoBlack from '/public/images/logo-black.png';
 import CloseIcon from '../svg/close-icon.svg';
-
-import s from './scss/header.module.scss';
 import Burger from '../Burger';
 import {
   INSTAGRAM_LINK,
   SPOTIFY_LINK,
   TWITTER_LINK,
 } from '../../constants/links';
-import { useHeader } from './typescript/header.hooks';
+import {
+  handleBurgerClick,
+  handleCloseIconClick,
+} from './typescript/header.helpers';
+
+import s from './scss/header.module.scss';
 
 const Header: FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-
-  const { handleBurgerClick, handleCloseIconClick } = useHeader({
-    setIsMenuOpen,
-  });
 
   return (
     <header className={`${s['header']} p-4`}>
@@ -41,7 +40,10 @@ const Header: FC = () => {
             </a>
           </Link>
         </div>
-        <Burger isMenuOpen={isMenuOpen} onClick={handleBurgerClick} />
+        <Burger
+          isMenuOpen={isMenuOpen}
+          onClick={handleBurgerClick(setIsMenuOpen)}
+        />
       </div>
       <div
         className={`${s['header__wrapper']} ${
@@ -99,7 +101,7 @@ const Header: FC = () => {
           </a>
         </Link>
         <CloseIcon
-          onClick={handleCloseIconClick}
+          onClick={handleCloseIconClick(setIsMenuOpen)}
           className={`${s['header__close']} ${
             isMenuOpen ? s['header__close--popin'] : ''
           }`}

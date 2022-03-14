@@ -1,7 +1,8 @@
 import { RefObject } from 'react';
 import { CustomHook } from '../../../helpers/types';
 
-export type IBubblesHook = CustomHook<
-  { reference: RefObject<HTMLDivElement> },
-  void
->;
+export interface IBubblesHookArgs {
+  reference: RefObject<HTMLDivElement>;
+}
+
+export type IBubblesHook = CustomHook<IBubblesHookArgs, void>;
