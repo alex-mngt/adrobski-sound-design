@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, Fragment } from 'react';
 import Button from '../Inputs/Button';
 import { useNotificationVideo } from './typescript/notificationVideo.hooks';
 import { INotificationVideoProps } from './typescript/notificationVideo.interfaces';
@@ -15,21 +15,19 @@ const NotificationVideo: FC<INotificationVideoProps> = ({
     <div className={`${s['notification-video']} f f-jc-space-b f-ai-center`}>
       <div className={`${s['notification-video__infos']}`}>
         <p className='fw-700 mb-2'>{name}</p>
-        <p className={`${s['notification-video__links']} pb-1`}>
+        <p className={`pb-1`}>
           {artists.map((artist, index) => (
-            <>
+            <Fragment key={artist.name}>
               <a
-                key={artist.name}
                 href={artist.profileUrl}
                 className={`${s['notification-video__link']}`}
               >
                 {artist.name}
               </a>
               {index !== artists.length - 1 && ' x '}
-            </>
+            </Fragment>
           ))}
         </p>
-        <p></p>
       </div>
       {link && (
         <Button

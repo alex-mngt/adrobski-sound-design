@@ -4,19 +4,26 @@ import { IVideoHook } from './video.interfaces';
 
 import s from '../scss/video.module.scss';
 import NotificationVideo from '../../NotificationVideo';
-import { sleep } from '../../../helpers/tools';
+import { getOS, sleep } from '../../../helpers/tools';
 import { NotificationContext } from '../../Notification/typescript/notification.context';
 
-export const useVideo: IVideoHook = ({ video, focusedVideo, reference }) => {
+export const useVideo: IVideoHook = ({
+  video,
+  focusedVideo,
+  reference,
+  setIsMacOs,
+}) => {
   const notifications = useContext(NotificationContext);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => observe(reference, focusedVideo, notifications), []);
 
+  useEffect(() => {
+    setIsMacOs(getOS() === 'Mac OS');
+  }, [setIsMacOs]);
+
   const handleClick: MouseEventHandler = async e => {
     const videoElement = e.target as HTMLVideoElement;
-
-    console.log('click 1');
 
     if (window.innerWidth > 768) {
       return;

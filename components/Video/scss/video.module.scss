@@ -1,5 +1,9 @@
 @use '/styles/base//variables.scss';
 
+.wrapper--keypressed {
+  cursor: pointer;
+}
+
 .video {
   width: 100%;
   height: auto;
@@ -16,6 +20,10 @@
   }
 }
 
+.video--keypressed {
+  cursor: pointer;
+}
+
 .video--focused {
   transform: translateX(0) scale(1.05) !important;
 }
@@ -26,6 +34,51 @@
   &:nth-of-type(n),
   &:nth-of-type(2n) {
     transform: translateX(0);
+  }
+}
+
+.video__infos {
+  // position: fixed;
+  top: 0;
+  left: 0;
+  background: variables.$white;
+  color: variables.$black;
+  border-radius: variables.$radius-x-small;
+}
+
+.video__redirect-hint {
+  opacity: 0;
+  animation: appearing 0.2s ease-out 0.1s forwards;
+
+  span {
+    color: variables.$primary;
+  }
+}
+
+.video__keyboard-tag {
+  border: 1px solid variables.$primary;
+  border-radius: variables.$radius-x-small;
+  transition: background 0.2s ease-out, color 0.2s ease-out,
+    fontWeigth 0.2s ease-out;
+}
+
+.video__keyboard-tag--active {
+  background: variables.$primary;
+  color: variables.$white;
+  font-weight: 700;
+}
+
+.video__artist {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -(variables.$spacing-1);
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: variables.$primary;
   }
 }
 
@@ -42,5 +95,15 @@
 
   .video--rect {
     grid-column: auto / span 2;
+  }
+}
+
+@keyframes appearing {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }

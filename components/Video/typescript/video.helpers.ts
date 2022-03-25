@@ -1,4 +1,4 @@
-import { RefObject } from 'react';
+import { MouseEventHandler, RefObject } from 'react';
 import { IVideoProps } from './video.interfaces';
 
 import s from '../scss/video.module.scss';
@@ -58,4 +58,20 @@ export const observe = (
 
   appearingObserver.observe(ref.current);
   disappearingObserver.observe(ref.current);
+};
+
+export const handleMouseEnter = (): MouseEventHandler<HTMLVideoElement> => {
+  const handler: MouseEventHandler<HTMLVideoElement> = () => {
+    console.log('mouse enter');
+  };
+
+  return handler;
+};
+
+export const handleMouseLeave = (): MouseEventHandler<HTMLVideoElement> => {
+  const handler: MouseEventHandler<HTMLVideoElement> = () => {
+    console.log('mouse leave');
+  };
+
+  return handler;
 };

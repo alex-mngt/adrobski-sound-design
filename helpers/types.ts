@@ -25,3 +25,5 @@ export interface IStandardProps {
   className?: string;
   id?: string;
 }
+
+export type IOs = 'Mac OS' | 'iOS' | 'Windows' | 'Android' | 'Linux';

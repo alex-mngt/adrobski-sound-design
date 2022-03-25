@@ -1,4 +1,4 @@
-import { RefObject } from 'react';
+import { Dispatch, RefObject, SetStateAction } from 'react';
 import { CustomHook, IStandardProps, IVideo } from '../../../helpers/types';
 
 export interface IVideosGridProps extends IStandardProps {
@@ -6,6 +6,11 @@ export interface IVideosGridProps extends IStandardProps {
 }
 
 export type IVideoGridHook = CustomHook<
-  { reference: RefObject<HTMLDivElement>; page: number },
+  {
+    reference: RefObject<HTMLDivElement>;
+    page: number;
+    setIsCtrlPressed: Dispatch<SetStateAction<boolean>>;
+    setIsShiftPressed: Dispatch<SetStateAction<boolean>>;
+  },
   { videosSlice: any; paginationFn: any }
 >;

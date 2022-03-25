@@ -13,10 +13,17 @@ import { IVideosGridProps } from './typescript/video-grid.interfaces';
 
 const VideosGrid: FC<IVideosGridProps> = ({ videos, className }) => {
   const [page, setPage] = useState<number>(1);
+  const [isShiftPressed, setIsShiftPressed] = useState<boolean>(false);
+  const [isCtrlPressed, setIsCtrlPressed] = useState<boolean>(false);
   const reference = useRef<HTMLDivElement>(null);
   const focusedVideo = useRef<HTMLVideoElement>();
 
-  const { videosSlice, paginationFn } = useVideoGrid({ reference, page });
+  const { videosSlice, paginationFn } = useVideoGrid({
+    reference,
+    page,
+    setIsCtrlPressed,
+    setIsShiftPressed,
+  });
 
   const displayedVideos = videos.slice(videosSlice[0], videosSlice[1]);
 
@@ -28,6 +35,8 @@ const VideosGrid: FC<IVideosGridProps> = ({ videos, className }) => {
             key={slugify(video.name)}
             video={video}
             focusedVideo={focusedVideo}
+            isCtrlPressed={isCtrlPressed}
+            isShiftPressed={isShiftPressed}
           />
         ))}
       </div>
