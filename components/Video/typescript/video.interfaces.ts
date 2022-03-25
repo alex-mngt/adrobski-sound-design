@@ -18,6 +18,8 @@ export type IVideoHook = CustomHook<
   Pick<IVideoProps, 'video' | 'focusedVideo'> & {
     reference: RefObject<HTMLVideoElement>;
     setIsMacOs: Dispatch<SetStateAction<boolean | undefined>>;
+    isCtrlPressed: boolean;
+    isShiftPressed: boolean;
   },
   { handleClick: MouseEventHandler }
 >;

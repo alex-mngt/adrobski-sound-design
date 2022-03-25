@@ -12,6 +12,8 @@ export const useVideo: IVideoHook = ({
   focusedVideo,
   reference,
   setIsMacOs,
+  isCtrlPressed,
+  isShiftPressed,
 }) => {
   const notifications = useContext(NotificationContext);
 
@@ -26,6 +28,14 @@ export const useVideo: IVideoHook = ({
     const videoElement = e.target as HTMLVideoElement;
 
     if (window.innerWidth > 768) {
+      if (isCtrlPressed || (isShiftPressed && isCtrlPressed)) {
+        video.artists.forEach(artist => {
+          window.open(artist.profileUrl)?.focus();
+        });
+      }
+      if (isShiftPressed && !isCtrlPressed) {
+        window.open(video.link)?.focus();
+      }
       return;
     }
 

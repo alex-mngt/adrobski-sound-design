@@ -19,6 +19,8 @@ const Video: FC<IVideoProps> = ({
     focusedVideo,
     reference,
     setIsMacOs,
+    isCtrlPressed,
+    isShiftPressed,
   });
 
   return (
@@ -66,44 +68,52 @@ const Video: FC<IVideoProps> = ({
             </Fragment>
           ))}
         </p>
-        {isMacOs && (
-          <p className='f f-ai-center fs-small'>
-            {isCtrlPressed || isShiftPressed ? 'Hold' : 'Press'}
-            {((isShiftPressed && isCtrlPressed) ||
-              (!isShiftPressed && isCtrlPressed) ||
-              (!isCtrlPressed && !isShiftPressed)) && (
-              <span
-                className={`${s['video__keyboard-tag']} ${
-                  isCtrlPressed ? s['video__keyboard-tag--active'] : ''
-                } fs-x-small p-1 ml-2 mr-1`}
-              >
-                {isMacOs ? 'Cmd' : 'Ctrl'}
-              </span>
-            )}
-            {isCtrlPressed && (
-              <span className={`${s['video__redirect-hint']} ml-1`}>
-                + <span className='fw-700'>Click</span> to see artist profile
-              </span>
-            )}
-            {!isCtrlPressed && !isShiftPressed && (
-              <span className='ml-1'>or</span>
-            )}
-            {!isCtrlPressed && (
-              <span
-                className={`${s['video__keyboard-tag']} ${
-                  isShiftPressed ? s['video__keyboard-tag--active'] : ''
-                } fs-x-small p-1 ml-2`}
-              >
-                Shift
-              </span>
-            )}
-            {isShiftPressed && !isCtrlPressed && (
-              <span className={`${s['video__redirect-hint']} ml-1`}>
-                + <span className='fw-700'>Click</span> to see artwork online
-              </span>
-            )}
-          </p>
-        )}
+        <p className='f f-ai-center fs-small'>
+          {(!isCtrlPressed && !isShiftPressed) ||
+          (isShiftPressed && !video.link)
+            ? 'Press'
+            : 'Hold'}
+          {((isShiftPressed && isCtrlPressed) ||
+            (isShiftPressed && !video.link) ||
+            (!isShiftPressed && isCtrlPressed) ||
+            (!isCtrlPressed && !isShiftPressed)) && (
+            <span
+              className={`${s['video__keyboard-tag']} ${
+                isCtrlPressed ? s['video__keyboard-tag--active'] : ''
+              } fs-x-small p-1 ml-2 mr-1`}
+            >
+              {isMacOs ? 'Cmd' : 'Ctrl'}
+            </span>
+          )}
+          {isCtrlPressed && (
+            <span className={`${s['video__redirect-hint']} ml-1`}>
+              + <span className='fw-700'>Click</span> to open artist
+              {video.artists.length > 1 && 's'} profile
+            </span>
+          )}
+          {video.link && (
+            <>
+              {!isCtrlPressed && !isShiftPressed && (
+                <span className='ml-1'>or</span>
+              )}
+              {!isCtrlPressed && (
+                <span
+                  className={`${s['video__keyboard-tag']} ${
+                    isShiftPressed ? s['video__keyboard-tag--active'] : ''
+                  } fs-x-small p-1 ml-2`}
+                >
+                  Shift
+                </span>
+              )}
+              {isShiftPressed && !isCtrlPressed && (
+                <span className={`${s['video__redirect-hint']} ml-1`}>
+                  + <span className='fw-700'>Click</span> to open artwork
+                  reference
+                </span>
+              )}
+            </>
+          )}
+        </p>
       </div>
     </div>
   );
