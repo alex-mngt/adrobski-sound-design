@@ -37,6 +37,8 @@ const VideosGrid: FC<IVideosGridProps> = ({ videos, className }) => {
             focusedVideo={focusedVideo}
             isCtrlPressed={isCtrlPressed}
             isShiftPressed={isShiftPressed}
+            setIsCtrlPressed={setIsCtrlPressed}
+            setIsShiftPressed={setIsShiftPressed}
           />
         ))}
       </div>

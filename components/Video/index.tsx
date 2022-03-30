@@ -11,6 +11,8 @@ const Video: FC<IVideoProps> = ({
   focusedVideo,
   isCtrlPressed,
   isShiftPressed,
+  setIsCtrlPressed,
+  setIsShiftPressed,
 }) => {
   const [isMacOs, setIsMacOs] = useState<boolean>();
   const reference = useRef<HTMLVideoElement>(null);
@@ -21,7 +23,17 @@ const Video: FC<IVideoProps> = ({
     setIsMacOs,
     isCtrlPressed,
     isShiftPressed,
+    setIsCtrlPressed,
+    setIsShiftPressed,
   });
+
+  const isPressDisplayed =
+    (!isCtrlPressed && !isShiftPressed) || (isShiftPressed && !video.link);
+  const isCtrlDisplayed =
+    (isShiftPressed && isCtrlPressed) ||
+    (isShiftPressed && !video.link) ||
+    (!isShiftPressed && isCtrlPressed) ||
+    (!isCtrlPressed && !isShiftPressed);
 
   return (
     <div
@@ -69,20 +81,14 @@ const Video: FC<IVideoProps> = ({
           ))}
         </p>
         <p className='f f-ai-center fs-small'>
-          {(!isCtrlPressed && !isShiftPressed) ||
-          (isShiftPressed && !video.link)
-            ? 'Press'
-            : 'Hold'}
-          {((isShiftPressed && isCtrlPressed) ||
-            (isShiftPressed && !video.link) ||
-            (!isShiftPressed && isCtrlPressed) ||
-            (!isCtrlPressed && !isShiftPressed)) && (
+          {isPressDisplayed ? 'Press' : 'Hold'}
+          {isCtrlDisplayed && (
             <span
               className={`${s['video__keyboard-tag']} ${
                 isCtrlPressed ? s['video__keyboard-tag--active'] : ''
-              } fs-x-small p-1 ml-2 mr-1`}
+              } fs-x-small pt-1 pb-1 pr-2 pl-2 ml-2 mr-1`}
             >
-              {isMacOs ? 'Cmd' : 'Ctrl'}
+              {isMacOs ? '⌘' : 'Ctrl'}
             </span>
           )}
           {isCtrlPressed && (
@@ -100,9 +106,9 @@ const Video: FC<IVideoProps> = ({
                 <span
                   className={`${s['video__keyboard-tag']} ${
                     isShiftPressed ? s['video__keyboard-tag--active'] : ''
-                  } fs-x-small p-1 ml-2`}
+                  } fs-x-small pt-1 pb-1 pr-2 pl-2 ml-2`}
                 >
-                  Shift
+                  {isMacOs ? '⌥' : 'Alt'}
                 </span>
               )}
               {isShiftPressed && !isCtrlPressed && (

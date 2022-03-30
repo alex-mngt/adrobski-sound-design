@@ -17,7 +17,7 @@ export const handleKeyUpDown = (
       }
     }
 
-    if (e.key === 'Shift') {
+    if (e.key === 'Alt') {
       setIsShiftPressed(event === 'keydown' ? true : false);
     }
   };

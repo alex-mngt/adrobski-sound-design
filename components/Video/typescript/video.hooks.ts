@@ -14,6 +14,8 @@ export const useVideo: IVideoHook = ({
   setIsMacOs,
   isCtrlPressed,
   isShiftPressed,
+  setIsCtrlPressed,
+  setIsShiftPressed,
 }) => {
   const notifications = useContext(NotificationContext);
 
@@ -30,17 +32,28 @@ export const useVideo: IVideoHook = ({
     if (window.innerWidth > 768) {
       if (isCtrlPressed || (isShiftPressed && isCtrlPressed)) {
         video.artists.forEach(artist => {
-          window.open(artist.profileUrl)?.focus();
+          window.open(artist.profileUrl, '_blank');
+          setIsCtrlPressed(false);
         });
       }
       if (isShiftPressed && !isCtrlPressed) {
-        window.open(video.link)?.focus();
+        if (!video.link) {
+          return;
+        }
+
+        window.open(video.link);
+        setIsShiftPressed(false);
       }
       return;
     }
 
     if (focusedVideo.current === videoElement) {
       videoElement.classList.add(s['video--focused']);
+
+      if (window.innerWidth > 768) {
+        return;
+      }
+
       notifications.showNotification(
         createElement(NotificationVideo, {
           artists: video.artists,
@@ -64,12 +77,19 @@ export const useVideo: IVideoHook = ({
     if (focusedVideo.current) {
       focusedVideo.current.pause();
       focusedVideo.current.classList.remove(s['video--focused']);
-      notifications.hideNotification();
-      await sleep(400);
+
+      if (window.innerWidth < 768) {
+        notifications.hideNotification();
+        await sleep(400);
+      }
     }
 
     videoElement.classList.add(s['video--focused']);
     focusedVideo.current = videoElement;
+
+    if (window.innerWidth > 768) {
+      return;
+    }
 
     notifications.showNotification(
       createElement(NotificationVideo, {
