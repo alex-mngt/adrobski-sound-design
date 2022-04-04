@@ -1,0 +1,33 @@
+@use '/styles/base/variables.scss';
+
+.button {
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease-out;
+
+  &:hover {
+    transform: scale(1.025);
+  }
+
+  &:disabled {
+    background: variables.$disabled;
+    &:hover {
+      transform: none;
+      cursor: unset;
+    }
+  }
+}
+
+.button--full {
+  width: 100%;
+}
+
+.button--small {
+  padding: variables.$spacing-3;
+  font-size: 0.8rem;
+}
+
+.button--primary {
+  color: variables.$white;
+  background: variables.$primary;
+}

@@ -1,0 +1,136 @@
+@use '/styles/base//variables.scss';
+
+.wrapper--left {
+  .video {
+    transform: translateX(-30px);
+  }
+
+  .video__infos {
+    transform: translate(25vw, 50vh);
+  }
+}
+
+.wrapper--right {
+  .video {
+    transform: translateX(30px);
+  }
+
+  .video__infos {
+    transform: translate(75vw, 50vh);
+  }
+}
+
+.wrapper--keypressed {
+  cursor: pointer;
+}
+
+.video {
+  width: 100%;
+  height: auto;
+  border-radius: variables.$radius-small;
+  opacity: 0;
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.video--keypressed {
+  cursor: pointer;
+}
+
+.video--focused {
+  transform: translateX(0) scale(1.05) !important;
+}
+
+.video--appearing {
+  opacity: 1;
+
+  &:nth-of-type(n),
+  &:nth-of-type(2n) {
+    transform: translateX(0);
+  }
+}
+
+.video__infos {
+  pointer-events: none;
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  background: variables.$white;
+  color: variables.$black;
+  border-radius: variables.$radius-x-small;
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-out;
+  z-index: 1;
+  box-shadow: 0px 0px 8px 4px rgba(black, 0.2);
+}
+
+.video__redirect-hint {
+  opacity: 0;
+  animation: appearing 0.2s ease-out 0.1s forwards;
+
+  span {
+    color: variables.$primary;
+  }
+}
+
+.video__keyboard-tag {
+  border: 1px solid variables.$primary;
+  border-radius: variables.$radius-x-small;
+  transition: background 0.2s ease-out, color 0.2s ease-out,
+    fontWeigth 0.2s ease-out;
+}
+
+.video__keyboard-tag--active {
+  background: variables.$primary;
+  color: variables.$white;
+  font-weight: 700;
+}
+
+.video__artist {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -(variables.$spacing-1);
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: variables.$primary;
+  }
+}
+
+@media (min-width: variables.$breakpoint-md) {
+  .video {
+    &:nth-of-type(n) {
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+
+    &:nth-of-type(2n) {
+      transition: opacity 0.5s 0.25s ease-out, transform 0.5s 0.25s ease-out;
+    }
+  }
+
+  .video--rect {
+    grid-column: auto / span 2;
+  }
+}
+
+@media (min-width: variables.$breakpoint-lg) {
+  .video {
+    &:hover {
+      & + .video__infos {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@keyframes appearing {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

@@ -1,5 +1,4 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
 import Header from '../components/Header';
 import BaseLayout from '../layout/BaseLayout';
 import Image from 'next/image';
@@ -7,28 +6,37 @@ import Image from 'next/image';
 import s from '/styles/pages/home.module.scss';
 import Artists from '/public/images/artists.png';
 import Brands from '/public/images/brands.png';
-import VideoGrid from '../components/VideosGrid';
-import videoList from '../helpers/videoList';
-import Bubbles from '../components/bubbles/Bubbles';
-import { spotifyLink } from '../helpers/links';
-import { useEffect } from 'react';
+import VideoGrid from '../components/VideoGrid';
+import Bubbles from '../components/Bubbles';
+import { SPOTIFY_LINK } from '../constants/links';
+import { useEffect, useRef } from 'react';
 import smoothscroll from 'smoothscroll-polyfill';
 import Footer from '../components/Footer';
+import Notification from '../components/Notification';
+import { useNotification } from '../components/Notification/typescript/notification.hooks';
+import { videos } from '../constants/videos';
+import { NotificationContext } from '../components/Notification/typescript/notification.context';
 
 const Home: NextPage = ({}) => {
   useEffect(() => {
     smoothscroll.polyfill();
   });
 
+  const reference = useRef<HTMLDivElement>(null);
+
+  const { notificationContent, notificationContextValue } = useNotification({
+    reference,
+  });
+
   return (
-    <>
+    <NotificationContext.Provider value={notificationContextValue}>
       <Header />
       <BaseLayout>
         <h1 className={`${s['home__title']} mt-6 h3 fw-700`}>
           <span>Adrosbki is a french</span>{' '}
           <span>
             <a
-              href={spotifyLink}
+              href={SPOTIFY_LINK}
               target='_blank'
               rel='noreferrer'
               className={`${s['home__title-emphasis']}`}
@@ -68,12 +76,13 @@ const Home: NextPage = ({}) => {
         </div>
         <VideoGrid
           className={`${s['home__square-videos']} mb-6`}
-          videos={videoList}
+          videos={videos}
         />
         <Footer />
       </BaseLayout>
       <Bubbles />
-    </>
+      <Notification reference={reference} content={notificationContent} />
+    </NotificationContext.Provider>
   );
 };
 

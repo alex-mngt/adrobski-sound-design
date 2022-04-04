@@ -1,0 +1,32 @@
+@use '/styles/base/variables.scss';
+
+.notification-video__infos {
+  flex-shrink: 1;
+  flex-basis: auto;
+  overflow: hidden;
+}
+
+.notification-video__button {
+  flex-shrink: 0;
+}
+
+.notification-video__title,
+.notification-video__links {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+.notification-video__link {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -(variables.$spacing-1);
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: variables.$primary;
+  }
+}

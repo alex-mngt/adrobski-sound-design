@@ -1,4 +1,4 @@
-import { FC, UIEventHandler } from 'react';
+import { FC } from 'react';
 
 const BaseLayout: FC = ({ children }) => {
   return <div className='container'>{children}</div>;
