@@ -11,21 +11,20 @@ const Footer = () => {
       <Link href='/legals'>
         <a className={`${s['footer__legals']}`}>Legals</a>
       </Link>
-      <p className={`${s['footer__studio']} f f-center f-direction-column`}>
+      <p className={`${s['footer__studio']} f f-ai-center ta-right`}>
         <span className='mb-1'>
           Made with [<span className='fw-700 mr-1 ml-1'>love</span>] by{' '}
         </span>
         <Link href='https://www.instagram.com/wearestudio99/?hl=fr'>
-          <a target='_blank' className='f f-center'>
+          <a target='_blank' className='ml-2'>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              className={`${s['footer__logo']} mr-1`}
+              className={`${s['footer__logo']}`}
               width='30px'
               height='20.73px'
               src='/images/we-are-studio-99.svg'
               alt='WeAreStudio99Logo'
             ></img>
-            WeAreStudio99
           </a>
         </Link>
       </p>
