@@ -16,6 +16,16 @@ class MyDocument extends Document {
     return (
       <Html lang='en'>
         <Head>
+          <link
+            rel='icon'
+            type='image/svg+xml'
+            href='/images/favicons/favicon.svg'
+          />
+          <link
+            rel='icon'
+            type='image/png'
+            href='/images/favicons/favicon.png'
+          />
           <link rel='preconnect' href='https://fonts.googleapis.com' />
           <link
             rel='preconnect'
