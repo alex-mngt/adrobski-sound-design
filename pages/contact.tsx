@@ -1,4 +1,5 @@
 import { NextPage } from 'next';
+import Head from 'next/head';
 import {
   ChangeEvent,
   MouseEventHandler,
@@ -29,6 +30,9 @@ const Contact: NextPage = () => {
 
   return (
     <>
+      <Head>
+        <title>Contact - Adrobski Sound Design</title>
+      </Head>
       <Header />
       <BaseLayout>
         <Form
