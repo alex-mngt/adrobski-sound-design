@@ -35,7 +35,23 @@ const Contact: NextPage = () => {
       </Head>
       <Header />
       <BaseLayout>
-        <Form
+        <div className={`${s['temp']} f f-direction-column f-center`}>
+          <p className='ta-center'>
+            A contact form will be available soon, meanwhile you can contact me
+            via{' '}
+            <a className='fw-700' href='https://twitter.com/adrobskimusic'>
+              Twitter
+            </a>{' '}
+            or{' '}
+            <a
+              className='fw-700'
+              href='https://www.instagram.com/adrobskimusic'
+            >
+              Instagram
+            </a>
+          </p>
+        </div>
+        {/* <Form
           id='form'
           reference={form}
           isValid={isFormValid}
@@ -100,7 +116,7 @@ const Contact: NextPage = () => {
             fullWidth
             primary
           />
-        </Form>
+        </Form> */}
       </BaseLayout>
     </>
   );
