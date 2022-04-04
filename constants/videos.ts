@@ -2,6 +2,7 @@ import { IVideo } from '../helpers/types';
 import {
   BLANSABLE,
   HEIRVEY,
+  JUSTIN_BUISSON,
   MATTHIEU_BRACCINI,
   MEKALABS,
   STRETCH_CLUB,
@@ -78,7 +79,7 @@ export const videos: IVideo[] = [
   },
   {
     id: '36-days-of-type',
-    name: '36 Days of Type',
+    name: 'H',
     artists: [BLANSABLE],
     link: 'https://www.instagram.com/p/CNkO8dQHbVf/',
     fallbackSource: {
@@ -129,7 +130,7 @@ export const videos: IVideo[] = [
   },
   {
     id: 'mekaverse',
-    name: 'Mekaverse',
+    name: 'Rarity',
     artists: [MEKALABS],
     link: 'https://twitter.com/MekaVerse/status/1438929989819379713?s=20&t=P4cl7a-460XkHbeX9Oy8Vg',
     fallbackSource: {
@@ -309,6 +310,244 @@ export const videos: IVideo[] = [
     sources: [
       {
         url: '/videos/square/yoplait-strawberry-mango/yoplait-strawberry-mango.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
+    id: 'blansable_99',
+    name: '99',
+    artists: [BLANSABLE],
+    link: 'https://www.instagram.com/p/CL9ugHMniYt/',
+    fallbackSource: {
+      url: '/videos/square/blansable_99/blansable_99_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/blansable_99/blansable_99_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
+    id: 'blansable_ange',
+    name: 'Ange',
+    artists: [BLANSABLE],
+    link: 'https://www.instagram.com/reel/CXOk63DDEOx/',
+    fallbackSource: {
+      url: '/videos/square/blansable_ange/blansable_ange_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/blansable_ange/blansable_ange_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
+    id: 'blansable_C',
+    name: 'C',
+    artists: [BLANSABLE],
+    link: 'https://www.instagram.com/p/CNXcNqgnO__/',
+    fallbackSource: {
+      url: '/videos/square/blansable_C/blansable_C_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/blansable_C/blansable_C_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
+    id: 'blansable_fish',
+    name: 'Fish',
+    artists: [BLANSABLE],
+    link: 'https://www.instagram.com/reel/CY4IfLjJX3f/',
+    fallbackSource: {
+      url: '/videos/square/blansable_fish/blansable_fish_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/blansable_fish/blansable_fish_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
+    id: 'blansable_grue',
+    name: 'Grue',
+    artists: [BLANSABLE],
+    link: 'https://www.instagram.com/reel/CYCNC0gJSsg/',
+    fallbackSource: {
+      url: '/videos/square/blansable_grue/blansable_grue_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/blansable_grue/blansable_grue_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
+    id: 'blansable_rendering',
+    name: 'Rendering',
+    artists: [BLANSABLE],
+    link: 'https://www.instagram.com/p/CVQTxzlg7aJ/',
+    fallbackSource: {
+      url: '/videos/square/blansable_rendering/blansable_rendering_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/blansable_rendering/blansable_rendering_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
+    id: 'justinbuisson_Chindogu',
+    name: 'Chindogu',
+    artists: [JUSTIN_BUISSON],
+    link: 'https://youtu.be/JzpaqERrtZE?t=53',
+    fallbackSource: {
+      url: '/videos/square/justinbuisson_Chindogu/justinbuisson_Chindogu_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/justinbuisson_Chindogu/justinbuisson_Chindogu_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
+    id: 'justinbuisson_DA',
+    name: 'New DA',
+    artists: [BLANSABLE],
+    link: 'https://www.instagram.com/p/CZZ6RFuIsmk/',
+    fallbackSource: {
+      url: '/videos/square/justinbuisson_DA/justinbuisson_DA_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/justinbuisson_DA/justinbuisson_DA_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
+    id: 'mekaverse_background',
+    name: 'Background',
+    artists: [MEKALABS],
+    link: 'https://twitter.com/MekaVerse/status/1484995429825761286?s=20&t=v2CVQtp8xqX4E92Dx7fHKQ',
+    fallbackSource: {
+      url: '/videos/square/mekaverse_background/mekaverse_background_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/mekaverse_background/mekaverse_background_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
+    id: 'mekaverse_blue',
+    name: 'Blue',
+    artists: [MEKALABS],
+    link: 'https://twitter.com/MekaVerse/status/1494012602493685764?s=20&t=v2CVQtp8xqX4E92Dx7fHKQ',
+    fallbackSource: {
+      url: '/videos/square/mekaverse_blue/mekaverse_blue_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/mekaverse_blue/mekaverse_blue_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
+    id: 'mekaverse_lookup',
+    name: 'Look Up',
+    artists: [MEKALABS],
+    link: 'https://twitter.com/MekaVerse/status/1484642405026615298?s=20&t=v2CVQtp8xqX4E92Dx7fHKQ',
+    fallbackSource: {
+      url: '/videos/square/mekaverse_lookup/mekaverse_lookup_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/mekaverse_lookup/mekaverse_lookup_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
+    id: 'mekaverse_lootboxopen',
+    name: 'Lootbox Explosion',
+    artists: [MEKALABS],
+    link: 'https://twitter.com/MekaVerse/status/1472709018439372801?s=20&t=v2CVQtp8xqX4E92Dx7fHKQ',
+    fallbackSource: {
+      url: '/videos/square/mekaverse_lootboxopen/mekaverse_lootboxopen_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/mekaverse_lootboxopen/mekaverse_lootboxopen_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
+    id: 'mekaverse_mekabot',
+    name: 'Mekabot',
+    artists: [MEKALABS],
+    link: 'https://twitter.com/MekaVerse/status/1496205880567685131?s=20&t=v2CVQtp8xqX4E92Dx7fHKQ',
+    fallbackSource: {
+      url: '/videos/square/mekaverse_mekabot/mekaverse_mekabot_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/mekaverse_mekabot/mekaverse_mekabot_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
+    id: 'mekaverse_mekabotcusto',
+    name: 'Mekabot Customization',
+    artists: [MEKALABS],
+    link: 'https://twitter.com/MekaVerse/status/1504585381664145412?s=20&t=v2CVQtp8xqX4E92Dx7fHKQ',
+    fallbackSource: {
+      url: '/videos/square/mekaverse_mekabotcusto/mekaverse_mekabotcusto_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/mekaverse_mekabotcusto/mekaverse_mekabotcusto_VP9.webm',
         type: 'video/webm',
       },
     ],
