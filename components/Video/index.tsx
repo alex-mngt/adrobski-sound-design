@@ -54,7 +54,7 @@ const Video: FC<IVideoProps> = ({
         controls
         preload='metadata'
         onClick={handleClick}
-        onMouseMove={handleMouseMove(videoInfosReference, s)}
+        onMouseMove={handleMouseMove(videoInfosReference)}
       >
         {video.sources.map(source => (
           <source
