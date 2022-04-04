@@ -3,6 +3,7 @@ import { IVideoProps } from './video.interfaces';
 
 import s from '../scss/video.module.scss';
 import { INotificationContext } from '../../Notification/typescript/notification.interfaces';
+import { rafDebounce } from '../../../helpers/tools';
 
 export const observe = (
   ref: RefObject<HTMLVideoElement>,
@@ -60,18 +61,20 @@ export const observe = (
   disappearingObserver.observe(ref.current);
 };
 
-export const handleMouseEnter = (): MouseEventHandler<HTMLVideoElement> => {
-  const handler: MouseEventHandler<HTMLVideoElement> = () => {
-    console.log('mouse enter');
+export const handleMouseMove = (
+  ref: RefObject<HTMLDivElement>,
+): MouseEventHandler<HTMLVideoElement> => {
+  const handler: MouseEventHandler<HTMLVideoElement> = e => {
+    if (!ref.current) {
+      return;
+    }
+
+    ref.current.style.transform = `translate(${e.pageX + 13.5}px, ${
+      e.pageY - window.scrollY + 13.5
+    }px)`;
   };
 
-  return handler;
-};
+  const rafDebouncedHandleMouseMove = rafDebounce(handler);
 
-export const handleMouseLeave = (): MouseEventHandler<HTMLVideoElement> => {
-  const handler: MouseEventHandler<HTMLVideoElement> = () => {
-    console.log('mouse leave');
-  };
-
-  return handler;
+  return rafDebouncedHandleMouseMove;
 };

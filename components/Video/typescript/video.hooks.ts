@@ -10,7 +10,7 @@ import { NotificationContext } from '../../Notification/typescript/notification.
 export const useVideo: IVideoHook = ({
   video,
   focusedVideo,
-  reference,
+  videoReference,
   setIsMacOs,
   isCtrlPressed,
   isShiftPressed,
@@ -20,7 +20,7 @@ export const useVideo: IVideoHook = ({
   const notifications = useContext(NotificationContext);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => observe(reference, focusedVideo, notifications), []);
+  useEffect(() => observe(videoReference, focusedVideo, notifications), []);
 
   useEffect(() => {
     setIsMacOs(getOS() === 'Mac OS');

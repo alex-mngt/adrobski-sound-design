@@ -1,5 +1,25 @@
 @use '/styles/base//variables.scss';
 
+.wrapper--left {
+  .video {
+    transform: translateX(-30px);
+  }
+
+  .video__infos {
+    transform: translate(25vw, 50vh);
+  }
+}
+
+.wrapper--right {
+  .video {
+    transform: translateX(30px);
+  }
+
+  .video__infos {
+    transform: translate(75vw, 50vh);
+  }
+}
+
 .wrapper--keypressed {
   cursor: pointer;
 }
@@ -10,14 +30,6 @@
   border-radius: variables.$radius-small;
   opacity: 0;
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-
-  &:nth-of-type(n) {
-    transform: translateX(-30px);
-  }
-
-  &:nth-of-type(2n) {
-    transform: translateX(30px);
-  }
 }
 
 .video--keypressed {
@@ -38,12 +50,17 @@
 }
 
 .video__infos {
-  // position: fixed;
+  pointer-events: none;
+  position: fixed;
+  opacity: 0;
   top: 0;
   left: 0;
   background: variables.$white;
   color: variables.$black;
   border-radius: variables.$radius-x-small;
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-out;
+  z-index: 1;
+  box-shadow: 0px 0px 8px 4px rgba(black, 0.2);
 }
 
 .video__redirect-hint {
@@ -95,6 +112,16 @@
 
   .video--rect {
     grid-column: auto / span 2;
+  }
+}
+
+@media (min-width: variables.$breakpoint-lg) {
+  .video {
+    &:hover {
+      & + .video__infos {
+        opacity: 1;
+      }
+    }
   }
 }
 

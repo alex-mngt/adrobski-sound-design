@@ -2,7 +2,7 @@ import { FC, Fragment, useRef, useState } from 'react';
 import { getOS, slugify } from '../../helpers/tools';
 
 import s from './scss/video.module.scss';
-import { handleMouseEnter, handleMouseLeave } from './typescript/video.helpers';
+import { handleMouseMove } from './typescript/video.helpers';
 import { useVideo } from './typescript/video.hooks';
 import { IVideoProps } from './typescript/video.interfaces';
 
@@ -13,13 +13,16 @@ const Video: FC<IVideoProps> = ({
   isShiftPressed,
   setIsCtrlPressed,
   setIsShiftPressed,
+  index,
 }) => {
   const [isMacOs, setIsMacOs] = useState<boolean>();
-  const reference = useRef<HTMLVideoElement>(null);
+  const videoReference = useRef<HTMLVideoElement>(null);
+  const videoInfosReference = useRef<HTMLDivElement>(null);
+
   const { handleClick } = useVideo({
     video,
     focusedVideo,
-    reference,
+    videoReference,
     setIsMacOs,
     isCtrlPressed,
     isShiftPressed,
@@ -37,12 +40,12 @@ const Video: FC<IVideoProps> = ({
 
   return (
     <div
-      className={`${
+      className={`wrapper ${
         isCtrlPressed || isShiftPressed ? s['wrapper--keypressed'] : ''
-      }`}
+      } ${index % 2 === 0 ? s['wrapper--left'] : s['wrapper--right']}`}
     >
       <video
-        ref={reference}
+        ref={videoReference}
         playsInline
         loop
         className={`${s['video']} ${
@@ -51,8 +54,7 @@ const Video: FC<IVideoProps> = ({
         controls
         preload='metadata'
         onClick={handleClick}
-        onMouseEnter={handleMouseEnter()}
-        onMouseLeave={handleMouseLeave()}
+        onMouseMove={handleMouseMove(videoInfosReference, s)}
       >
         {video.sources.map(source => (
           <source
@@ -68,6 +70,7 @@ const Video: FC<IVideoProps> = ({
         Your browser cannot play HTML5 videos
       </video>
       <div
+        ref={videoInfosReference}
         className={`${s['video__infos']} f f-direction-column f-ai-start p-4`}
       >
         <p className='mb-4'>

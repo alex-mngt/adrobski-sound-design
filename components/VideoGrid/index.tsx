@@ -30,7 +30,7 @@ const VideosGrid: FC<IVideosGridProps> = ({ videos, className }) => {
   return (
     <>
       <div ref={reference} className={`${s['videos-grid']} ${className || ''}`}>
-        {displayedVideos.map(video => (
+        {displayedVideos.map((video, index) => (
           <Video
             key={slugify(video.name)}
             video={video}
@@ -39,6 +39,7 @@ const VideosGrid: FC<IVideosGridProps> = ({ videos, className }) => {
             isShiftPressed={isShiftPressed}
             setIsCtrlPressed={setIsCtrlPressed}
             setIsShiftPressed={setIsShiftPressed}
+            index={index}
           />
         ))}
       </div>

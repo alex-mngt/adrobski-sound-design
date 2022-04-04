@@ -14,11 +14,12 @@ export interface IVideoProps {
   isShiftPressed: boolean;
   setIsCtrlPressed: Dispatch<SetStateAction<boolean>>;
   setIsShiftPressed: Dispatch<SetStateAction<boolean>>;
+  index: number;
 }
 
 export type IVideoHook = CustomHook<
   Pick<IVideoProps, 'video' | 'focusedVideo'> & {
-    reference: RefObject<HTMLVideoElement>;
+    videoReference: RefObject<HTMLVideoElement>;
     setIsMacOs: Dispatch<SetStateAction<boolean | undefined>>;
     isCtrlPressed: IVideoProps['isCtrlPressed'];
     isShiftPressed: IVideoProps['isShiftPressed'];
