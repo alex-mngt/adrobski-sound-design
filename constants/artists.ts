@@ -24,3 +24,8 @@ export const STRETCH_CLUB: IArtist = {
   name: 'Stretch Clubbbbb',
   profileUrl: 'https://www.instagram.com/_stretchclub/',
 };
+
+export const JUSTIN_BUISSON: IArtist = {
+  name: 'Justin Buisson',
+  profileUrl: 'https://www.instagram.com/justinbuisson/',
+};
