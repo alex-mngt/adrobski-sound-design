@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { NextPage } from 'next';
 import Head from 'next/head';
 import {
@@ -25,8 +26,21 @@ const Contact: NextPage = () => {
 
   const form = useRef<HTMLFormElement>(null);
 
-  const hanldeSubmit: MouseEventHandler = () => {
-    console.log('submited');
+  const hanldeSubmit: MouseEventHandler = async () => {
+    const res = await axios
+      .post('/api/send-mail', {
+        firstName,
+        lastName,
+        email,
+        message,
+      })
+      .catch(err => console.log(err));
+
+    if (!res) {
+      return;
+    }
+
+    console.log(res.data);
   };
 
   return (
@@ -36,7 +50,7 @@ const Contact: NextPage = () => {
       </Head>
       <Header />
       <BaseLayout>
-        <div className={`${s['temp']} f f-direction-column f-center`}>
+        {/* <div className={`${s['temp']} f f-direction-column f-center`}>
           <p className='ta-center'>
             A contact form will be available soon, meanwhile you can contact me
             via{' '}
@@ -51,8 +65,8 @@ const Contact: NextPage = () => {
               Instagram
             </a>
           </p>
-        </div>
-        {/* <Form
+        </div> */}
+        <Form
           id='form'
           reference={form}
           isValid={isFormValid}
@@ -111,13 +125,13 @@ const Contact: NextPage = () => {
           <Button
             onClick={hanldeSubmit}
             className={s['contact__button']}
-            disabled={!isFormValid}
+            // disabled={!isFormValid}
             text='Submit'
             type='button'
             fullWidth
             primary
           />
-        </Form> */}
+        </Form>
         <Footer />
       </BaseLayout>
     </>
