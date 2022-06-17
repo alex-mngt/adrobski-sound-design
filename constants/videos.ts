@@ -537,7 +537,7 @@ export const videos: IVideo[] = [
     format: 'square',
   },
   {
-    id: 'mekaverse_mekabotcusto',
+    id: 'mekaverse_mekabotcustom',
     name: 'Mekabot Customization',
     artists: [MEKALABS],
     link: 'https://twitter.com/MekaVerse/status/1504585381664145412?s=20&t=v2CVQtp8xqX4E92Dx7fHKQ',
