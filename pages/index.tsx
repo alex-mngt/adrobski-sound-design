@@ -42,7 +42,7 @@ const Home: NextPage = ({}) => {
         <Header />
         <BaseLayout>
           <h1 className={`${s['home__title']} mt-6 h3 fw-700`}>
-            <span>Adrosbki is a french</span>{' '}
+            <span>Adrobski is a french</span>{' '}
             <span>
               <a
                 href={SPOTIFY_LINK}
