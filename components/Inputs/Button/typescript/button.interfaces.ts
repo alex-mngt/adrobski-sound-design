@@ -1,4 +1,5 @@
 import { MouseEventHandler } from 'react';
+import { Icon } from 'react-feather';
 import { IStandardProps } from '../../../../helpers/types';
 
 export interface IButtonProps extends IStandardProps {
@@ -9,4 +10,5 @@ export interface IButtonProps extends IStandardProps {
   primary?: boolean;
   small?: boolean;
   onClick: MouseEventHandler;
+  icon?: Icon;
 }

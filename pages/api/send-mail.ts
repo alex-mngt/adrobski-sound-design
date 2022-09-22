@@ -84,6 +84,8 @@ const handler = async (
 
     sgMail.setApiKey(process.env.SENGRID_API_KEY || '');
 
+    console.log('sending message');
+
     await sgMail.send(messages).catch(err => {
       console.log(err);
 
@@ -96,7 +98,9 @@ const handler = async (
         .json({ message: `Email service is temporary unavailable` });
     });
 
-    res.status(200).emit;
+    console.log('message sent ');
+
+    res.status(200).send();
   }
 };
 
