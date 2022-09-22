@@ -1,12 +1,8 @@
+import axios from 'axios';
 import { NextPage } from 'next';
 import Head from 'next/head';
-import {
-  ChangeEvent,
-  MouseEventHandler,
-  useReducer,
-  useRef,
-  useState,
-} from 'react';
+import { MouseEventHandler, useRef, useState } from 'react';
+import { Check, Icon, Loader, X } from 'react-feather';
 import Footer from '../components/Footer';
 import Form from '../components/Form';
 import Header from '../components/Header';
@@ -22,11 +18,32 @@ const Contact: NextPage = () => {
   const [lastName, setLastName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [message, setMessage] = useState<string>('');
+  const [buttonText, setButtonText] = useState<string>('Send');
+  const [buttonIcon, setButtonIcon] = useState<Icon>();
 
   const form = useRef<HTMLFormElement>(null);
 
-  const hanldeSubmit: MouseEventHandler = () => {
-    console.log('submited');
+  const hanldeSubmit: MouseEventHandler = async () => {
+    setButtonText('Sending');
+    setButtonIcon(Loader);
+
+    const res = await axios
+      .post('/api/send-mail', {
+        firstName,
+        lastName,
+        email,
+        message,
+      })
+      .catch(err => console.log(err));
+
+    if (!res || res.status !== 200) {
+      setButtonText('Error sending your message, Reload + Try again');
+      setButtonIcon(X);
+      return;
+    }
+
+    setButtonText('Messsage sent');
+    setButtonIcon(Check);
   };
 
   return (
@@ -36,23 +53,7 @@ const Contact: NextPage = () => {
       </Head>
       <Header />
       <BaseLayout>
-        <div className={`${s['temp']} f f-direction-column f-center`}>
-          <p className='ta-center'>
-            A contact form will be available soon, meanwhile you can contact me
-            via{' '}
-            <a className='fw-700' href='https://twitter.com/adrobskimusic'>
-              Twitter
-            </a>{' '}
-            or{' '}
-            <a
-              className='fw-700'
-              href='https://www.instagram.com/adrobskimusic'
-            >
-              Instagram
-            </a>
-          </p>
-        </div>
-        {/* <Form
+        <Form
           id='form'
           reference={form}
           isValid={isFormValid}
@@ -112,12 +113,13 @@ const Contact: NextPage = () => {
             onClick={hanldeSubmit}
             className={s['contact__button']}
             disabled={!isFormValid}
-            text='Submit'
+            text={buttonText}
+            icon={buttonIcon}
             type='button'
             fullWidth
             primary
           />
-        </Form> */}
+        </Form>
         <Footer />
       </BaseLayout>
     </>

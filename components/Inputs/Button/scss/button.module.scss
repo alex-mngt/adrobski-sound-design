@@ -4,6 +4,9 @@
   font-size: 1rem;
   cursor: pointer;
   transition: transform 0.2s ease-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &:hover {
     transform: scale(1.025);
@@ -30,4 +33,75 @@
 .button--primary {
   color: variables.$white;
   background: variables.$primary;
+}
+
+$speed: 0.5s;
+
+.button--loader {
+  svg {
+    // animation: spin 1s infinite;
+
+    line {
+      // opacity: 0;
+      // transition: opacity #{$speed} ease-in-out;
+
+      &:first-of-type {
+        animation: fade $speed linear infinite;
+      }
+
+      &:nth-of-type(8) {
+        animation: fade $speed #{($speed / 8) * 2} ease-out infinite;
+      }
+
+      &:nth-of-type(6) {
+        animation: fade $speed #{($speed / 8) * 3} ease-out infinite;
+      }
+      &:nth-of-type(4) {
+        animation: fade $speed #{($speed / 8) * 4} ease-out infinite;
+      }
+      &:nth-of-type(2) {
+        animation: fade $speed #{($speed / 8) * 5} ease-out infinite;
+      }
+
+      &:nth-of-type(7) {
+        animation: fade $speed #{($speed / 8) * 6} ease-out infinite;
+      }
+
+      &:nth-of-type(5) {
+        animation: fade $speed #{($speed / 8) * 7} ease-out infinite;
+      }
+
+      &:nth-of-type(3) {
+        animation: fade $speed $speed ease-out infinite;
+      }
+    }
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+
+  33% {
+    opacity: 0;
+  }
+
+  66% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
