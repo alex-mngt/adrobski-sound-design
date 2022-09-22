@@ -125,6 +125,15 @@
     font-size: 1.95rem * 1.4;
   }
 
+  .home__title-emphasis {
+    display: inline-block;
+    transition: transform 0.2s ease-out;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+
   .home__clients {
     margin-right: -#{math.div(variables.$spacing-8 + variables.$spacing-6, 2)};
     margin-left: -#{math.div(variables.$spacing-8 + variables.$spacing-6, 2)};

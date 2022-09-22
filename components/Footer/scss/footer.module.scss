@@ -31,16 +31,51 @@
   .footer__legals {
     grid-row: 1;
     grid-column: 1;
+    overflow: hidden;
+    position: relative;
+    justify-self: flex-start;
+
+    &::after {
+      margin-bottom: variables.$spacing-1;
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      background: variables.$white;
+      left: 0;
+      bottom: -#{variables.$spacing-1};
+      transform: translateX(-100%);
+      transition: transform 0.2s ease-out;
+    }
+
+    &:hover {
+      &::after {
+        transform: translateX(0);
+      }
+    }
   }
 
   .footer__catchprase {
     margin: auto;
     grid-row: 1;
     grid-column: 2;
+    transition: transform 0.2s ease-out;
+
+    &:hover {
+      transform: translateY(-2px) scale(1.025);
+    }
   }
 
   .footer__studio {
     grid-row: 1;
     grid-column: 3;
+
+    a {
+      transition: transform 0.2s ease-out;
+
+      &:hover {
+        transform: translateY(-2px) scale(1.025);
+      }
+    }
   }
 }
