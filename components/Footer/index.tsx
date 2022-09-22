@@ -5,9 +5,11 @@ import s from './scss/footer.module.scss';
 const Footer = () => {
   return (
     <footer className={`${s['footer']} pt-7 pb-4`}>
-      <p className={`${s['footer__catchprase']} fw-700 ta-center h5`}>
-        Let&apos;s Work Together
-      </p>
+      <Link href='/contact'>
+        <a className={`${s['footer__catchprase']} fw-700 ta-center h5`}>
+          Let&apos;s Work Together
+        </a>
+      </Link>
       <Link href='/legals'>
         <a className={`${s['footer__legals']}`}>Legals</a>
       </Link>

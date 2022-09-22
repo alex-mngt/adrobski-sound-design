@@ -1,4 +1,4 @@
-@use "/styles/base/variables.scss";
+@use '/styles/base/variables.scss';
 
 .header__wrapper {
   position: fixed;
@@ -132,13 +132,12 @@
 }
 
 @media (min-width: variables.$breakpoint-lg) {
-  .header__svgs {
-    svg {
-      transition: transform 0.2s ease-out;
+  .header__svgs svg,
+  .header__contact {
+    transition: transform 0.2s ease-out;
 
-      &:hover {
-        transform: translateY(-2px) scale(1.025);
-      }
+    &:hover {
+      transform: translateY(-2px) scale(1.025);
     }
   }
 }
