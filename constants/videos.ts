@@ -675,23 +675,6 @@ export const videos: IVideo[] = [
     format: 'square',
   },
   {
-    id: 'matteyyy_mushroom_meditation',
-    name: 'Mushroom Meditation',
-    artists: [MATTEYYY],
-    link: 'https://www.instagram.com/p/CL9qm2anjsQ/',
-    fallbackSource: {
-      url: '/videos/square/matteyyy_mushroom_meditation/matteyyy_mushroom_meditation_h264.mp4',
-      type: 'video/mp4',
-    },
-    sources: [
-      {
-        url: '/videos/square/matteyyy_mushroom_meditation/matteyyy_mushroom_meditation_VP9.webm',
-        type: 'video/webm',
-      },
-    ],
-    format: 'square',
-  },
-  {
     id: 'matteyyy_multiverse_run',
     name: 'Multiverse Run',
     artists: [MATTEYYY],
