@@ -17,7 +17,7 @@ export const MEKALABS: IArtist = {
 
 export const MATTHIEU_BRACCINI: IArtist = {
   name: 'Matthieu Braccini',
-  profileUrl: 'https://twitter.com/MattBraccini/',
+  profileUrl: 'https://www.instagram.com/matthieubraccini/',
 };
 
 export const STRETCH_CLUB: IArtist = {
@@ -28,4 +28,14 @@ export const STRETCH_CLUB: IArtist = {
 export const JUSTIN_BUISSON: IArtist = {
   name: 'Justin Buisson',
   profileUrl: 'https://www.instagram.com/justinbuisson/',
+};
+
+export const VYDER: IArtist = {
+  name: 'Vyder',
+  profileUrl: 'https://twitter.com/VYDERgg',
+};
+
+export const MATTEYYY: IArtist = {
+  name: 'Matteyyy',
+  profileUrl: 'https://www.instagram.com/matteyyy_/',
 };

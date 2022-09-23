@@ -6,6 +6,8 @@ import {
   MATTHIEU_BRACCINI,
   MEKALABS,
   STRETCH_CLUB,
+  MATTEYYY,
+  VYDER,
 } from './artists';
 
 export const videos: IVideo[] = [
@@ -548,6 +550,244 @@ export const videos: IVideo[] = [
     sources: [
       {
         url: '/videos/square/mekaverse_mekabotcusto/mekaverse_mekabotcusto_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
+    id: 'blansable_36days_0',
+    name: '36days 0',
+    artists: [BLANSABLE],
+    link: 'https://www.instagram.com/p/Cb2j9y3D5qp/',
+    fallbackSource: {
+      url: '/videos/square/blansable_36days_0/blansable_36days_0_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/blansable_36days_0/blansable_36days_0_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
+    id: 'blansable_36days_4',
+    name: '36days 4',
+    artists: [BLANSABLE],
+    link: 'https://www.instagram.com/p/CcA2iJODsW1/',
+    fallbackSource: {
+      url: '/videos/square/blansable_36days_4/blansable_36days_4_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/blansable_36days_4/blansable_36days_4_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
+    id: 'blansable_grunt',
+    name: 'Grunt',
+    artists: [BLANSABLE],
+    link: 'https://www.instagram.com/p/CfWi6BMjY_o/',
+    fallbackSource: {
+      url: '/videos/square/blansable_grunt/blansable_grunt_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/blansable_grunt/blansable_grunt_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
+    id: 'blansable_the_explorer_snake',
+    name: 'The Explorer Snake',
+    artists: [BLANSABLE],
+    link: 'https://www.instagram.com/p/CixeXzqjN6P/',
+    fallbackSource: {
+      url: '/videos/square/blansable_the_explorer_snake/blansable_the_explorer_snake_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/blansable_the_explorer_snake/blansable_the_explorer_snake_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
+    id: 'heirvey_heirvey_s_world',
+    name: 'heirvey"s_world',
+    artists: [HEIRVEY],
+    link: 'https://vimeo.com/606875966',
+    fallbackSource: {
+      url: '/videos/square/heirvey_heirvey_s_world/heirvey_heirvey_s_world_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/heirvey_heirvey_s_world/heirvey_heirvey_s_world_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
+    id: 'matteyyy_excalibur',
+    name: 'Excalibur',
+    artists: [MATTEYYY],
+    link: 'https://www.instagram.com/p/CLwyXIRHfVp/',
+    fallbackSource: {
+      url: '/videos/square/matteyyy_excalibur/matteyyy_excalibur_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/matteyyy_excalibur/matteyyy_excalibur_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
+    id: 'matteyyy_mushroom_meditation',
+    name: 'Mushroom Meditation',
+    artists: [MATTEYYY],
+    link: 'https://www.instagram.com/p/CL9qm2anjsQ/',
+    fallbackSource: {
+      url: '/videos/square/matteyyy_mushroom_meditation/matteyyy_mushroom_meditation_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/matteyyy_mushroom_meditation/matteyyy_mushroom_meditation_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
+    id: 'matteyyy_mushroom_meditation',
+    name: 'Mushroom Meditation',
+    artists: [MATTEYYY],
+    link: 'https://www.instagram.com/p/CL9qm2anjsQ/',
+    fallbackSource: {
+      url: '/videos/square/matteyyy_mushroom_meditation/matteyyy_mushroom_meditation_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/matteyyy_mushroom_meditation/matteyyy_mushroom_meditation_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
+    id: 'matteyyy_multiverse_run',
+    name: 'Multiverse Run',
+    artists: [MATTEYYY],
+    link: 'https://www.instagram.com/p/COdPdRCnFU9/',
+    fallbackSource: {
+      url: '/videos/square/matteyyy_multiverse_run/matteyyy_multiverse_run_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/matteyyy_multiverse_run/matteyyy_multiverse_run_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
+    id: 'matthieubraccini_eternal_expectation',
+    name: 'Eternal Expectation',
+    artists: [MATTHIEU_BRACCINI],
+    link: 'https://www.instagram.com/matthieubraccini/',
+    fallbackSource: {
+      url: '/videos/square/matthieubraccini_eternal_expectation/matthieubraccini_eternal_expectation_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/matthieubraccini_eternal_expectation/matthieubraccini_eternal_expectation_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
+    id: 'mekaverse_meka-merch',
+    name: 'Meka-Merch',
+    artists: [MEKALABS],
+    link: 'https://twitter.com/MekaVerse/status/1570477509950537731',
+    fallbackSource: {
+      url: '/videos/square/mekaverse_meka-merch/mekaverse_meka-merch_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/mekaverse_meka-merch/mekaverse_meka-merch_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
+    id: 'mekaverse_meka-station',
+    name: 'Meka-Station',
+    artists: [MEKALABS],
+    link: 'https://twitter.com/MekaVerse/status/1553832677551345664',
+    fallbackSource: {
+      url: '/videos/square/mekaverse_meka-station/mekaverse_meka-station_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/mekaverse_meka-station/mekaverse_meka-station_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
+    id: 'mekaverse_the_last_gadians',
+    name: 'The Last Gādians',
+    artists: [MEKALABS,MATTEYYY,MATTHIEU_BRACCINI],
+    link: 'https://www.instagram.com/p/CX_lSXBNg4L/',
+    fallbackSource: {
+      url: '/videos/square/mekaverse_the_last_gadians/mekaverse_the_last_gadians_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/mekaverse_the_last_gadians/mekaverse_the_last_gadians_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
+    id: 'vyder_final_reveal',
+    name: 'Final Reveal',
+    artists: [VYDER],
+    link: 'https://twitter.com/VYDERgg/status/1570472546218266625',
+    fallbackSource: {
+      url: '/videos/square/vyder_final_reveal/vyder_final_reveal_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/vyder_final_reveal/vyder_final_reveal_VP9.webm',
         type: 'video/webm',
       },
     ],
