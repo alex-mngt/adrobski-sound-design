@@ -98,7 +98,7 @@ export const videos: IVideo[] = [
   },
   {
     id: 'heirvey_heirvey_s_world',
-    name: 'heirvey"s_world',
+    name: 'heirveys world',
     artists: [HEIRVEY],
     link: 'https://vimeo.com/606875966',
     fallbackSource: {
