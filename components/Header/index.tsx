@@ -55,13 +55,13 @@ const Header: FC = () => {
             isMenuOpen ? s['header__svgs--slidin'] : ''
           } f-js-center f-as-start`}
         >
-          <a href={TWITTER_LINK}>
+          <a href={TWITTER_LINK} target="_blank" rel="noreferrer"> 
             <TwitterLogo />
           </a>
-          <a href={INSTAGRAM_LINK}>
+          <a href={INSTAGRAM_LINK} target="_blank" rel="noreferrer">
             <InstaLogo className='ml-4 mr-4' />
           </a>
-          <a href={SPOTIFY_LINK}>
+          <a href={SPOTIFY_LINK} target="_blank" rel="noreferrer">
             <SpotifyLogo />
           </a>
         </div>
