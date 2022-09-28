@@ -386,23 +386,6 @@ export const videos: IVideo[] = [
     format: 'square',
   },
   {
-    id: 'blansable_99',
-    name: '99',
-    artists: [BLANSABLE],
-    link: 'https://www.instagram.com/p/CL9ugHMniYt/',
-    fallbackSource: {
-      url: '/videos/square/blansable_99/blansable_99_h264.mp4',
-      type: 'video/mp4',
-    },
-    sources: [
-      {
-        url: '/videos/square/blansable_99/blansable_99_VP9.webm',
-        type: 'video/webm',
-      },
-    ],
-    format: 'square',
-  },
-  {
     id: 'blansable_ange',
     name: 'Ange',
     artists: [BLANSABLE],
@@ -488,23 +471,6 @@ export const videos: IVideo[] = [
     format: 'square',
   },
   {
-    id: 'armadillo',
-    name: 'Armadillo',
-    artists: [BLANSABLE],
-    link: 'https://www.instagram.com/p/CVfrxqKDaV6/',
-    fallbackSource: {
-      url: '/videos/square/armadillo/armadillo.mp4',
-      type: 'video/mp4',
-    },
-    sources: [
-      {
-        url: '/videos/square/armadillo/armadillo.webm',
-        type: 'video/webm',
-      },
-    ],
-    format: 'square',
-  },
-  {
     id: 'tetris',
     name: 'Tetris',
     artists: [BLANSABLE],
@@ -522,23 +488,6 @@ export const videos: IVideo[] = [
     format: 'square',
   },
   {
-    id: 'falling-pieces',
-    name: 'Falling Pieces',
-    artists: [BLANSABLE],
-    link: 'https://www.instagram.com/p/CFZzkpEnXV6/',
-    fallbackSource: {
-      url: '/videos/square/falling-pieces/falling-pieces.mp4',
-      type: 'video/mp4',
-    },
-    sources: [
-      {
-        url: '/videos/square/falling-pieces/falling-pieces.webm',
-        type: 'video/webm',
-      },
-    ],
-    format: 'square',
-  },
-  {
     id: 'chivas',
     name: 'Chivas',
     artists: [BLANSABLE],
@@ -550,23 +499,6 @@ export const videos: IVideo[] = [
     sources: [
       {
         url: '/videos/square/chivas/chivas.webm',
-        type: 'video/webm',
-      },
-    ],
-    format: 'square',
-  },
-  {
-    id: 'blansable',
-    name: 'Blansable',
-    artists: [BLANSABLE],
-    link: 'https://twitter.com/Blansable99/status/1290052948966412288?s=20&t=P4cl7a-460XkHbeX9Oy8Vg',
-    fallbackSource: {
-      url: '/videos/square/blansable/blansable.mp4',
-      type: 'video/mp4',
-    },
-    sources: [
-      {
-        url: '/videos/square/blansable/blansable.webm',
         type: 'video/webm',
       },
     ],
@@ -601,23 +533,6 @@ export const videos: IVideo[] = [
     sources: [
       {
         url: '/videos/square/fleur/fleur.webm',
-        type: 'video/webm',
-      },
-    ],
-    format: 'square',
-  },
-  {
-    id: 'planet',
-    name: 'Planet',
-    artists: [HEIRVEY],
-    link: 'https://www.instagram.com/p/CJQnOTJIdfa/',
-    fallbackSource: {
-      url: '/videos/square/planet/planet.mp4',
-      type: 'video/mp4',
-    },
-    sources: [
-      {
-        url: '/videos/square/planet/planet.webm',
         type: 'video/webm',
       },
     ],
