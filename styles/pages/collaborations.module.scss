@@ -1,0 +1,10 @@
+@use '/styles/base/variables.scss';
+
+.collaborations {
+  gap: variables.$spacing-3;
+  white-space: nowrap;
+}
+
+.collaborations__separator {
+  transform: scale(2);
+}

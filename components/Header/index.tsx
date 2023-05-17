@@ -55,13 +55,13 @@ const Header: FC = () => {
             isMenuOpen ? s['header__svgs--slidin'] : ''
           } f-js-center f-as-start`}
         >
-          <a href={TWITTER_LINK} target="_blank" rel="noreferrer"> 
+          <a href={TWITTER_LINK} target='_blank' rel='noreferrer'>
             <TwitterLogo />
           </a>
-          <a href={INSTAGRAM_LINK} target="_blank" rel="noreferrer">
+          <a href={INSTAGRAM_LINK} target='_blank' rel='noreferrer'>
             <InstaLogo className='ml-4 mr-4' />
           </a>
-          <a href={SPOTIFY_LINK} target="_blank" rel="noreferrer">
+          <a href={SPOTIFY_LINK} target='_blank' rel='noreferrer'>
             <SpotifyLogo />
           </a>
         </div>
@@ -95,11 +95,18 @@ const Header: FC = () => {
             </Link>
           </div>
         </div>
-        <Link href='/contact'>
-          <a className={`${s['header__contact']} fw-700 f-js-center mt-5 mb-5`}>
-            contact
-          </a>
-        </Link>
+        <div className={`${s['header__links']} f f-ai-center f-jc-center`}>
+          <Link href='/contact'>
+            <a className={`${s['header__link']} fw-700 f-js-center mt-5 mb-5`}>
+              contact
+            </a>
+          </Link>
+          <Link href='/collaborations'>
+            <a className={`${s['header__link']} fw-700 f-js-center mt-5 mb-5`}>
+              collabs
+            </a>
+          </Link>
+        </div>
         <CloseIcon
           onClick={handleCloseIconClick(setIsMenuOpen)}
           className={`${s['header__close']} ${
