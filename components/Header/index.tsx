@@ -27,17 +27,15 @@ const Header: FC = () => {
     <header className={`${s['header']} p-4`}>
       <div className={`${s['header__mobile']} f f-jc-space-b f-ai-center`}>
         <div className={`${s['header__mobile-logo']}`}>
-          <Link href='/'>
-            <a>
-              <Image
-                priority={true}
-                layout='responsive'
-                src={AdrobskiLogo}
-                alt='Adrobski Logo'
-                height={1182}
-                width={2016}
-              />
-            </a>
+          <Link href='/' passHref>
+            <Image
+              priority={true}
+              layout='responsive'
+              src={AdrobskiLogo}
+              alt='Adrobski Logo'
+              height={1182}
+              width={2016}
+            />
           </Link>
         </div>
         <Burger
@@ -67,44 +65,42 @@ const Header: FC = () => {
         </div>
         <div className={`${s['header__logo']} f-js-center f-as-end`}>
           <div className={`${s['main-logo']}`}>
-            <Link href='/'>
-              <a>
-                <Image
-                  priority={true}
-                  src={AdrobskiLogo}
-                  alt='Adrobski Logo'
-                  height={1182}
-                  width={2016}
-                  layout='responsive'
-                />
-              </a>
+            <Link href='/' passHref>
+              <Image
+                priority={true}
+                src={AdrobskiLogo}
+                alt='Adrobski Logo'
+                height={1182}
+                width={2016}
+                layout='responsive'
+              />
             </Link>
           </div>
           <div className={`${s['main-logo--black']}`}>
-            <Link href='/'>
-              <a>
-                <Image
-                  priority={true}
-                  src={AdrobskiLogoBlack}
-                  alt='Adrobski Logo'
-                  height={1182}
-                  width={2016}
-                  layout='responsive'
-                />
-              </a>
+            <Link href='/' passHref>
+              <Image
+                priority={true}
+                src={AdrobskiLogoBlack}
+                alt='Adrobski Logo'
+                height={1182}
+                width={2016}
+                layout='responsive'
+              />
             </Link>
           </div>
         </div>
         <div className={`${s['header__links']} f f-ai-center f-jc-center`}>
-          <Link href='/contact'>
-            <a className={`${s['header__link']} fw-700 f-js-center mt-5 mb-5`}>
-              contact
-            </a>
+          <Link
+            href='/contact'
+            className={`${s['header__link']} fw-700 f-js-center mt-5 mb-5`}
+          >
+            contact
           </Link>
-          <Link href='/collaborations'>
-            <a className={`${s['header__link']} fw-700 f-js-center mt-5 mb-5`}>
-              collabs
-            </a>
+          <Link
+            href='/collaborations'
+            className={`${s['header__link']} fw-700 f-js-center mt-5 mb-5`}
+          >
+            collabs
           </Link>
         </div>
         <CloseIcon
