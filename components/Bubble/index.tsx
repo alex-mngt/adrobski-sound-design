@@ -1,5 +1,5 @@
 import { FC, useRef } from 'react';
-import Image from "next/image";
+import Image from 'next/image';
 import { IBubbleProps } from './typescript/bubble.interfaces';
 
 const Bubble: FC<IBubbleProps> = ({ className, bubble }) => {
@@ -11,9 +11,10 @@ const Bubble: FC<IBubbleProps> = ({ className, bubble }) => {
         alt=''
         src={bubble}
         style={{
-          maxWidth: "100%",
-          height: "auto"
-        }} />
+          maxWidth: '100%',
+          height: 'auto',
+        }}
+      />
     </div>
   );
 };
