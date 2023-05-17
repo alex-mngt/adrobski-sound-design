@@ -1,5 +1,5 @@
 import { FC, useState } from 'react';
-import Image from 'next/image';
+import Image from "next/image";
 import Link from 'next/link';
 import TwitterLogo from '../svg/twitter.svg';
 import SpotifyLogo from '../svg/spotify.svg';
@@ -30,12 +30,15 @@ const Header: FC = () => {
           <Link href='/' passHref>
             <Image
               priority={true}
-              layout='responsive'
               src={AdrobskiLogo}
               alt='Adrobski Logo'
               height={1182}
               width={2016}
-            />
+              sizes="100vw"
+              style={{
+                width: "100%",
+                height: "auto"
+              }} />
           </Link>
         </div>
         <Burger
@@ -72,8 +75,11 @@ const Header: FC = () => {
                 alt='Adrobski Logo'
                 height={1182}
                 width={2016}
-                layout='responsive'
-              />
+                sizes="100vw"
+                style={{
+                  width: "100%",
+                  height: "auto"
+                }} />
             </Link>
           </div>
           <div className={`${s['main-logo--black']}`}>
@@ -84,8 +90,11 @@ const Header: FC = () => {
                 alt='Adrobski Logo'
                 height={1182}
                 width={2016}
-                layout='responsive'
-              />
+                sizes="100vw"
+                style={{
+                  width: "100%",
+                  height: "auto"
+                }} />
             </Link>
           </div>
         </div>
