@@ -5,6 +5,7 @@ import { COLLABORATIONS } from '../constants/collaborations';
 import BaseLayout from '../layout/BaseLayout';
 import s from '/styles/pages/collaborations.module.scss';
 import Bubbles from '../components/Bubbles';
+import Footer from '../components/Footer';
 
 const Collaborations: NextPage = () => {
   return (
@@ -18,13 +19,16 @@ const Collaborations: NextPage = () => {
       </Head>
       <Header />
       <BaseLayout>
-        <div className={`${s['collaborations']} mt-6 mb-6`}>
-          {COLLABORATIONS.map(collaboration => (
-            <>
-              <p>{collaboration}</p>
-            </>
-          ))}
+        <div className={`${s['collaborations']} f f-center`}>
+          <div className={`${s['collaborations__grid']}`}>
+            {COLLABORATIONS.map(collaboration => (
+              <>
+                <p>{collaboration}</p>
+              </>
+            ))}
+          </div>
         </div>
+        <Footer />
       </BaseLayout>
       <Bubbles collabs />
     </>
