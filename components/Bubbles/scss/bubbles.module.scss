@@ -85,6 +85,26 @@
   left: -166px;
 }
 
+.bubbles-wrapper--collabs {
+  .bubble {
+    animation-delay: 1.5s;
+  }
+
+  .bubble--1 {
+    width: 245px;
+    top: 100px;
+    right: -160px;
+  }
+
+  .bubble--2 {
+    display: block;
+    width: 240px;
+    top: 700px;
+    top: 619px;
+    left: -178px;
+  }
+}
+
 @media (min-width: variables.$breakpoint-md) {
   .bubble--1 {
     width: 640px;

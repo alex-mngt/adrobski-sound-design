@@ -113,6 +113,7 @@ body {
   background: variables.$black;
   color: variables.$white;
   position: relative;
+  min-height: 100vh;
 }
 
 ol,

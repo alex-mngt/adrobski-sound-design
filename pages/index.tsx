@@ -18,7 +18,7 @@ import { videos } from '../constants/videos';
 import { NotificationContext } from '../components/Notification/typescript/notification.context';
 import Head from 'next/head';
 
-const Home: NextPage = ({}) => {
+const Home: NextPage = () => {
   useEffect(() => {
     smoothscroll.polyfill();
   });

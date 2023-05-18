@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import { COLLABORATIONS } from '../constants/collaborations';
 import BaseLayout from '../layout/BaseLayout';
 import s from '/styles/pages/collaborations.module.scss';
+import Bubbles from '../components/Bubbles';
 
 const Collaborations: NextPage = () => {
   return (
@@ -17,17 +18,15 @@ const Collaborations: NextPage = () => {
       </Head>
       <Header />
       <BaseLayout>
-        <div className={`${s['collaborations']} mt-6 f f-center f-wrap`}>
-          {COLLABORATIONS.map((collaboration, idx) => (
+        <div className={`${s['collaborations']} mt-6 mb-6`}>
+          {COLLABORATIONS.map(collaboration => (
             <>
               <p>{collaboration}</p>
-              {idx !== COLLABORATIONS.length - 1 ? (
-                <div className={s['collaborations__separator']}>•</div>
-              ) : null}
             </>
           ))}
         </div>
       </BaseLayout>
+      <Bubbles collabs />
     </>
   );
 };

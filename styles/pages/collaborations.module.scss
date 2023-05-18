@@ -1,10 +1,18 @@
 @use '/styles/base/variables.scss';
 
 .collaborations {
-  gap: variables.$spacing-3;
-  white-space: nowrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: variables.$spacing-5;
+  text-align: center;
 }
 
 .collaborations__separator {
   transform: scale(2);
+}
+
+@media (min-width: variables.$breakpoint-md) {
+  .collaborations {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
