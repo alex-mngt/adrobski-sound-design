@@ -5,6 +5,12 @@
   font-family: 'Urbanist', sans-serif;
 }
 
+#__next {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
 html,
 body,
 div,
@@ -109,10 +115,13 @@ section {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   line-height: normal;
   background: variables.$black;
   color: variables.$white;
   position: relative;
+  min-height: 100vh;
 }
 
 ol,
