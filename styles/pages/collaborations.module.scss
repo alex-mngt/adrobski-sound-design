@@ -1,0 +1,23 @@
+@use '/styles/base/variables.scss';
+
+.collaborations {
+  flex-grow: 1;
+}
+
+.collaborations__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: variables.$spacing-5;
+  text-align: center;
+  transform: translateY(variables.$spacing-5);
+}
+
+.collaborations__separator {
+  transform: scale(2);
+}
+
+@media (min-width: variables.$breakpoint-md) {
+  .collaborations__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

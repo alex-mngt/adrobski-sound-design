@@ -18,7 +18,7 @@ import { videos } from '../constants/videos';
 import { NotificationContext } from '../components/Notification/typescript/notification.context';
 import Head from 'next/head';
 
-const Home: NextPage = ({}) => {
+const Home: NextPage = () => {
   useEffect(() => {
     smoothscroll.polyfill();
   });
@@ -65,20 +65,29 @@ const Home: NextPage = ({}) => {
             <div className={`${s['home__clients-imgs']} f f-wrap f-jc-end`}>
               <div className={`${s['home__artists']} mb-5`}>
                 <Image
+                  priority
                   width={281}
                   height={54.9}
-                  layout='responsive'
                   alt=''
                   src={Artists}
+                  sizes='100vw'
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                  }}
                 />
               </div>
               <div className={`${s['home__brands']}`}>
                 <Image
                   width={322}
                   height={54.9}
-                  layout='responsive'
                   alt=''
                   src={Brands}
+                  sizes='100vw'
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                  }}
                 />
               </div>
             </div>

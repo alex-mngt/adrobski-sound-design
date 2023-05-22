@@ -27,17 +27,19 @@ const Header: FC = () => {
     <header className={`${s['header']} p-4`}>
       <div className={`${s['header__mobile']} f f-jc-space-b f-ai-center`}>
         <div className={`${s['header__mobile-logo']}`}>
-          <Link href='/'>
-            <a>
-              <Image
-                priority={true}
-                layout='responsive'
-                src={AdrobskiLogo}
-                alt='Adrobski Logo'
-                height={1182}
-                width={2016}
-              />
-            </a>
+          <Link href='/' passHref>
+            <Image
+              priority={true}
+              src={AdrobskiLogo}
+              alt='Adrobski Logo'
+              height={1182}
+              width={2016}
+              sizes='100vw'
+              style={{
+                width: '100%',
+                height: 'auto',
+              }}
+            />
           </Link>
         </div>
         <Burger
@@ -55,51 +57,64 @@ const Header: FC = () => {
             isMenuOpen ? s['header__svgs--slidin'] : ''
           } f-js-center f-as-start`}
         >
-          <a href={TWITTER_LINK} target="_blank" rel="noreferrer"> 
+          <a href={TWITTER_LINK} target='_blank' rel='noreferrer'>
             <TwitterLogo />
           </a>
-          <a href={INSTAGRAM_LINK} target="_blank" rel="noreferrer">
+          <a href={INSTAGRAM_LINK} target='_blank' rel='noreferrer'>
             <InstaLogo className='ml-4 mr-4' />
           </a>
-          <a href={SPOTIFY_LINK} target="_blank" rel="noreferrer">
+          <a href={SPOTIFY_LINK} target='_blank' rel='noreferrer'>
             <SpotifyLogo />
           </a>
         </div>
         <div className={`${s['header__logo']} f-js-center f-as-end`}>
           <div className={`${s['main-logo']}`}>
-            <Link href='/'>
-              <a>
-                <Image
-                  priority={true}
-                  src={AdrobskiLogo}
-                  alt='Adrobski Logo'
-                  height={1182}
-                  width={2016}
-                  layout='responsive'
-                />
-              </a>
+            <Link href='/' passHref>
+              <Image
+                priority={true}
+                src={AdrobskiLogo}
+                alt='Adrobski Logo'
+                height={1182}
+                width={2016}
+                sizes='100vw'
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                }}
+              />
             </Link>
           </div>
           <div className={`${s['main-logo--black']}`}>
-            <Link href='/'>
-              <a>
-                <Image
-                  priority={true}
-                  src={AdrobskiLogoBlack}
-                  alt='Adrobski Logo'
-                  height={1182}
-                  width={2016}
-                  layout='responsive'
-                />
-              </a>
+            <Link href='/' passHref>
+              <Image
+                priority={true}
+                src={AdrobskiLogoBlack}
+                alt='Adrobski Logo'
+                height={1182}
+                width={2016}
+                sizes='100vw'
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                }}
+              />
             </Link>
           </div>
         </div>
-        <Link href='/contact'>
-          <a className={`${s['header__contact']} fw-700 f-js-center mt-5 mb-5`}>
+        <div className={`${s['header__links']} f f-ai-center f-jc-center`}>
+          <Link
+            href='/contact'
+            className={`${s['header__link']} fw-700 f-js-center mt-5 mb-5`}
+          >
             contact
-          </a>
-        </Link>
+          </Link>
+          <Link
+            href='/collaborations'
+            className={`${s['header__link']} fw-700 f-js-center mt-5 mb-5`}
+          >
+            collabs
+          </Link>
+        </div>
         <CloseIcon
           onClick={handleCloseIconClick(setIsMenuOpen)}
           className={`${s['header__close']} ${

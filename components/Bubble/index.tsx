@@ -7,7 +7,14 @@ const Bubble: FC<IBubbleProps> = ({ className, bubble }) => {
 
   return (
     <div ref={reference} className={className}>
-      <Image alt='' src={bubble} />
+      <Image
+        alt=''
+        src={bubble}
+        style={{
+          maxWidth: '100%',
+          height: 'auto',
+        }}
+      />
     </div>
   );
 };

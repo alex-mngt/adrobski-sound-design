@@ -306,7 +306,7 @@ export const videos: IVideo[] = [
   {
     id: 'mekaverse_the_last_gadians',
     name: 'The Last Gādians',
-    artists: [MEKALABS,MATTEYYY,MATTHIEU_BRACCINI],
+    artists: [MEKALABS, MATTEYYY, MATTHIEU_BRACCINI],
     link: 'https://www.instagram.com/p/CX_lSXBNg4L/',
     fallbackSource: {
       url: '/videos/square/mekaverse_the_last_gadians/mekaverse_the_last_gadians_h264.mp4',

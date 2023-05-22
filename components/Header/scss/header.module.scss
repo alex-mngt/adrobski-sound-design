@@ -58,9 +58,13 @@
   grid-row: 1;
 }
 
-.header__contact {
-  text-transform: uppercase;
+.header__links {
   grid-row: 2/3;
+  gap: variables.$spacing-4;
+}
+
+.header__link {
+  text-transform: uppercase;
 }
 
 .header__close {
@@ -100,7 +104,7 @@
 
   .header__svgs,
   .header__logo,
-  .header__contact {
+  .header__links {
     grid-row: auto;
     align-self: center;
   }
@@ -133,7 +137,7 @@
 
 @media (min-width: variables.$breakpoint-lg) {
   .header__svgs svg,
-  .header__contact {
+  .header__link {
     transition: transform 0.2s ease-out;
 
     &:hover {
