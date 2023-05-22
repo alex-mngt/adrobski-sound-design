@@ -112,7 +112,7 @@ const Header: FC = () => {
             href='/collaborations'
             className={`${s['header__link']} fw-700 f-js-center mt-5 mb-5`}
           >
-            collabs
+            clients
           </Link>
         </div>
         <CloseIcon
