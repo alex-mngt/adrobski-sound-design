@@ -8,9 +8,46 @@ import {
   STRETCH_CLUB,
   MATTEYYY,
   VYDER,
+  BALO,
+  MAGNANE,
+  Hurrah,
 } from './artists';
 
 export const videos: IVideo[] = [
+  {
+    id: 'Magnane_LVMH',
+    name: 'LVMH',
+    artists: [MAGNANE],
+    link: 'https://magnane.com/projects/lvmh-data-summit',
+    fallbackSource: {
+      url: '/videos/square/Magnane_LVMH/Magnane_LVMH_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/Magnane_LVMH/Magnane_LVMH_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+    {
+    id: 'Mekaverse_MekaDriver_trailer',
+    name: 'MekaDriver Trailer',
+    artists: [MEKALABS],
+    link: 'https://twitter.com/MekaVerse/status/1616538052310216704',
+    fallbackSource: {
+      url: '/videos/square/Mekaverse_MekaDriver_trailer/Mekaverse_MekaDriver_trailer_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/Mekaverse_MekaDriver_trailer/Mekaverse_MekaDriver_trailer_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
   {
     id: 'mekaverse_meka-merch',
     name: 'Meka-Merch',
@@ -28,35 +65,69 @@ export const videos: IVideo[] = [
     ],
     format: 'square',
   },
-  {
-    id: 'matteyyy_multiverse_run',
-    name: 'Multiverse Run',
-    artists: [MATTEYYY],
-    link: 'https://www.instagram.com/p/COdPdRCnFU9/',
+    {
+    id: 'mekaverse_mekabotcustom',
+    name: 'Mekabot Customization',
+    artists: [MEKALABS],
+    link: 'https://twitter.com/MekaVerse/status/1504585381664145412?s=20&t=v2CVQtp8xqX4E92Dx7fHKQ',
     fallbackSource: {
-      url: '/videos/square/matteyyy_multiverse_run/matteyyy_multiverse_run_h264.mp4',
+      url: '/videos/square/mekaverse_mekabotcusto/mekaverse_mekabotcusto_h264.mp4',
       type: 'video/mp4',
     },
     sources: [
       {
-        url: '/videos/square/matteyyy_multiverse_run/matteyyy_multiverse_run_VP9.webm',
+        url: '/videos/square/mekaverse_mekabotcusto/mekaverse_mekabotcusto_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+    {
+    id: 'blansable_rendering',
+    name: 'Rendering',
+    artists: [BLANSABLE],
+    link: 'https://www.instagram.com/p/CVQTxzlg7aJ/',
+    fallbackSource: {
+      url: '/videos/square/blansable_rendering/blansable_rendering_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/blansable_rendering/blansable_rendering_VP9.webm',
         type: 'video/webm',
       },
     ],
     format: 'square',
   },
   {
-    id: 'blansable_grue',
-    name: 'Grue',
+    id: 'justinbuisson_DA',
+    name: 'New DA',
     artists: [BLANSABLE],
-    link: 'https://www.instagram.com/reel/CYCNC0gJSsg/',
+    link: 'https://www.instagram.com/p/CZZ6RFuIsmk/',
     fallbackSource: {
-      url: '/videos/square/blansable_grue/blansable_grue_h264.mp4',
+      url: '/videos/square/justinbuisson_DA/justinbuisson_DA_h264.mp4',
       type: 'video/mp4',
     },
     sources: [
       {
-        url: '/videos/square/blansable_grue/blansable_grue_VP9.webm',
+        url: '/videos/square/justinbuisson_DA/justinbuisson_DA_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+    {
+    id: 'vyder_FreeMint',
+    name: 'Free Mint',
+    artists: [VYDER],
+    link: 'https://twitter.com/vydergg',
+    fallbackSource: {
+      url: '/videos/square/Vyder_FreeMint/Vyder_FreeMint_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/Vyder_FreeMint/Vyder_FreeMint_VP9.webm',
         type: 'video/webm',
       },
     ],
@@ -114,34 +185,17 @@ export const videos: IVideo[] = [
     format: 'square',
   },
   {
-    id: 'blansable_rendering',
-    name: 'Rendering',
-    artists: [BLANSABLE],
-    link: 'https://www.instagram.com/p/CVQTxzlg7aJ/',
+    id: 'Hurrah.Group_Virtex_Trailer_music',
+    name: 'Virtex Stadium Music Trailer',
+    artists: [Hurrah],
+    link: 'https://www.virtexstadium.com/',
     fallbackSource: {
-      url: '/videos/square/blansable_rendering/blansable_rendering_h264.mp4',
+      url: '/videos/square/Hurrah.Group_Virtex_Trailer_musicHurrah.Group_Virtex_Trailer_music_h264.mp4',
       type: 'video/mp4',
     },
     sources: [
       {
-        url: '/videos/square/blansable_rendering/blansable_rendering_VP9.webm',
-        type: 'video/webm',
-      },
-    ],
-    format: 'square',
-  },
-  {
-    id: 'justinbuisson_DA',
-    name: 'New DA',
-    artists: [BLANSABLE],
-    link: 'https://www.instagram.com/p/CZZ6RFuIsmk/',
-    fallbackSource: {
-      url: '/videos/square/justinbuisson_DA/justinbuisson_DA_h264.mp4',
-      type: 'video/mp4',
-    },
-    sources: [
-      {
-        url: '/videos/square/justinbuisson_DA/justinbuisson_DA_VP9.webm',
+        url: '/videos/square/Hurrah.Group_Virtex_Trailer_music/Hurrah.Group_Virtex_Trailer_music_VP9.webm',
         type: 'video/webm',
       },
     ],
@@ -233,23 +287,6 @@ export const videos: IVideo[] = [
     format: 'square',
   },
   {
-    id: 'mekaverse_mekabotcustom',
-    name: 'Mekabot Customization',
-    artists: [MEKALABS],
-    link: 'https://twitter.com/MekaVerse/status/1504585381664145412?s=20&t=v2CVQtp8xqX4E92Dx7fHKQ',
-    fallbackSource: {
-      url: '/videos/square/mekaverse_mekabotcusto/mekaverse_mekabotcusto_h264.mp4',
-      type: 'video/mp4',
-    },
-    sources: [
-      {
-        url: '/videos/square/mekaverse_mekabotcusto/mekaverse_mekabotcusto_VP9.webm',
-        type: 'video/webm',
-      },
-    ],
-    format: 'square',
-  },
-  {
     id: 'mekaverse_meka-station',
     name: 'Meka-Station',
     artists: [MEKALABS],
@@ -278,6 +315,23 @@ export const videos: IVideo[] = [
     sources: [
       {
         url: '/videos/square/mekaverse_the_last_gadians/mekaverse_the_last_gadians_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
+    id: 'matteyyy_multiverse_run',
+    name: 'Multiverse Run',
+    artists: [MATTEYYY],
+    link: 'https://www.instagram.com/p/COdPdRCnFU9/',
+    fallbackSource: {
+      url: '/videos/square/matteyyy_multiverse_run/matteyyy_multiverse_run_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/matteyyy_multiverse_run/matteyyy_multiverse_run_VP9.webm',
         type: 'video/webm',
       },
     ],
@@ -321,7 +375,7 @@ export const videos: IVideo[] = [
     id: 'matthieubraccini_eternal_expectation',
     name: 'Eternal Expectation',
     artists: [MATTHIEU_BRACCINI],
-    link: 'https://www.instagram.com/matthieubraccini/',
+    link: 'https://www.instagram.com/p/CdLyx0btNbY/',
     fallbackSource: {
       url: '/videos/square/matthieubraccini_eternal_expectation/matthieubraccini_eternal_expectation_h264.mp4',
       type: 'video/mp4',
@@ -329,6 +383,74 @@ export const videos: IVideo[] = [
     sources: [
       {
         url: '/videos/square/matthieubraccini_eternal_expectation/matthieubraccini_eternal_expectation_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
+    id: 'matthieubraccini_Melancholy',
+    name: 'Melancholy',
+    artists: [MATTHIEU_BRACCINI],
+    link: 'https://www.instagram.com/p/CpiR0u7Nt71/',
+    fallbackSource: {
+      url: '/videos/square/Matthieu_Braccini_Melancholy/Matthieu_Braccini_Melancholy_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/Matthieu_Braccini_Melancholy/Matthieu_Braccini_Melancholy_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
+    id: 'matthieubraccini_The_Og_Meka_Driver',
+    name: 'The Og Meka Driver',
+    artists: [MATTHIEU_BRACCINI],
+    link: 'https://www.instagram.com/p/CnkKyqSNLzQ/',
+    fallbackSource: {
+      url: '/videos/square/Matthieu_Braccini_The_Og_Meka_Driver/Matthieu_Braccini_The_Og_Meka_Driver_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/Matthieu_Braccini_The_Og_Meka_Driver/Matthieu_Braccini_The_Og_Meka_Driver_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
+    id: 'matthieubraccini_THE_SNEAKER_GIRL',
+    name: 'The Sneaker Girl',
+    artists: [MATTHIEU_BRACCINI],
+    link: 'https://www.instagram.com/p/Cn4lNGtNCwG/',
+    fallbackSource: {
+      url: '/videos/square/Matthieu_Braccini_THE_SNEAKER_GIRL/Matthieu_Braccini_THE_SNEAKER_GIRL_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/Matthieu_Braccini_THE_SNEAKER_GIRL/Matthieu_Braccini_THE_SNEAKER_GIRL_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+    {
+    id: 'blansable_grue',
+    name: 'Grue',
+    artists: [BLANSABLE],
+    link: 'https://www.instagram.com/reel/CYCNC0gJSsg/',
+    fallbackSource: {
+      url: '/videos/square/blansable_grue/blansable_grue_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/blansable_grue/blansable_grue_VP9.webm',
         type: 'video/webm',
       },
     ],
@@ -403,51 +525,34 @@ export const videos: IVideo[] = [
     format: 'square',
   },
   {
-    id: 'blansable_C',
-    name: 'C',
+    id: 'blansable_Haunted',
+    name: 'Haunted',
     artists: [BLANSABLE],
-    link: 'https://www.instagram.com/p/CNXcNqgnO__/',
+    link: 'https://www.instagram.com/p/CkJINDDjM0K/',
     fallbackSource: {
-      url: '/videos/square/blansable_C/blansable_C_h264.mp4',
+      url: '/videos/square/Blansable_Haunted/Blansable_Haunted_h264.mp4',
       type: 'video/mp4',
     },
     sources: [
       {
-        url: '/videos/square/blansable_C/blansable_C_VP9.webm',
+        url: '/videos/square/Blansable_Haunted/Blansable_Haunted_VP9.webm',
         type: 'video/webm',
       },
     ],
     format: 'square',
   },
   {
-    id: 'blansable_fish',
-    name: 'Fish',
+    id: 'blansable_Millionflowers',
+    name: 'Million flowers',
     artists: [BLANSABLE],
-    link: 'https://www.instagram.com/reel/CY4IfLjJX3f/',
+    link: 'https://www.instagram.com/p/Com3biVjTM5/',
     fallbackSource: {
-      url: '/videos/square/blansable_fish/blansable_fish_h264.mp4',
+      url: '/videos/square/Blansable_Millionflowers/Blansable_Millionflowers_h264.mp4',
       type: 'video/mp4',
     },
     sources: [
       {
-        url: '/videos/square/blansable_fish/blansable_fish_VP9.webm',
-        type: 'video/webm',
-      },
-    ],
-    format: 'square',
-  },
-  {
-    id: 'colors',
-    name: 'Colors',
-    artists: [BLANSABLE],
-    link: 'https://www.instagram.com/p/CLpA_EtHjmi/',
-    fallbackSource: {
-      url: '/videos/square/colors/colors.mp4',
-      type: 'video/mp4',
-    },
-    sources: [
-      {
-        url: '/videos/square/colors/colors.webm',
+        url: '/videos/square/Blansable_Millionflowers/Blansable_Millionflowers_VP9.webm',
         type: 'video/webm',
       },
     ],
@@ -505,6 +610,23 @@ export const videos: IVideo[] = [
     format: 'square',
   },
   {
+    id: 'Balo_flashboy',
+    name: 'Flashboy',
+    artists: [BALO],
+    link: 'https://www.instagram.com/p/Cm1QHfXDQvE/',
+    fallbackSource: {
+      url: '/videos/square/Balo_flashboy/Balo_flashboy_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/Balo_flashboy/Balo_flashboy_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
     id: 'cartier',
     name: 'Cartier',
     artists: [HEIRVEY],
@@ -556,108 +678,6 @@ export const videos: IVideo[] = [
     format: 'square',
   },
   {
-    id: 'chess',
-    name: 'Chess',
-    artists: [HEIRVEY],
-    link: 'https://www.instagram.com/p/B93_EdLIRkN/',
-    fallbackSource: {
-      url: '/videos/square/chess/chess.mp4',
-      type: 'video/mp4',
-    },
-    sources: [
-      {
-        url: '/videos/square/chess/chess.webm',
-        type: 'video/webm',
-      },
-    ],
-    format: 'square',
-  },
-  {
-    id: 'yoplait-chocolat',
-    name: 'Yoplait Chocolat',
-    artists: [MATTHIEU_BRACCINI, STRETCH_CLUB],
-    link: 'https://wearestretchclub.com/perle-de-lait/',
-    fallbackSource: {
-      url: '/videos/square/yoplait-chocolat/yoplait-chocolat.mp4',
-      type: 'video/mp4',
-    },
-    sources: [
-      {
-        url: '/videos/square/yoplait-chocolat/yoplait-chocolat.webm',
-        type: 'video/webm',
-      },
-    ],
-    format: 'square',
-  },
-  {
-    id: 'yoplait-lemon',
-    name: 'Yoplait Lemon',
-    artists: [MATTHIEU_BRACCINI, STRETCH_CLUB],
-    link: 'https://wearestretchclub.com/perle-de-lait/',
-    fallbackSource: {
-      url: '/videos/square/yoplait-lemon/yoplait-lemon.mp4',
-      type: 'video/mp4',
-    },
-    sources: [
-      {
-        url: '/videos/square/yoplait-lemon/yoplait-lemon.webm',
-        type: 'video/webm',
-      },
-    ],
-    format: 'square',
-  },
-  {
-    id: 'yoplait-cream',
-    name: 'Yoplait Cream',
-    artists: [MATTHIEU_BRACCINI, STRETCH_CLUB],
-    link: 'https://wearestretchclub.com/perle-de-lait/',
-    fallbackSource: {
-      url: '/videos/square/yoplait-cream/yoplait-cream.mp4',
-      type: 'video/mp4',
-    },
-    sources: [
-      {
-        url: '/videos/square/yoplait-cream/yoplait-cream.webm',
-        type: 'video/webm',
-      },
-    ],
-    format: 'square',
-  },
-  {
-    id: 'yoplait-strawberry',
-    name: 'Yoplait Strawberry',
-    artists: [MATTHIEU_BRACCINI, STRETCH_CLUB],
-    link: 'https://wearestretchclub.com/perle-de-lait/',
-    fallbackSource: {
-      url: '/videos/square/yoplait-strawberry/yoplait-strawberry.mp4',
-      type: 'video/mp4',
-    },
-    sources: [
-      {
-        url: '/videos/square/yoplait-strawberry/yoplait-strawberry.webm',
-        type: 'video/webm',
-      },
-    ],
-    format: 'square',
-  },
-  {
-    id: 'yoplait-strawberry-mango',
-    name: 'Yoplait Strawberry Mango',
-    artists: [MATTHIEU_BRACCINI, STRETCH_CLUB],
-    link: 'https://wearestretchclub.com/perle-de-lait/',
-    fallbackSource: {
-      url: '/videos/square/yoplait-strawberry-mango/yoplait-strawberry-mango.mp4',
-      type: 'video/mp4',
-    },
-    sources: [
-      {
-        url: '/videos/square/yoplait-strawberry-mango/yoplait-strawberry-mango.webm',
-        type: 'video/webm',
-      },
-    ],
-    format: 'square',
-  },
-  {
     id: 'justinbuisson_Chindogu',
     name: 'Chindogu',
     artists: [JUSTIN_BUISSON],
@@ -675,17 +695,17 @@ export const videos: IVideo[] = [
     format: 'square',
   },
   {
-    id: 'vyder_final_reveal',
-    name: 'Final Reveal',
-    artists: [VYDER],
-    link: 'https://twitter.com/VYDERgg/status/1570472546218266625',
+    id: 'justinbuisson_botani',
+    name: 'Botani',
+    artists: [JUSTIN_BUISSON],
+    link: 'https://www.instagram.com/p/Cp0fFbDscTm/',
     fallbackSource: {
-      url: '/videos/square/vyder_final_reveal/vyder_final_reveal_h264.mp4',
+      url: '/videos/square/Justin_buisson_botani/Justin_buisson_botani_h264.mp4',
       type: 'video/mp4',
     },
     sources: [
       {
-        url: '/videos/square/vyder_final_reveal/vyder_final_reveal_VP9.webm',
+        url: '/videos/square/Justin_buisson_botani/Justin_buisson_botani_VP9.webm',
         type: 'video/webm',
       },
     ],
