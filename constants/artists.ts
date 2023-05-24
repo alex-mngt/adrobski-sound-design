@@ -39,3 +39,18 @@ export const MATTEYYY: IArtist = {
   name: 'Matteyyy',
   profileUrl: 'https://www.instagram.com/matteyyy_/',
 };
+
+export const BALO: IArtist = {
+  name: 'Balo',
+  profileUrl: 'https://www.instagram.com/baloprisonnier/',
+};
+
+export const MAGNANE: IArtist = {
+  name: 'Magnane',
+  profileUrl: 'https://magnane.com/',
+};
+
+export const Hurrah: IArtist = {
+  name: 'Hurrah',
+  profileUrl: 'https://hurrah.group/',
+};
