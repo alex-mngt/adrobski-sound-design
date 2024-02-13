@@ -1,7 +1,8 @@
-import { Dispatch, RefObject, SetStateAction } from 'react';
+import { Dispatch, ReactNode, RefObject, SetStateAction } from 'react';
 import { CustomHook, IStandardProps } from '../../../helpers/types';
 
 export interface IFormProps extends IStandardProps {
+  children: ReactNode;
   reference: RefObject<HTMLFormElement>;
   setIsValid: Dispatch<SetStateAction<boolean>>;
   isValid: boolean;

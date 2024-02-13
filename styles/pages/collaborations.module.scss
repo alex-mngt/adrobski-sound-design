@@ -9,7 +9,6 @@
   grid-template-columns: repeat(2, 1fr);
   gap: variables.$spacing-5;
   text-align: center;
-  transform: translateY(variables.$spacing-5);
 }
 
 .collaborations__separator {

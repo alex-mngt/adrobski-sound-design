@@ -19,12 +19,10 @@ const Collaborations: NextPage = () => {
       </Head>
       <Header />
       <BaseLayout>
-        <div className={`${s['collaborations']} f f-center`}>
+        <div className={`${s['collaborations']} f f-center mt-6`}>
           <div className={`${s['collaborations__grid']}`}>
             {COLLABORATIONS.map(collaboration => (
-              <>
-                <p>{collaboration}</p>
-              </>
+              <p key={collaboration}>{collaboration}</p>
             ))}
           </div>
         </div>
