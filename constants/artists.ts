@@ -50,7 +50,27 @@ export const MAGNANE: IArtist = {
   profileUrl: 'https://magnane.com/',
 };
 
-export const Hurrah: IArtist = {
+export const HURRAH: IArtist = {
   name: 'Hurrah',
   profileUrl: 'https://hurrah.group/',
+};
+
+export const AVERSE: IArtist = {
+  name: 'Averse',
+  profileUrl: 'https://averseparis.com/fr',
+};
+
+export const HERVESTUDIO: IArtist = {
+  name: 'Hervé Studio',
+  profileUrl: 'https://www.herve.paris/',
+};
+
+export const MUJOATELIER: IArtist = {
+  name: 'Mujo Atelier',
+  profileUrl: 'https://www.instagram.com/mujo.atelier/',
+};
+
+export const POPCORN: IArtist = {
+  name: 'PopCorn',
+  profileUrl: 'https://www.youtube.com/@popcorntalkshow',
 };
