@@ -10,7 +10,11 @@ import {
   VYDER,
   BALO,
   MAGNANE,
-  Hurrah,
+  HURRAH,
+  AVERSE,
+  HERVESTUDIO,
+  MUJOATELIER,
+  POPCORN,
 } from './artists';
 
 export const videos: IVideo[] = [
@@ -31,18 +35,18 @@ export const videos: IVideo[] = [
     ],
     format: 'square',
   },
-    {
-    id: 'Mekaverse_MekaDriver_trailer',
-    name: 'MekaDriver Trailer',
-    artists: [MEKALABS],
-    link: 'https://twitter.com/MekaVerse/status/1616538052310216704',
+  {
+    id: 'PopCorn_BforBank',
+    name: 'BforBank Sponsorisation',
+    artists: [POPCORN],
+    link: 'https://www.youtube.com/@popcorntalkshow/featured',
     fallbackSource: {
-      url: '/videos/square/Mekaverse_MekaDriver_trailer/Mekaverse_MekaDriver_trailer_h264.mp4',
+      url: '/videos/square/PopCorn_BforBank/PopCorn_BforBank_h264.mp4',
       type: 'video/mp4',
     },
     sources: [
       {
-        url: '/videos/square/Mekaverse_MekaDriver_trailer/Mekaverse_MekaDriver_trailer_VP9.webm',
+        url: '/videos/square/PopCorn_BforBank/PopCorn_BforBank_VP9.webm',
         type: 'video/webm',
       },
     ],
@@ -60,6 +64,261 @@ export const videos: IVideo[] = [
     sources: [
       {
         url: '/videos/square/mekaverse_meka-merch/mekaverse_meka-merch_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
+    id: 'HerveStudio_Lacoste',
+    name: 'Lacoste',
+    artists: [HERVESTUDIO],
+    link: 'https://www.instagram.com/p/C1rZ0x9tC4S/',
+    fallbackSource: {
+      url: '/videos/square/HerveStudio_Lacoste/HerveStudio_Lacoste_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/HerveStudio_Lacoste/HerveStudio_Lacoste_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
+    id: 'Mujo_Atelier_VaseRemesh',
+    name: 'Vase Remesh',
+    artists: [MUJOATELIER],
+    link: 'https://www.instagram.com/p/CzT-tyRM1GF/',
+    fallbackSource: {
+      url: '/videos/square/Mujo_Atelier_VaseRemesh/Mujo_Atelier_VaseRemesh_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/Mujo_Atelier_VaseRemesh/Mujo_Atelier_VaseRemesh_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
+    id: 'Mujo_Atelier_VaseFall',
+    name: 'Vase Fall',
+    artists: [MUJOATELIER],
+    link: 'https://www.instagram.com/p/C0cHIr-MRP7/',
+    fallbackSource: {
+      url: '/videos/square/Mujo_Atelier_VaseFall/Mujo_Atelier_VaseFall_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/Mujo_Atelier_VaseFall/Mujo_Atelier_VaseFall_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
+    id: 'justinbuisson_DA',
+    name: 'New DA',
+    artists: [BLANSABLE],
+    link: 'https://www.instagram.com/p/CZZ6RFuIsmk/',
+    fallbackSource: {
+      url: '/videos/square/justinbuisson_DA/justinbuisson_DA_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/justinbuisson_DA/justinbuisson_DA_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
+    id: 'Matteyyy_SummersEnd',
+    name: 'Summer s End',
+    artists: [MATTEYYY],
+    link: 'https://www.instagram.com/reel/CydvlOftpiv/',
+    fallbackSource: {
+      url: '/videos/square/Matteyyy_SummersEnd/Matteyyy_SummersEnd_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/Matteyyy_SummersEnd/Matteyyy_SummersEnd_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
+    id: 'Mujo_Atelier_Case&Wood',
+    name: 'Case & Wood',
+    artists: [MUJOATELIER],
+    link: 'https://www.instagram.com/p/C0LyC7Ns-7Y/',
+    fallbackSource: {
+      url: '/videos/square/Mujo_Atelier_Case&Wood/Mujo_Atelier_Case&Wood_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/Mujo_Atelier_Case&Wood/Mujo_Atelier_Case&Wood_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
+    id: 'Mujo_Atelier_MarcheDeCeramique',
+    name: 'Marché De Céramique',
+    artists: [MUJOATELIER],
+    link: 'https://www.instagram.com/p/Cz66_PzLOb3/',
+    fallbackSource: {
+      url: '/videos/square/Mujo_Atelier_MarcheDeCeramique/Mujo_Atelier_MarcheDeCeramique_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/Mujo_Atelier_MarcheDeCeramique/Mujo_Atelier_MarcheDeCeramique_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
+    id: 'Mujo_Atelier_Sponge&Vase',
+    name: 'Sponge & Vase',
+    artists: [MUJOATELIER],
+    link: 'https://www.instagram.com/p/CyQTIp6sCUT/',
+    fallbackSource: {
+      url: '/videos/square/Mujo_Atelier_Sponge&Vase/Mujo_Atelier_Sponge&Vase_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/Mujo_Atelier_Sponge&Vase/Mujo_Atelier_Sponge&Vase_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
+    id: 'HerveStudio_Scaleway',
+    name: 'Scaleway SFX Teaser',
+    artists: [HERVESTUDIO],
+    link: 'https://www.youtube.com/watch?v=TnDpsRUiBYU',
+    fallbackSource: {
+      url: '/videos/square/HerveStudio_Scaleway/HerveStudio_Scaleway_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/HerveStudio_Scaleway/HerveStudio_Scaleway_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
+    id: 'Averse_Annonce',
+    name: 'Annonce',
+    artists: [AVERSE],
+    link: 'https://www.instagram.com/p/Cx50mkgMG7a/',
+    fallbackSource: {
+      url: '/videos/square/Averse_Annonce/Averse_Annonce_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/Averse_Annonce/Averse_Annonce_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
+    id: 'Averse_RingTeaser',
+    name: 'Ring Teaser',
+    artists: [AVERSE],
+    link: 'https://www.instagram.com/p/CylhL_Jtuzl/',
+    fallbackSource: {
+      url: '/videos/square/Averse_RingTeaser/Averse_RingTeaser_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/Averse_RingTeaser/Averse_RingTeaser_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
+    id: 'Averse_BoringGirl',
+    name: 'Boring Girl',
+    artists: [AVERSE],
+    link: 'https://www.instagram.com/p/Cx-4PYntNHv/?img_index=1',
+    fallbackSource: {
+      url: '/videos/square/Averse_BoringGirl/Averse_BoringGirl_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/Averse_BoringGirl/Averse_BoringGirl_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
+    id: 'Averse_RingExplosion',
+    name: 'Ring Explosion',
+    artists: [AVERSE],
+    link: 'https://www.instagram.com/p/CzB1ImONFKS/',
+    fallbackSource: {
+      url: '/videos/square/Averse_RingExplosion/Averse_RingExplosion_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/Averse_RingExplosion/Averse_RingExplosion_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
+    id: 'MatthieuBraccini_HoundII',
+    name: 'HoundII',
+    artists: [MATTHIEU_BRACCINI],
+    link: 'https://www.instagram.com/p/CsoeD9ptoQ_/?img_index=1',
+    fallbackSource: {
+      url: '/videos/square/MatthieuBraccini_HoundII/MatthieuBraccini_HoundII_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/MatthieuBraccini_HoundII/MatthieuBraccini_HoundII_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
+    id: 'Virtex_TeaserWorldLOL2023',
+    name: 'Teaser World LOL 2023',
+    artists: [HURRAH],
+    link: 'https://twitter.com/VirtexStadium/status/1717549142447169805',
+    fallbackSource: {
+      url: '/videos/square/Virtex_TeaserWorldLOL2023/Virtex_TeaserWorldLOL2023_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/Virtex_TeaserWorldLOL2023/Virtex_TeaserWorldLOL2023_VP9.webm',
         type: 'video/webm',
       },
     ],
@@ -99,23 +358,6 @@ export const videos: IVideo[] = [
     ],
     format: 'square',
   },
-  {
-    id: 'justinbuisson_DA',
-    name: 'New DA',
-    artists: [BLANSABLE],
-    link: 'https://www.instagram.com/p/CZZ6RFuIsmk/',
-    fallbackSource: {
-      url: '/videos/square/justinbuisson_DA/justinbuisson_DA_h264.mp4',
-      type: 'video/mp4',
-    },
-    sources: [
-      {
-        url: '/videos/square/justinbuisson_DA/justinbuisson_DA_VP9.webm',
-        type: 'video/webm',
-      },
-    ],
-    format: 'square',
-  },
     {
     id: 'vyder_FreeMint',
     name: 'Free Mint',
@@ -145,6 +387,23 @@ export const videos: IVideo[] = [
     sources: [
       {
         url: '/videos/square/blansable_the_explorer_snake/blansable_the_explorer_snake_VP9.webm',
+        type: 'video/webm',
+      },
+    ],
+    format: 'square',
+  },
+  {
+    id: 'Mekaverse_MekaDriver_trailer',
+    name: 'MekaDriver Trailer',
+    artists: [MEKALABS],
+    link: 'https://twitter.com/MekaVerse/status/1616538052310216704',
+    fallbackSource: {
+      url: '/videos/square/Mekaverse_MekaDriver_trailer/Mekaverse_MekaDriver_trailer_h264.mp4',
+      type: 'video/mp4',
+    },
+    sources: [
+      {
+        url: '/videos/square/Mekaverse_MekaDriver_trailer/Mekaverse_MekaDriver_trailer_VP9.webm',
         type: 'video/webm',
       },
     ],
@@ -187,7 +446,7 @@ export const videos: IVideo[] = [
   {
     id: 'Hurrah.Group_Virtex_Trailer_music',
     name: 'Virtex Stadium Music Trailer',
-    artists: [Hurrah],
+    artists: [HURRAH],
     link: 'https://www.virtexstadium.com/',
     fallbackSource: {
       url: '/videos/square/Hurrah.Group_Virtex_Trailer_musicHurrah.Group_Virtex_Trailer_music_h264.mp4',
